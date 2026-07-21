@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</helmet>
+<div style="width:900px;height:600px;position:relative;background:#f6f7f8;font-family:'Instrument Sans',system-ui,sans-serif;overflow:hidden;user-select:none">
+
+  <div style="padding:26px 40px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:22px">
+      <span style="font:700 20px/1 'Instrument Sans';color:#131416">Library — Summer</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:780px">
+      <div style="aspect-ratio:1;border-radius:8px;background:#5b6ee1"></div>
+      <div style="aspect-ratio:1;border-radius:8px;background:#e8c4d8;position:relative">
+        <div style="position:absolute;inset:-1px;border-radius:9px;box-shadow:0 0 0 2px #597eff"></div>
+      </div>
+      <div style="aspect-ratio:1;border-radius:8px;background:#f4d9a8"></div>
+      <div style="aspect-ratio:1;border-radius:8px;background:#a8d4c8"></div>
+      <div style="aspect-ratio:1;border-radius:8px;background:#dfe6ee"></div>
+    </div>
+  </div>
+
+  <!-- context menu -->
+  <div style="position:absolute;left:210px;top:150px;width:241px;background:#fff;border-radius:10px;box-shadow:0 16px 40px rgba(0,18,71,.22);padding:8px 0">
+    <div style="display:flex;align-items:center;gap:11px;padding:11px 16px;font:500 13.5px/1 'Instrument Sans';color:#2a2c31">⤓ Download</div>
+    <div style="display:flex;align-items:center;gap:11px;padding:11px 16px;font:500 13.5px/1 'Instrument Sans';color:#2a2c31">🖉 Rename</div>
+    <div style="display:flex;align-items:center;gap:11px;padding:11px 16px;font:500 13.5px/1 'Instrument Sans';color:#2a2c31">★ Set as project header</div>
+    <div style="display:flex;align-items:center;gap:11px;padding:11px 16px;font:500 13.5px/1 'Instrument Sans';color:#2a2c31">📁 Move to folder</div>
+    <div style="display:flex;align-items:center;gap:11px;padding:11px 16px;font:500 13.5px/1 'Instrument Sans';color:#2a2c31">✕ Remove from "Summer"</div>
+    <div style="height:1px;background:#f0f1f3;margin:6px 0"></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:11px 16px;font:500 13.5px/1 'Instrument Sans';color:#d64545">🗑 Delete</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:600}}"></script>
+</body>
+</html>

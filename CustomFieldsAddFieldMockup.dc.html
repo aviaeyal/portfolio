@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</helmet>
+<div style="width:900px;height:600px;position:relative;background:#f4f5f6;font-family:'Instrument Sans',system-ui,sans-serif;overflow:hidden;user-select:none;display:flex;align-items:center;justify-content:center">
+
+  <div style="position:absolute;inset:0;background:rgba(19,20,22,.32)"></div>
+
+  <!-- small "Add custom field" modal -->
+  <div style="position:relative;width:410px;background:#fff;border-radius:14px;box-shadow:0 24px 60px rgba(0,18,71,.24);overflow:visible">
+    <div style="padding:22px 26px 4px;display:flex;align-items:center;justify-content:space-between">
+      <span style="font:700 16px/1 'Instrument Sans';color:#131416">Add custom field</span>
+      <span style="color:#868a98;font-size:15px">✕</span>
+    </div>
+
+    <div style="padding:18px 26px 26px;display:flex;flex-direction:column;gap:16px">
+      <div>
+        <div style="font:600 10.5px/1 'Instrument Sans';letter-spacing:.06em;color:#a9acb4;margin-bottom:7px">FIELD NAME</div>
+        <div style="border:1.5px solid #131416;border-radius:8px;padding:11px 13px;font:500 14px/1 'Instrument Sans';color:#131416">Project worth</div>
+      </div>
+      <div style="position:relative">
+        <div style="font:600 10.5px/1 'Instrument Sans';letter-spacing:.06em;color:#a9acb4;margin-bottom:7px">FIELD TYPE</div>
+        <div style="border:1.5px solid #597eff;border-radius:8px;padding:11px 13px;display:flex;align-items:center;justify-content:space-between;font:500 14px/1 'Instrument Sans';color:#131416;box-shadow:0 0 0 3px rgba(89,126,255,.14)">Text <span style="color:#868a98;font-size:11px">▲</span></div>
+
+        <!-- dropdown list -->
+        <div style="position:absolute;top:64px;left:0;right:0;background:#fff;border-radius:10px;box-shadow:0 16px 40px rgba(0,18,71,.2);padding:6px;z-index:5">
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;background:#f4f5f6;border-radius:7px;font:600 13.5px/1 'Instrument Sans';color:#131416"><span style="width:16px;text-align:center;color:#597eff">Aa</span>Text</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;font:500 13.5px/1 'Instrument Sans';color:#3a3a34"><span style="width:16px;text-align:center;color:#868a98">☰</span>Long text</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;font:500 13.5px/1 'Instrument Sans';color:#3a3a34"><span style="width:16px;text-align:center;color:#868a98">📅</span>Date</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;font:500 13.5px/1 'Instrument Sans';color:#3a3a34"><span style="width:16px;text-align:center;color:#868a98">#</span>Number</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;font:500 13.5px/1 'Instrument Sans';color:#3a3a34"><span style="width:16px;text-align:center;color:#868a98">🔗</span>Link</div>
+        </div>
+      </div>
+      <div style="height:200px"></div>
+    </div>
+
+    <div style="padding:16px 26px;border-top:1px solid #f0f1f3;display:flex;justify-content:flex-end;gap:10px">
+      <span style="font:600 13px/1 'Instrument Sans';color:#525660;padding:9px 18px;border-radius:7px">Cancel</span>
+      <span style="font:600 13px/1 'Instrument Sans';color:#fff;background:#131416;padding:9px 20px;border-radius:7px">Save</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:600}}"></script>
+</body>
+</html>
