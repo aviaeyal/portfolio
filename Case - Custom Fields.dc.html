@@ -22,13 +22,16 @@
   .nextrow:hover{padding-left:12px}
   .nextrow .nx{transition:color .2s ease}
   .nextrow:hover .nx{color:#000}
+  @media (max-width:640px){
+    .scale-embed{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  }
 </style>
 </helmet>
 <div>
 
   <div style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:44px;display:flex;align-items:center;justify-content:space-between">
     <a class="backlink" href="Avia Eyal - Portfolio (Minimal).dc.html" style="font:400 13px/1 'Instrument Sans',sans-serif;color:#8a8a82;text-decoration:none">← <span class="nm" style="color:#5f5f58">Avia Eyal</span></a>
-    <span style="font:500 12px/1 'Geist Mono',monospace;color:#a3a39a">02 / 05</span>
+    <span style="font:500 12px/1 'Geist Mono',monospace;color:#a3a39a">02 / 04</span>
   </div>
 
   <header style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:60px;padding-bottom:44px">
@@ -38,7 +41,7 @@
   </header>
 
   <div style="max-width:860px;margin:0 auto;padding:0 28px">
-    <div style="width:100%;height:533px;overflow:hidden;border:1px solid #14141216;border-radius:10px;background:#e9e7e0">
+    <div class="scale-embed" style="width:100%;height:533px;overflow:hidden;border:1px solid #14141216;border-radius:10px;background:#e9e7e0">
       <div style="width:900px;height:600px;transform:scale(0.8889);transform-origin:top left">
         <dc-import name="CustomFieldsManageMockup" hint-size="900px,600px" style="width:900px;height:600px"></dc-import>
       </div>
@@ -73,7 +76,7 @@
         <div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">7</span><span style="font:400 12.5px/1.4 'Instrument Sans',sans-serif;color:#8a8a82">competitor CRMs<br>benchmarked</span></div>
       </div>
       <p style="font:400 17px/1.75 'Instrument Sans',sans-serif;color:#3a3a34;margin:0 0 20px">Adding a field meant a small, focused decision: name it, then pick a type scoped to what the data actually needs — not a blank spreadsheet cell.</p>
-      <div style="width:100%;height:328px;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff">
+      <div class="scale-embed" style="width:100%;height:328px;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff">
         <div style="width:900px;height:600px;transform:scale(0.6178);transform-origin:top left">
           <dc-import name="CustomFieldsAddFieldMockup" hint-size="900px,600px" style="width:900px;height:600px"></dc-import>
         </div>
@@ -85,7 +88,7 @@
         <div style="display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:20px;padding:14px 0;border-bottom:1px solid #14141212"><span style="font:500 14px/1.4 'Instrument Sans',sans-serif;color:#1a1a17">Cake flavor</span><span style="font:400 14px/1.4 'Instrument Sans',sans-serif;color:#5f5f58">Closed list</span><span style="font:400 14px/1.4 'Instrument Sans',sans-serif;color:#8a8a82">e.g. vanilla vs. chocolate</span></div>
         <div style="display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:20px;padding:14px 0;border-bottom:1px solid #14141212"><span style="font:500 14px/1.4 'Instrument Sans',sans-serif;color:#1a1a17">Contact group</span><span style="font:400 14px/1.4 'Instrument Sans',sans-serif;color:#5f5f58">Text / multi-select</span><span style="font:400 14px/1.4 'Instrument Sans',sans-serif;color:#8a8a82">used to target the reminder</span></div>
         <div style="display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:20px;padding:14px 0;border-bottom:1px solid #14141212"><span style="font:500 14px/1.4 'Instrument Sans',sans-serif;color:#1a1a17">Lead source</span><span style="font:400 14px/1.4 'Instrument Sans',sans-serif;color:#5f5f58">Text / multi-select</span><span style="font:400 14px/1.4 'Instrument Sans',sans-serif;color:#8a8a82">vendor market vs. referral</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:20px;padding:14px 0"><span style="font:500 14px/1.4 'Instrument Sans',sans-serif;color:#1a1a17">Reference image</span><span style="font:400 14px/1.4 'Instrument Sans',sans-serif;color:#5f5f58">Image upload</span><span style="font:400 14px/1.4 'Instrument Sans',sans-serif;color:#8a8a82">kept hidden from the client</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:20px;padding:14px 0"><span style="font:500 14px/1.4 'Instrument Sans',sans-serif;color:#1a1a17">Reference image</span><span style="font:400 14px/1.4 'Instrument Sans',sans-serif;color:#5f5f58">Link</span><span style="font:400 14px/1.4 'Instrument Sans',sans-serif;color:#8a8a82">kept hidden from the client</span></div>
       </div>
       <p style="font:400 17px/1.75 'Instrument Sans',sans-serif;color:#3a3a34;margin:28px 0 0">I also benchmarked field flexibility across seven competitor tools — Zoho, Spotler CRM, Bigin, Bloom, Copilot, Kartra, and Dubsado — to calibrate how far to push customization versus how simple to keep the defaults.</p>
     </div>
