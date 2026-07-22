@@ -24,6 +24,10 @@
   .ilink:hover{border-bottom-color:#121210}
   .contactbtn{transition:border-color .2s var(--ease)}
   .contactbtn:hover{border-color:#fbfbf9}
+  .pht{aspect-ratio:1;border-radius:8px;overflow:hidden;background:#f1f0ea;border:1px solid #14141216;display:flex;align-items:center;justify-content:center;transition:transform .2s var(--ease)}
+  .pht:hover{transform:scale(1.02)}
+  .pht picture{width:100%;height:100%;display:block}
+  .pht img{width:100%;height:100%;object-fit:contain}
   @media (prefers-reduced-motion:no-preference){
     header{animation:reveal .6s var(--ease) both}
   }
@@ -69,8 +73,26 @@
 
   <div style="max-width:900px;margin:0 auto;padding:0 34px">
 
+    <!-- ILLUSTRATION -->
+    <sc-if value="{{ showIllustration }}" hint-placeholder-val="{{ true }}">
+    <section id="illustration" style="padding:64px 0 40px;scroll-margin-top:76px">
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 24px">ILLUSTRATION</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px">
+        <div class="pht"><picture><source srcset="assets/illustrations/urban-plaza.webp" type="image/webp"><img src="assets/illustrations/urban-plaza.jpg" loading="lazy" alt="Gouache illustration of a peach-toned courtyard with steps, purple trees, and cat-like creatures lounging in the evening light"></picture></div>
+        <div class="pht"><picture><source srcset="assets/illustrations/fish-window.webp" type="image/webp"><img src="assets/illustrations/fish-window.jpg" loading="lazy" alt="Gouache illustration of a cat looking through a blue window at an oversized goldfish"></picture></div>
+        <div class="pht"><picture><source srcset="assets/illustrations/face-in-water.webp" type="image/webp"><img src="assets/illustrations/face-in-water.jpg" loading="lazy" alt="Gouache illustration of a blue-haired face emerging from swirling orange water, surrounded by koi"></picture></div>
+        <div class="pht"><picture><source srcset="assets/illustrations/girl-in-cat.webp" type="image/webp"><img src="assets/illustrations/girl-in-cat.jpg" loading="lazy" alt="Colored pencil illustration of a girl curled up asleep inside a giant striped cat"></picture></div>
+        <div class="pht"><picture><source srcset="assets/illustrations/urban-market.webp" type="image/webp"><img src="assets/illustrations/urban-market.jpg" loading="lazy" alt="Gouache illustration of a lantern-lit night market stall with a long-legged fish creature and fruit baskets"></picture></div>
+        <div class="pht"><picture><source srcset="assets/illustrations/urban-bus.webp" type="image/webp"><img src="assets/illustrations/urban-bus.jpg" loading="lazy" alt="Gouache illustration of animal-headed passengers riding a city bus at sunset"></picture></div>
+        <div class="pht"><picture><source srcset="assets/illustrations/waterfall-room.webp" type="image/webp"><img src="assets/illustrations/waterfall-room.jpg" loading="lazy" alt="Gouache illustration of a bedroom where the bed has become a mossy waterfall, with a fox-eared figure resting in it"></picture></div>
+        <div class="pht"><picture><source srcset="assets/illustrations/floor-with-plants.webp" type="image/webp"><img src="assets/illustrations/floor-with-plants.jpg" loading="lazy" alt="Gouache illustration of a person lying on a tiled floor surrounded by houseplants, a laptop, and a cat"></picture></div>
+      </div>
+      <p style="font:400 14px/1.6 'Hanken Grotesk',sans-serif;color:#8a8a82;margin:18px 0 0">More on <a href="https://instagram.com/aviaeyal" target="_blank" rel="noopener" class="ilink">@aviaeyal ↗</a></p>
+    </section>
+    </sc-if>
+
     <!-- FACTS -->
-    <section style="padding:64px 0 40px;display:grid;grid-template-columns:1fr 1fr;gap:0 56px">
+    <section style="padding:24px 0 40px;display:grid;grid-template-columns:1fr 1fr;gap:0 56px">
       <div style="display:flex;flex-direction:column">
         <div style="padding:0 0 18px;border-bottom:1px solid #14141216"><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#a3a39a;display:block;margin-bottom:9px">NOW</span><span style="font:400 14.5px/1.5 'Hanken Grotesk',sans-serif">Senior Product Designer, HoneyBook</span></div>
         <div style="padding:18px 0;border-bottom:1px solid #14141216"><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#a3a39a;display:block;margin-bottom:9px">PATH</span><span style="font:400 14.5px/1.5 'Hanken Grotesk',sans-serif">QA Engineer → QA Automation → Product Design</span></div>
