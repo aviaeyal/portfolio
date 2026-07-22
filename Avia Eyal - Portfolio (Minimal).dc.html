@@ -24,6 +24,8 @@
   .wrow:hover .wyear{color:#121210}
   .ilink{text-decoration:none;border-bottom:1px solid #12121033;padding-bottom:1px;transition:border-color .2s ease}
   .ilink:hover{border-bottom-color:#121210}
+  .navlink{transition:color .2s ease}
+  .navlink:hover{color:#121210}
 </style>
 </helmet>
 <template id="__bundler_thumbnail" data-bg-color="#fbfbf9">
@@ -40,10 +42,18 @@
   </svg>
 </template>
 <div style="background:{{ bgColor }};min-height:100vh">
+<nav style="position:sticky;top:0;z-index:50;background:#fbfbf9f2;backdrop-filter:blur(8px);border-bottom:1px solid #14141216;display:flex;align-items:center;justify-content:space-between;padding:0 34px;height:60px">
+  <a href="Avia Eyal - Portfolio (Minimal).dc.html" style="font:600 15px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em;text-decoration:none;color:#121210">Avia Eyal</a>
+  <div style="display:flex;gap:26px;align-items:center;font:500 12.5px/1 'Instrument Sans',sans-serif;color:#5f5f58">
+    <a href="Avia Eyal - Portfolio (Minimal).dc.html" class="navlink" style="text-decoration:none;color:#121210">Work</a>
+    <a href="About - Avia Eyal.dc.html" class="navlink" style="text-decoration:none">About</a>
+    <a href="About - Avia Eyal.dc.html#contact" class="navlink" style="text-decoration:none">Contact</a>
+  </div>
+</nav>
 <div style="max-width:640px;margin:0 auto;padding:0 28px">
 
   <!-- HEADER -->
-  <header style="padding:120px 0 0">
+  <header style="padding:84px 0 0">
     <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:26px;line-height:1;letter-spacing:-.02em;margin:0">Avia Eyal</h1>
     <p style="font:400 16px/1.7 'Instrument Sans',sans-serif;color:#5f5f58;margin:14px 0 0;max-width:52ch">A senior product designer, 10+ years in B2B SaaS. I design the complex parts of software (editors, file structure, platform features) from research through shipped UI. By way of QA engineering and a background in neuroscience.</p>
     <div style="display:flex;gap:22px;margin:22px 0 0;font:400 14px/1 'Instrument Sans',sans-serif;color:#5f5f58">
