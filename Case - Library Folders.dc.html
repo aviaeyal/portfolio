@@ -10,30 +10,34 @@
 <helmet data-dc-atomics>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Hanken+Grotesk:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  html{scroll-behavior:smooth}
-  body{margin:0;background:#fbfbf9;color:#121210;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  html{scroll-behavior:smooth;--ease:cubic-bezier(.16,1,.3,1)}
+  body{margin:0;background:#fbfbf9;color:#121210;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   ::selection{background:#12121012}
   a{color:inherit}
-  .backlink .nm{transition:color .2s ease}
+  .backlink .nm{transition:color .2s var(--ease)}
   .backlink:hover .nm{color:#000}
-  .nextrow{transition:padding-left .2s ease}
-  .nextrow:hover{padding-left:12px}
-  .nextrow .nx{transition:color .2s ease}
+  .nextrow{transition:transform .2s var(--ease)}
+  .nextrow:hover{transform:translateX(12px)}
+  .nextrow .nx{transition:color .2s var(--ease)}
   .nextrow:hover .nx{color:#000}
   @media (max-width:640px){
     .scale-embed{overflow-x:auto;-webkit-overflow-scrolling:touch}
   }
-  .navlink{transition:color .2s ease}
+  .navlink{transition:color .2s var(--ease)}
   .navlink:hover{color:#121210}
+  @media (prefers-reduced-motion:no-preference){
+    header{animation:reveal .6s var(--ease) both}
+  }
+  @keyframes reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </helmet>
 <div>
 
   <nav style="position:sticky;top:0;z-index:50;background:#fbfbf9f2;backdrop-filter:blur(8px);border-bottom:1px solid #14141216;display:flex;align-items:center;justify-content:space-between;padding:0 34px;height:60px">
     <a href="Avia Eyal - Portfolio (Minimal).dc.html" style="font:600 15px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em;text-decoration:none;color:#121210">Avia Eyal</a>
-    <div style="display:flex;gap:26px;align-items:center;font:500 12.5px/1 'Instrument Sans',sans-serif;color:#5f5f58">
+    <div style="display:flex;gap:26px;align-items:center;font:500 12.5px/1 'Hanken Grotesk',sans-serif;color:#5f5f58">
       <a href="Avia Eyal - Portfolio (Minimal).dc.html" class="navlink" style="text-decoration:none;color:#121210">Work</a>
       <a href="About - Avia Eyal.dc.html" class="navlink" style="text-decoration:none">About</a>
       <a href="About - Avia Eyal.dc.html#contact" class="navlink" style="text-decoration:none">Contact</a>
@@ -41,14 +45,14 @@
   </nav>
 
   <div style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:28px;display:flex;align-items:center;justify-content:space-between">
-    <a class="backlink" href="Avia Eyal - Portfolio (Minimal).dc.html" style="font:400 13px/1 'Instrument Sans',sans-serif;color:#8a8a82;text-decoration:none">← <span class="nm" style="color:#5f5f58">Avia Eyal</span></a>
-    <span style="font:500 12px/1 'Geist Mono',monospace;color:#a3a39a">03 / 04</span>
+    <a class="backlink" href="Avia Eyal - Portfolio (Minimal).dc.html" style="font:400 13px/1 'Hanken Grotesk',sans-serif;color:#8a8a82;text-decoration:none">← <span class="nm" style="color:#5f5f58">Avia Eyal</span></a>
+    <span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#a3a39a">03 / 04</span>
   </div>
 
   <header style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:60px;padding-bottom:44px">
-    <p style="font:500 11px/1 'Geist Mono',monospace;letter-spacing:.16em;color:#8a8a82;margin:0 0 22px">HONEYBOOK · IA · 2023</p>
+    <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#8a8a82;margin:0 0 22px">HONEYBOOK · IA · 2023</p>
     <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(38px,5.6vw,60px);line-height:1;letter-spacing:-.025em;margin:0 0 24px;max-width:16ch">Library Folders</h1>
-    <p style="font:400 20px/1.55 'Instrument Sans',sans-serif;color:#454540;max-width:46ch;margin:0">How do you bring order to a growing library of templates and files without adding friction to everyday use?</p>
+    <p style="font:400 20px/1.55 'Hanken Grotesk',sans-serif;color:#454540;max-width:46ch;margin:0">How do you bring order to a growing library of templates and files without adding friction to everyday use?</p>
   </header>
 
   <div style="max-width:860px;margin:0 auto;padding:0 28px">
@@ -57,57 +61,57 @@
         <dc-import name="LibraryFoldersAfterMockup" hint-size="1000px,640px" style="width:1000px;height:640px"></dc-import>
       </div>
     </div>
-    <p style="font:400 12px/1.5 'Geist Mono',monospace;color:#a3a39a;margin:12px 2px 0">The shipped Library — folders in the left rail, All/Images/Files filtering, and a selection toolbar for bulk actions.</p>
+    <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">The shipped Library: folders in the left rail, All/Images/Files filtering, and a selection toolbar for bulk actions.</p>
   </div>
 
   <section style="max-width:680px;margin:0 auto;padding:0 28px">
     <div style="padding:52px 0 4px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
-      <div><span style="font:500 10px/1 'Geist Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">ROLE</span><span style="font:400 13.5px/1.4 'Instrument Sans',sans-serif">Product designer</span></div>
-      <div><span style="font:500 10px/1 'Geist Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">TEAM</span><span style="font:400 13.5px/1.4 'Instrument Sans',sans-serif">PM · engineering · research</span></div>
-      <div><span style="font:500 10px/1 'Geist Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">TIMELINE</span><span style="font:400 13.5px/1.4 'Instrument Sans',sans-serif">2023</span></div>
-      <div><span style="font:500 10px/1 'Geist Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">CONTRIB.</span><span style="font:400 13.5px/1.4 'Instrument Sans',sans-serif">Research → ship</span></div>
+      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">ROLE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Product designer</span></div>
+      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">TEAM</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">PM · engineering · research</span></div>
+      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">TIMELINE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">2023</span></div>
+      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">SCOPE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Research → ship</span></div>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'Geist Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">CONTEXT</p>
-      <p style="font:400 17px/1.75 'Instrument Sans',sans-serif;color:#3a3a34;margin:0 0 18px">The library was one unorganized, flat list. Users had to scroll through every image and file with no way to filter or group assets — there was no folder, tag, or category to lean on.</p><p style="font:400 17px/1.75 'Instrument Sans',sans-serif;color:#3a3a34;margin:0 0 26px">Finding one specific image became a time-consuming, frustrating process — and that friction compounded every time someone needed to reuse a template or asset.</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">CONTEXT</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 18px">The library was one unorganized, flat list. Users had to scroll through every image and file with no way to filter or group assets, and there was no folder, tag, or category to lean on.</p><p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 26px">Finding one specific image became a time-consuming, frustrating process, and that friction compounded every time someone needed to reuse a template or asset.</p>
       <div style="width:100%;height:280px;overflow:hidden;border:1px solid #14141216;border-radius:8px">
-        <img src="assets/library-before.png" alt="Library before — a flat, unorganized asset list" style="width:100%;height:100%;object-fit:cover;object-position:top" />
+        <img src="assets/library-before.png" alt="Library before: a flat, unorganized asset list" style="width:100%;height:100%;object-fit:cover;object-position:top" />
       </div>
-      <p style="font:400 12px/1.5 'Geist Mono',monospace;color:#a3a39a;margin:12px 2px 0">BEFORE — everything in one flat list, images and files mixed together with no way to group them.</p>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">BEFORE: everything in one flat list, images and files mixed together with no way to group them.</p>
       
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'Geist Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">PROCESS</p>
-      <p style="font:400 17px/1.75 'Instrument Sans',sans-serif;color:#3a3a34;margin:0 0 28px">I designed a folder model that lets people group assets their own way, plus a right-click menu covering the everyday actions — rename, move, remove from a folder, set as a project header, delete — so reorganizing didn't mean touching every item one at a time.</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">PROCESS</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">I designed a folder model that lets people group assets their own way, plus a right-click menu covering the everyday actions (rename, move, remove from a folder, set as a project header, delete) so reorganizing didn't mean touching every item one at a time.</p>
       <div class="scale-embed" style="width:100%;height:328px;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#f6f7f8">
         <div style="width:900px;height:600px;transform:scale(0.6178);transform-origin:top left">
           <dc-import name="LibraryFoldersContextMenuMockup" hint-size="900px,600px" style="width:900px;height:600px"></dc-import>
         </div>
       </div>
-      <p style="font:400 12px/1.5 'Geist Mono',monospace;color:#a3a39a;margin:12px 2px 0">Right-click on any asset for the full set of folder actions, scoped to the folder it's currently in.</p>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">Right-click on any asset for the full set of folder actions, scoped to the folder it's currently in.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(23px,3.2vw,31px);line-height:1.28;letter-spacing:-.015em;color:#1a1a17;margin:0;max-width:26ch">“It maps to how I already think about my business, not how the software thinks.”</p>
-      <p style="font:500 11px/1 'Geist Mono',monospace;letter-spacing:.1em;color:#a3a39a;margin:22px 0 0">— CARD-SORT PARTICIPANT</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#a3a39a;margin:22px 0 0">— CARD-SORT PARTICIPANT</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'Geist Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">OUTCOME</p>
-      <p style="font:400 17px/1.75 'Instrument Sans',sans-serif;color:#3a3a34;margin:0">Shipped a hierarchical folder system with bulk move and organize actions across the library.</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">OUTCOME</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">Shipped a hierarchical folder system with bulk move and organize actions across the library.</p>
     </div>
   </section>
 
   <a class="nextrow" href="Case - Client Portal.dc.html" style="display:block;border-top:1px solid #14141212;text-decoration:none">
     <div style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:34px;padding-bottom:34px;display:flex;align-items:baseline;justify-content:space-between">
-      <span style="font:500 11px/1 'Geist Mono',monospace;letter-spacing:.12em;color:#a3a39a">NEXT</span>
+      <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#a3a39a">NEXT</span>
       <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:21px;letter-spacing:-.01em;color:#1a1a17">Client Portal Redesign →</span>
     </div>
   </a>
 
-  <footer style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:26px;padding-bottom:60px;border-top:1px solid #14141212;display:flex;justify-content:space-between;font:500 11px/1 'Geist Mono',monospace;letter-spacing:.04em;color:#a3a39a">
+  <footer style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:26px;padding-bottom:60px;border-top:1px solid #14141212;display:flex;justify-content:space-between;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:#a3a39a">
     <span>Avia Eyal</span>
     <span>Tel Aviv · 2026</span>
   </footer>

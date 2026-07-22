@@ -10,30 +10,34 @@
 <helmet data-dc-atomics>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Hanken+Grotesk:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  html{scroll-behavior:smooth}
-  body{margin:0;background:#fbfbf9;color:#121210;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  html{scroll-behavior:smooth;--ease:cubic-bezier(.16,1,.3,1)}
+  body{margin:0;background:#fbfbf9;color:#121210;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   ::selection{background:#12121012}
   a{color:inherit}
-  .backlink .nm{transition:color .2s ease}
+  .backlink .nm{transition:color .2s var(--ease)}
   .backlink:hover .nm{color:#000}
-  .nextrow{transition:padding-left .2s ease}
-  .nextrow:hover{padding-left:12px}
-  .nextrow .nx{transition:color .2s ease}
+  .nextrow{transition:transform .2s var(--ease)}
+  .nextrow:hover{transform:translateX(12px)}
+  .nextrow .nx{transition:color .2s var(--ease)}
   .nextrow:hover .nx{color:#000}
   @media (max-width:640px){
     .scale-embed{overflow-x:auto;-webkit-overflow-scrolling:touch}
   }
-  .navlink{transition:color .2s ease}
+  .navlink{transition:color .2s var(--ease)}
   .navlink:hover{color:#121210}
+  @media (prefers-reduced-motion:no-preference){
+    header{animation:reveal .6s var(--ease) both}
+  }
+  @keyframes reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </helmet>
 <div>
 
   <nav style="position:sticky;top:0;z-index:50;background:#fbfbf9f2;backdrop-filter:blur(8px);border-bottom:1px solid #14141216;display:flex;align-items:center;justify-content:space-between;padding:0 34px;height:60px">
     <a href="Avia Eyal - Portfolio (Minimal).dc.html" style="font:600 15px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em;text-decoration:none;color:#121210">Avia Eyal</a>
-    <div style="display:flex;gap:26px;align-items:center;font:500 12.5px/1 'Instrument Sans',sans-serif;color:#5f5f58">
+    <div style="display:flex;gap:26px;align-items:center;font:500 12.5px/1 'Hanken Grotesk',sans-serif;color:#5f5f58">
       <a href="Avia Eyal - Portfolio (Minimal).dc.html" class="navlink" style="text-decoration:none;color:#121210">Work</a>
       <a href="About - Avia Eyal.dc.html" class="navlink" style="text-decoration:none">About</a>
       <a href="About - Avia Eyal.dc.html#contact" class="navlink" style="text-decoration:none">Contact</a>
@@ -41,14 +45,14 @@
   </nav>
 
   <div style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:28px;display:flex;align-items:center;justify-content:space-between">
-    <a class="backlink" href="Avia Eyal - Portfolio (Minimal).dc.html" style="font:400 13px/1 'Instrument Sans',sans-serif;color:#8a8a82;text-decoration:none">← <span class="nm" style="color:#5f5f58">Avia Eyal</span></a>
-    <span style="font:500 12px/1 'Geist Mono',monospace;color:#a3a39a">04 / 04</span>
+    <a class="backlink" href="Avia Eyal - Portfolio (Minimal).dc.html" style="font:400 13px/1 'Hanken Grotesk',sans-serif;color:#8a8a82;text-decoration:none">← <span class="nm" style="color:#5f5f58">Avia Eyal</span></a>
+    <span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#a3a39a">04 / 04</span>
   </div>
 
   <header style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:60px;padding-bottom:44px">
-    <p style="font:500 11px/1 'Geist Mono',monospace;letter-spacing:.16em;color:#8a8a82;margin:0 0 22px">HONEYBOOK · CX · 2022</p>
+    <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#8a8a82;margin:0 0 22px">HONEYBOOK · CX · 2022</p>
     <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(38px,5.6vw,60px);line-height:1;letter-spacing:-.025em;margin:0 0 24px;max-width:16ch">Client Portal Redesign</h1>
-    <p style="font:400 20px/1.55 'Instrument Sans',sans-serif;color:#454540;max-width:46ch;margin:0">How do you make a portal feel professional and trustworthy to people who may never sign in again?</p>
+    <p style="font:400 20px/1.55 'Hanken Grotesk',sans-serif;color:#454540;max-width:46ch;margin:0">How do you make a portal feel professional and trustworthy to people who may never sign in again?</p>
   </header>
 
   <div style="max-width:860px;margin:0 auto;padding:0 28px">
@@ -57,38 +61,38 @@
         <dc-import name="PortalAfterMockup" hint-size="1040px,640px" style="width:1040px;height:640px"></dc-import>
       </div>
     </div>
-    <p style="font:400 12px/1.5 'Geist Mono',monospace;color:#a3a39a;margin:12px 2px 0">The redesigned portal — sidebar navigation, project details, messages, tasks, and files, themed to the member's own brand.</p>
+    <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">The redesigned portal: sidebar navigation, project details, messages, tasks, and files, themed to the member's own brand.</p>
   </div>
 
   <section style="max-width:680px;margin:0 auto;padding:0 28px">
     <div style="padding:52px 0 4px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
-      <div><span style="font:500 10px/1 'Geist Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">ROLE</span><span style="font:400 13.5px/1.4 'Instrument Sans',sans-serif">Product designer</span></div>
-      <div><span style="font:500 10px/1 'Geist Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">TEAM</span><span style="font:400 13.5px/1.4 'Instrument Sans',sans-serif">PM · engineering · research</span></div>
-      <div><span style="font:500 10px/1 'Geist Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">TIMELINE</span><span style="font:400 13.5px/1.4 'Instrument Sans',sans-serif">2022</span></div>
-      <div><span style="font:500 10px/1 'Geist Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">CONTRIB.</span><span style="font:400 13.5px/1.4 'Instrument Sans',sans-serif">Research → ship</span></div>
+      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">ROLE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Product designer</span></div>
+      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">TEAM</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">PM · engineering · research</span></div>
+      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">TIMELINE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">2022</span></div>
+      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">SCOPE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Research → ship</span></div>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'Geist Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">CONTEXT</p>
-      <p style="font:400 17px/1.75 'Instrument Sans',sans-serif;color:#3a3a34;margin:0 0 18px">Research into what members felt HoneyBook wasn't delivering on kept surfacing the same theme: customization and personalization ranked among the lowest-scoring aspects of the product, well behind usability and reliability. The old client portal was a symptom of that gap — a single flat page with no branding, no navigation, and no way for a member to make it feel like their own business.</p><p style="font:400 17px/1.75 'Instrument Sans',sans-serif;color:#3a3a34;margin:0">And the portal's audience is unforgiving: a client may open it once, on their phone, with no idea what HoneyBook even is — every visual cue either builds trust in the business that sent it, or undermines it.</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">CONTEXT</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 18px">Research into what members felt HoneyBook wasn't delivering on kept surfacing the same theme: customization and personalization ranked among the lowest-scoring aspects of the product, well behind usability and reliability. The old client portal was a symptom of that gap: a single flat page with no branding, no navigation, and no way for a member to make it feel like their own business.</p><p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">And the portal's audience is unforgiving: a client may open it once, on their phone, with no idea what HoneyBook even is. Every visual cue either builds trust in the business that sent it, or undermines it.</p>
       <div style="display:flex;gap:40px;flex-wrap:wrap;border-top:1px solid #14141216;margin-top:30px;padding-top:26px">
-        <div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">444</span><span style="font:400 12.5px/1.4 'Instrument Sans',sans-serif;color:#8a8a82">votes for a better<br>client portal</span></div>
-        <div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">16%</span><span style="font:400 12.5px/1.4 'Instrument Sans',sans-serif;color:#8a8a82">of members rank client<br>experience their #1 priority</span></div>
-        <div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">↓</span><span style="font:400 12.5px/1.4 'Instrument Sans',sans-serif;color:#8a8a82">customization scored lowest<br>of all expectation areas</span></div>
+        <div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">444</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">votes for a better<br>client portal</span></div>
+        <div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">16%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of members rank client<br>experience their #1 priority</span></div>
+        <div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">↓</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">customization scored lowest<br>of all expectation areas</span></div>
       </div>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'Geist Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">PROCESS</p>
-      <p style="font:400 17px/1.75 'Instrument Sans',sans-serif;color:#3a3a34;margin:0 0 28px">I designed for the dual-sided nature of the surface — white-label enough to feel like the member's brand, accessible enough to work for anyone — and pressure-tested the first-open experience. The before/after shows the shift: from one flat, unbranded page to a full workspace with navigation, project details, and files, wearing the member's own colors and imagery.</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">PROCESS</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">I designed for the dual-sided nature of the surface (white-label enough to feel like the member's brand, accessible enough to work for anyone) and pressure-tested the first-open experience. The before/after shows the shift: from one flat, unbranded page to a full workspace with navigation, project details, and files, wearing the member's own colors and imagery.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:16px">
         <div style="min-width:0">
           <div class="scale-embed" style="width:100%;height:220px;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff"><div style="width:900px;height:600px;transform:scale(0.3956);transform-origin:top left"><dc-import name="PortalBeforeMockup" hint-size="900px,600px" style="width:900px;height:600px"></dc-import></div></div>
-          <p style="font:500 10px/1 'Geist Mono',monospace;letter-spacing:.1em;color:#a3a39a;margin:8px 2px 0">BEFORE</p>
+          <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#a3a39a;margin:8px 2px 0">BEFORE</p>
         </div>
         <div style="min-width:0">
           <div class="scale-embed" style="width:100%;height:220px;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#f3ede4"><div style="width:1040px;height:640px;transform:scale(0.3346);transform-origin:top left"><dc-import name="PortalAfterMockup" hint-size="1040px,640px" style="width:1040px;height:640px"></dc-import></div></div>
-          <p style="font:500 10px/1 'Geist Mono',monospace;letter-spacing:.1em;color:#a3a39a;margin:8px 2px 0">AFTER</p>
+          <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#a3a39a;margin:8px 2px 0">AFTER</p>
         </div>
       </div>
       <div class="scale-embed" style="width:100%;height:328px;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff;margin-top:24px">
@@ -96,23 +100,23 @@
           <dc-import name="PortalCustomizeMockup" hint-size="900px,600px" style="width:900px;height:600px"></dc-import>
         </div>
       </div>
-      <p style="font:400 12px/1.5 'Geist Mono',monospace;color:#a3a39a;margin:12px 2px 0">The branding controls behind it — page and sidebar color, button styling, and a live preview — so the theming in the after shot is something any member can set themselves.</p>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">The branding controls behind it: page and sidebar color, button styling, and a live preview, so the theming in the after shot is something any member can set themselves.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'Geist Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">OUTCOME</p>
-      <p style="font:400 17px/1.75 'Instrument Sans',sans-serif;color:#3a3a34;margin:0">Shipped a redesigned client portal with navigation, richer project context, and full branding control — giving members a portal that looks like their business, not a piece of software they've never heard of. It became the clearest expression of the broader "customization and control" opportunity the research surfaced.</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">OUTCOME</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">Shipped a redesigned client portal with navigation, richer project context, and full branding control, giving members a portal that looks like their business, not a piece of software they've never heard of. It became the clearest expression of the broader "customization and control" opportunity the research surfaced.</p>
     </div>
   </section>
 
   <a class="nextrow" href="Case - Selective Communication.dc.html" style="display:block;border-top:1px solid #14141212;text-decoration:none">
     <div style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:34px;padding-bottom:34px;display:flex;align-items:baseline;justify-content:space-between">
-      <span style="font:500 11px/1 'Geist Mono',monospace;letter-spacing:.12em;color:#a3a39a">NEXT</span>
+      <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#a3a39a">NEXT</span>
       <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:21px;letter-spacing:-.01em;color:#1a1a17">Selective Communication →</span>
     </div>
   </a>
 
-  <footer style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:26px;padding-bottom:60px;border-top:1px solid #14141212;display:flex;justify-content:space-between;font:500 11px/1 'Geist Mono',monospace;letter-spacing:.04em;color:#a3a39a">
+  <footer style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:26px;padding-bottom:60px;border-top:1px solid #14141212;display:flex;justify-content:space-between;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:#a3a39a">
     <span>Avia Eyal</span>
     <span>Tel Aviv · 2026</span>
   </footer>
