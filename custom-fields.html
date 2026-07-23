@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Custom Fields — Avia Eyal</title>
+<meta name="description" content="Case file 02: letting every HoneyBook business track the details unique to their work without bloating the product. Five field types, pressure-tested against real jobs.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@80..125,400..750&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="sheet nav">
+  <div class="case-bar">
+    <a class="back" href="index.html">← Avia Eyal</a>
+    <span class="case-no">Case 02 · 04</span>
+  </div>
+</header>
+
+<main id="main">
+  <div class="sheet case-header">
+    <div class="rail"><span class="rail-no" aria-hidden="true">02</span></div>
+    <div>
+      <h1>Custom Fields</h1>
+      <p class="meta"><b>HoneyBook</b> · Data model · 2023</p>
+      <p class="lede">How do you let every business track the details unique to their work, without bloating the product for everyone else?</p>
+    </div>
+  </div>
+
+  <div class="sheet">
+    <figure class="fig fig--wide" data-reveal>
+      <div class="fig-viewport" style="--ar: 900 / 600; --fig-bg: #e9e7e0" data-w="900">
+        <iframe src="CustomFieldsManageMockup.dc.html" width="900" height="600" title="Interactive mockup of the manage project fields modal" loading="eager" tabindex="-1"></iframe>
+      </div>
+      <figcaption><span class="fig-no">Fig. 1</span>Manage project fields: the shipped modal, with the field-limit tooltip that appears at the 25-field cap.</figcaption>
+    </figure>
+
+    <dl class="facts">
+      <div><dt class="label">Role</dt><dd>Product designer</dd></div>
+      <div><dt class="label">Team</dt><dd>PM · engineering · research</dd></div>
+      <div><dt class="label">Timeline</dt><dd>2023</dd></div>
+      <div><dt class="label">Scope</dt><dd>Scoping to ship</dd></div>
+    </dl>
+
+    <section class="cs-section sub" aria-labelledby="s-context">
+      <div class="rail rail--sticky"><h2 class="label" id="s-context">Context</h2></div>
+      <div class="prose">
+        <p>No two service businesses track the same things. A photographer cares about shoot locations, a coach about session counts. The fixed fields forced everyone into notes and workarounds, and it showed up directly in what people were asking for:</p>
+        <blockquote class="q"><p>Hi there, I'm curious if I'm able to add fields into a contact detail section. Is this possible?</p></blockquote>
+        <blockquote class="q"><p>I was able to create a new field within the project… but I'm only able to create text fields. Is it possible to create dropdowns or other types of fields?</p></blockquote>
+        <p>The challenge wasn't adding fields. It was keeping the product simple for the people who would never need them.</p>
+      </div>
+    </section>
+
+    <section class="cs-section sub" aria-labelledby="s-process">
+      <div class="rail rail--sticky"><h2 class="label" id="s-process">Process</h2></div>
+      <div class="prose">
+        <p>I ran discovery calls with two power users to pressure-test the model. Their expectations converged on the same handful of behaviors. Renaming a field should update it everywhere it's used, not break silently the way it did in tools they'd left behind. Most fields would live on the contact rather than the project. And quantity mattered less than reliability: one user's clients needed five fields or fewer 90% of the time, while the other wanted headroom up to 25.</p>
+        <ul class="ev">
+          <li data-reveal style="--i:0"><span class="ev-n">90%</span><span class="ev-l">of contacts needed 5 fields or fewer</span></li>
+          <li data-reveal style="--i:1"><span class="ev-n">20–25</span><span class="ev-l">fields requested as headroom</span></li>
+          <li data-reveal style="--i:2"><span class="ev-n">7</span><span class="ev-l">competitor CRMs benchmarked</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <figure class="fig fig--railcap sub" data-reveal>
+      <div class="fig-viewport" style="--ar: 900 / 600; --fig-bg: #ffffff" data-w="900">
+        <iframe src="CustomFieldsAddFieldMockup.dc.html" width="900" height="600" title="Interactive mockup of the add-field flow" loading="lazy" tabindex="-1"></iframe>
+      </div>
+      <figcaption><span class="fig-no">Fig. 2</span>Adding a field is one small, focused decision: name it, then pick from five types (text, long text, date, number, link), chosen after the competitive scan showed most tools over-offer here.</figcaption>
+    </figure>
+
+    <section class="cs-section sub" aria-labelledby="s-test">
+      <div class="rail rail--sticky"><h2 class="label" id="s-test">Pressure test</h2></div>
+      <div class="prose">
+        <p>To check that five types were enough, I ran the model against a real job: a member who sends clients a birthday card and wants the right details ready when they do.</p>
+        <table class="spec">
+          <thead>
+            <tr><th scope="col">Field</th><th scope="col">Type</th><th scope="col">Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Cake flavor</td><td>Closed list</td><td>e.g. vanilla vs. chocolate</td></tr>
+            <tr><td>Contact group</td><td>Text / multi-select</td><td>used to target the reminder</td></tr>
+            <tr><td>Lead source</td><td>Text / multi-select</td><td>vendor market vs. referral</td></tr>
+            <tr><td>Reference image</td><td>Link</td><td>kept hidden from the client</td></tr>
+          </tbody>
+        </table>
+        <p>I also benchmarked field flexibility across seven competitor tools (Zoho, Spotler CRM, Bigin, Bloom, Copilot, Kartra, and Dubsado) to calibrate how far to push customization versus how simple to keep the defaults.</p>
+      </div>
+    </section>
+
+    <section class="cs-section sub cs-section--pull" aria-labelledby="s-finding">
+      <div class="rail rail--sticky"><h2 class="label" id="s-finding">Finding</h2></div>
+      <figure class="pull" data-reveal>
+        <blockquote><p>Can you add additional fields to the Client/Contact Database? I would like to track additional information on my customers.</p></blockquote>
+        <figcaption>Community request</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs-section sub" aria-labelledby="s-outcome">
+      <div class="rail rail--sticky"><h2 class="label" id="s-outcome">Outcome</h2></div>
+      <div class="prose">
+        <p>Shipped a flexible custom-fields system that scales from a solo freelancer to a growing team without overwhelming either: five deliberate field types, rename-safe everywhere a field is used, and a 25-field cap that keeps the common case simple.</p>
+        <p class="meta">Status: shipped to beta. Adoption metrics were still collecting when this case file was written.</p>
+      </div>
+    </section>
+
+    <nav class="sub next" aria-label="Next case">
+      <a class="next-link" href="library-folders.html">
+        <span class="next-label">Next case</span>
+        <span class="next-title">Library Folders
+          <svg viewBox="0 0 52 17" aria-hidden="true"><path d="M2 9.5 C 18 8, 33 8, 48 8.8 M37 2.5 C 41 5, 45 7, 48.5 8.8 C 44 11, 40.5 13.5, 37.5 15.5"/></svg>
+        </span>
+      </a>
+    </nav>
+  </div>
+</main>
+
+<footer class="sheet footer">
+  <div class="footer-inner">
+    <span>Avia Eyal · Senior Product Designer · Tel Aviv</span>
+    <span><a href="mailto:aviaeyal@gmail.com">aviaeyal@gmail.com</a> · <a href="https://linkedin.com/in/aviaeyal-417225107" target="_blank" rel="noopener">LinkedIn</a></span>
+    <span>Set in Archivo &amp; Source Serif 4 · 2026</span>
+  </div>
+</footer>
+</body>
+</html>
