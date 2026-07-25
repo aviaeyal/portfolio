@@ -56,12 +56,10 @@
   </header>
 
   <div style="max-width:860px;margin:0 auto;padding:0 28px">
-    <div class="scale-embed" style="width:100%;height:533px;overflow:hidden;border:1px solid #14141216;border-radius:10px;background:#e9e7e0">
-      <div style="width:900px;height:600px;transform:scale(0.8889);transform-origin:top left">
-        <dc-import name="CustomFieldsManageMockup" hint-size="900px,600px" style="width:900px;height:600px"></dc-import>
-      </div>
+    <div style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:10px">
+      <picture style="width:100%;display:block"><source srcset="assets/custom-fields/fields-manage.webp" type="image/webp"><img src="assets/custom-fields/fields-manage.jpg" alt="The shipped Manage project fields settings modal, with fields grouped by what the client can see" style="width:100%;display:block"></picture>
     </div>
-    <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">Manage project fields: the shipped modal, with the field-limit tooltip that appears at the 25-field cap.</p>
+    <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">Manage project fields: the shipped settings modal, with fields grouped by what the client sees and what stays private.</p>
   </div>
 
   <section style="max-width:680px;margin:0 auto;padding:0 28px">
@@ -86,12 +84,10 @@
       <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">PROCESS</p>
       <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">Every field needed rules for after creation, since client data doesn't stay static. A renamed field updates everywhere it's already in use rather than breaking silently. A field's type locks once created, so a date field can't quietly become a text field under existing data. Deleting a field clears it from the list but keeps the values already saved on projects, since removing a field shouldn't mean losing a client's history. Default fields, like project name, type, lead source, and date and location, ship locked, so the 25-field cap is headroom for what's actually custom, not a ceiling members hit right away.</p>
       <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 20px">Adding a field meant a small, focused decision: name it, then pick a type scoped to what the data actually needs, not a blank spreadsheet cell.</p>
-      <div class="scale-embed" style="width:100%;height:328px;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff">
-        <div style="width:900px;height:600px;transform:scale(0.6178);transform-origin:top left">
-          <dc-import name="CustomFieldsAddFieldMockup" hint-size="900px,600px" style="width:900px;height:600px"></dc-import>
-        </div>
+      <div style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px">
+        <picture style="width:100%;display:block"><source srcset="assets/custom-fields/fields-add.webp" type="image/webp"><img src="assets/custom-fields/fields-add.jpg" alt="The Add custom field modal: a field name, a field type dropdown, and a visible-to-clients toggle" style="width:100%;display:block"></picture>
       </div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 30px">Text, long text, date, number, link: five types, scoped to what the data actually needs rather than a generic catch-all.</p>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 30px">Adding a field: name it, pick a type (text, long text, date, number, or link), and set whether the client sees it.</p>
       <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 20px">To pressure-test that the five types were enough, I ran the model against a real job, a member who sends a birthday card and wants the right details ready when they do:</p>
       <div style="border-top:1px solid #14141216">
         <div style="display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:20px;padding:12px 0;border-bottom:1px solid #14141212"><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#a3a39a">FIELD</span><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#a3a39a">TYPE</span><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#a3a39a">NOTES</span></div>
