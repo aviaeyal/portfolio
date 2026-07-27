@@ -22,15 +22,27 @@
   .nextrow:hover{transform:translateX(12px)}
   .nextrow .nx{transition:color .2s var(--ease)}
   .nextrow:hover .nx{color:#000}
-  @media (max-width:640px){
-    .scale-embed{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  }
   .navlink{transition:color .2s var(--ease)}
   .navlink:hover{color:#121210}
+  .zoom{cursor:zoom-in}
+  .zoom:focus-visible{outline:2px solid #121210;outline-offset:2px}
+  .lb{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:#121210f2;padding:4vh 6vw}
+  .lb.open{display:flex}
+  .lb img{max-width:100%;max-height:min(860px,92vh);object-fit:contain;border-radius:8px}
+  .lb-btn{position:absolute;background:#fbfbf91a;border:1px solid #fbfbf94d;color:#fbfbf9;width:46px;height:46px;border-radius:50%;font:400 22px/1 'Hanken Grotesk',system-ui,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s var(--ease)}
+  .lb-btn:hover{background:#fbfbf933}
+  .lb-btn:focus-visible{outline:2px solid #fbfbf9;outline-offset:2px}
+  .lb-close{top:18px;right:18px;font-size:17px}
+  .lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+  .lb-next{right:20px;top:50%;transform:translateY(-50%)}
+  .lb-count{position:absolute;bottom:20px;left:0;right:0;text-align:center;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#fbfbf9b3}
+  @media (max-width:640px){.lb{padding:8vh 2vw}.lb-prev{left:8px}.lb-next{right:8px}}
   @media (prefers-reduced-motion:no-preference){
     header{animation:reveal .6s var(--ease) both}
+    .lb.open{animation:lbfade .2s var(--ease)}
   }
   @keyframes reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes lbfade{from{opacity:0}to{opacity:1}}
 </style>
 </helmet>
 <div>
@@ -51,17 +63,14 @@
 
   <header style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:60px;padding-bottom:44px">
     <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#8a8a82;margin:0 0 22px">HONEYBOOK · COMMS · 2024</p>
-    <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(38px,5.6vw,60px);line-height:1;letter-spacing:-.025em;margin:0 0 24px;max-width:16ch">Selective Communication</h1>
+    <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(38px,5.6vw,60px);line-height:1;letter-spacing:-.025em;margin:0 0 18px;max-width:16ch">Selective Communication</h1>
+    <p style="font:500 13px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:#8a8a82;margin:0 0 20px">AKA messages &amp; file permissions</p>
     <p style="font:400 20px/1.55 'Hanken Grotesk',sans-serif;color:#454540;max-width:46ch;margin:0">How do you give a business owner control over exactly who hears from them, without turning messaging into a chore?</p>
   </header>
 
   <div style="max-width:860px;margin:0 auto;padding:0 28px">
-    <div class="scale-embed" style="width:100%;height:533px;overflow:hidden;border:1px solid #14141216;border-radius:10px;background:#e9e7e0">
-      <div style="width:900px;height:600px;transform:scale(0.8889);transform-origin:top left">
-        <dc-import name="SelectiveShareMockup" hint-size="900px,600px" style="width:900px;height:600px"></dc-import>
-      </div>
-    </div>
-    <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">The Share flow: recipient selection, file authentication, and per-participant access in one place.</p>
+    <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:10px;background:#e9e7e0"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/share-hero.webp" type="image/webp"><img src="assets/selective-communication/share-hero.jpg" alt="The shipped Share modal: Share via email and Share via link tabs, an authentication toggle, the email-to recipient chips, and a who-can-view link" style="width:100%;display:block"></picture></div>
+    <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">The Share flow: recipient selection, file authentication, and per-participant access in one place. <span style="color:#c8c6bd">— click any image to enlarge</span></p>
   </div>
 
   <section style="max-width:680px;margin:0 auto;padding:0 28px">
@@ -74,32 +83,22 @@
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">CONTEXT</p>
-      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 18px">A HoneyBook project is rarely one-to-one. It holds clients, collaborators, and team members, but every email and shared file went to all of them at once. One in five emails already goes to multiple participants, and 43% of members run 2+ projects with 1+ client, so the wrong person seeing the wrong message was a routine, real risk.</p><p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 0">Selective communication was the third most-requested feature in the community (146 votes). The need wasn't simply “send fewer emails”: it was control and confidence about who sees what, before hitting send.</p>
-      <div style="display:flex;gap:40px;flex-wrap:wrap;margin-top:30px"><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em;">#3</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">most-requested feature<br>(146 votes)</span></div><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em;">20%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of emails go to<br>multiple participants</span></div><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em;">43%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of members run 2+<br>projects with 1+ client</span></div></div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:36px">
-        <div style="min-width:0">
-          <div style="width:100%;height:220px;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;height:100%;display:block"><source srcset="assets/selective-communication/reply-recipients-before.webp" type="image/webp"><img src="assets/selective-communication/reply-recipients-before.jpg" alt="Before: replying in the project feed, with recipients locked to whoever was already in the thread and no way to change them" style="width:100%;height:100%;object-fit:cover;object-position:top"></picture></div>
-          <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#a3a39a;margin:8px 2px 0">REPLY</p>
-        </div>
-        <div style="min-width:0">
-          <div style="width:100%;height:220px;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;height:100%;display:block"><source srcset="assets/selective-communication/share-modal-before.webp" type="image/webp"><img src="assets/selective-communication/share-modal-before.jpg" alt="Before: the old share modal, a flat email-to list with no per-recipient visibility control" style="width:100%;height:100%;object-fit:cover;object-position:top"></picture></div>
-          <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#a3a39a;margin:8px 2px 0">SHARE</p>
-        </div>
-      </div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">BEFORE: a feed reply always went to everyone already in the thread, and sharing a file had no way to manage visibility per recipient.</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 18px">A HoneyBook project is rarely one-to-one. It holds clients, collaborators, and team members, but every email and shared file went to all of them at once. That's fine for a true 1:1 project; the moment a project involves more than one client, a collaborator, or a team member, it turns risky: the wrong person seeing the wrong message, or opening a file that wasn't meant for them.</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 20px">Three problems kept surfacing:</p>
+      <ul style="margin:0 0 6px;padding-left:1.15em;font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34">
+        <li>No control over who receives an email or message.</li>
+        <li>No control over who can access or view a file.</li>
+        <li>Communication that felt inefficient and unprofessional to clients.</li>
+      </ul>
+      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;margin-top:36px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/reply-recipients-before.webp" type="image/webp"><img src="assets/selective-communication/reply-recipients-before.jpg" loading="lazy" alt="Before: replying in the project feed, with recipients locked to whoever was already in the thread and no way to change them" style="width:100%;display:block"></picture></div>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 30px">BEFORE, REPLY: a feed reply always went to everyone already in the thread, with no way to change the recipients.</p>
+      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/share-modal-before.webp" type="image/webp"><img src="assets/selective-communication/share-modal-before.jpg" loading="lazy" alt="Before: the old share modal, a flat email-to list with no per-recipient visibility control" style="width:100%;display:block"></picture></div>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">BEFORE, SHARE: the old share modal was a flat email-to list, with no way to manage visibility per recipient.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">PROCESS</p>
-      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">I ran a study with 30 members to pressure-test the model. 61% wanted to decide case-by-case whether all past communication or only new communication is shared; 32% were uncomfortable with “share everything” as the only option. Most tellingly, 71% framed the value as not spamming clients and protecting sensitive information, not just tidiness. That reframed the design around recipient control and clear visibility, mapped against the underlying participant states.</p>
-      <div style="max-width:470px;margin:0 auto;border:1px solid #14141216;border-radius:8px;overflow:hidden"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/permissions-map.webp" type="image/webp"><img src="assets/selective-communication/permissions-map.jpg" loading="lazy" alt="Permission map: each participant type — collaborator, client, team member, project owner — routed by whether they are outside the project, an existing participant, or newly added, resolving to view-only, grant, or remove access, and whether a newly added participant should see prior communication and files" style="width:100%;display:block"></picture></div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 34px">The permission logic behind it — every participant type and project state, down to whether someone added mid-project should see what came before. Who sees what was the hard part; the UI was the easy part.</p>
-      <div class="scale-embed" style="width:100%;height:416px;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff">
-        <div style="width:900px;height:600px;transform:scale(0.6933);transform-origin:top left">
-          <dc-import name="SelectiveShareEntryMockup" hint-size="900px,600px" style="width:900px;height:600px"></dc-import>
-        </div>
-      </div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">Opening Share from a file: the entry point into who can view it, before the recipient picker above.</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">RESEARCH</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">I ran a study with 30 members to pressure-test the model. 61% wanted to decide case-by-case whether all past communication or only new communication is shared; 32% were uncomfortable with “share everything” as the only option. Most tellingly, 71% framed the value as not spamming clients and protecting sensitive information, not just tidiness. That reframed the design around recipient control and clear visibility, mapped against the underlying participant states.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
@@ -108,8 +107,38 @@
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">DATA &amp; INSIGHTS</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">This wasn't a niche need. One in five emails already goes to multiple participants, 43% of members run 2+ projects with at least one client, and selective communication was the third most-requested feature in the community.</p>
+      <div style="display:flex;gap:44px;flex-wrap:wrap;margin-top:30px"><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">#3</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">most-requested feature<br>(195 community votes)</span></div><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">20%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of emails go to<br>multiple participants</span></div><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">43%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of members run 2+<br>projects with 1+ client</span></div></div>
+    </div>
+
+    <div style="padding:52px 0;border-top:1px solid #14141212">
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">CONCEPTS</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">“Who sees what” could live in more than one place. I explored two directions before committing.</p>
+      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/concept-inline.webp" type="image/webp"><img src="assets/selective-communication/concept-inline.jpg" loading="lazy" alt="Concept one: the Share via email and Share via link screens with authentication and per-recipient access controls built directly into the sharing flow" style="width:100%;display:block"></picture></div>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 30px">Direction one, permissions inline: authentication and per-recipient access built right into the Share-via-email and Share-via-link screens.</p>
+      <div class="zoom" style="max-width:600px;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/concept-modal.webp" type="image/webp"><img src="assets/selective-communication/concept-modal.jpg" loading="lazy" alt="Concept two: a lean Share via link screen paired with a separate Manage file access modal that toggles per-participant access" style="width:100%;display:block"></picture></div>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 28px">Direction two, a separate modal: a lean share screen with a dedicated “Manage file access” dialog for per-participant control.</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">The shipped design kept the best of both: recipients and authentication inline, where the decision gets made, and a separate Manage file access modal for the finer-grained, per-person control.</p>
+    </div>
+
+    <div style="padding:52px 0;border-top:1px solid #14141212">
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">DESIGN CHOICES</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">The complexity came from several directions at once: different permission levels inside an account, different needs for clients versus collaborators, and different norms across industries, where a wedding planner's project isn't structured like a university's.</p>
+      <div class="zoom" style="max-width:408px;margin:0 auto;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/comms-flowmap.webp" type="image/webp"><img src="assets/selective-communication/comms-flowmap.jpg" loading="lazy" alt="Project-communication permission flows: View and Send branch into files, messages, feed items, replies and shared files, then into which participants can see them and whether they joined before or after the project started" style="width:100%;display:block"></picture></div>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0;text-align:center">The permission flows I mapped: every interaction type, down to whether someone added mid-project should see what came before. Who sees what was the hard part; the UI was the easy part.</p>
+    </div>
+
+    <div style="padding:52px 0;border-top:1px solid #14141212">
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">INTERFACE</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">The shipped entry point keeps the decision close to the work: Share opens straight from a file, offering email, link, or direct access management: the front door to “who can see this.”</p>
+      <div class="zoom" style="max-width:500px;margin:0 auto;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/share-entry.webp" type="image/webp"><img src="assets/selective-communication/share-entry.jpg" loading="lazy" alt="Opening Share from a file in the editor: a menu offering share by email, share with link, or manage file access" style="width:100%;display:block"></picture></div>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0;text-align:center">Opening Share from a file — the entry point into who can view it, before the recipient picker.</p>
+    </div>
+
+    <div style="padding:52px 0;border-top:1px solid #14141212">
       <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">OUTCOME</p>
-      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">Shipped selective sending across the message feed and file sharing, with authentication for sensitive files and per-participant visibility across the workspace, and rolled out to all members. In pre-launch testing all four core tasks cleared an 80% success rate — and after launch, adoption concentrated exactly where the problem lived: among members who run projects with more than one client, 37% of feed messages and 36% of shared files now go out selectively, rather than to everyone by default.</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">Shipped selective sending across the message feed and file sharing, with authentication for sensitive files and per-participant visibility across the workspace, and rolled out to all members. In pre-launch testing all four core tasks cleared an 80% success rate, and after launch adoption concentrated exactly where the problem lived: among members who run projects with more than one client, 37% of feed messages and 36% of shared files now go out selectively, rather than to everyone by default.</p>
       <div style="display:flex;gap:44px;flex-wrap:wrap;border-top:1px solid #14141212;margin-top:30px;padding-top:28px"><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em;">37%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of feed messages from members<br>with 2+ clients sent selectively</span></div><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em;">10%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of all accounts have used<br>selective communication</span></div><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em;">6%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of all feed messages now<br>sent selectively</span></div></div>
     </div>
   </section>
@@ -127,5 +156,100 @@
   </footer>
 </div>
 </x-dc>
+<script>
+(function () {
+  var SEL = '.zoom';
+  var lb, lbImg, lbCount, items = [], idx = 0, lastFocus = null;
+  function collect() {
+    items = Array.prototype.map.call(document.querySelectorAll(SEL), function (el) {
+      var im = el.querySelector('img');
+      return { src: (im && (im.currentSrc || im.getAttribute('src'))) || '', alt: (im && im.getAttribute('alt')) || 'Image' };
+    });
+  }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function build() {
+    lb = document.createElement('div');
+    lb.className = 'lb';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Image viewer');
+    lb.innerHTML =
+      '<button type="button" class="lb-btn lb-close" aria-label="Close viewer">✕</button>' +
+      '<button type="button" class="lb-btn lb-prev" aria-label="Previous image">‹</button>' +
+      '<button type="button" class="lb-btn lb-next" aria-label="Next image">›</button>' +
+      '<div class="lb-count" aria-hidden="true"></div>';
+    lbImg = document.createElement('img');
+    lbImg.alt = '';
+    lb.appendChild(lbImg);
+    document.body.appendChild(lb);
+    lbCount = lb.querySelector('.lb-count');
+    lb.querySelector('.lb-close').addEventListener('click', close);
+    lb.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); go(-1); });
+    lb.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); go(1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  }
+  function show() {
+    var it = items[idx];
+    lbImg.setAttribute('src', it.src);
+    lbImg.setAttribute('alt', it.alt);
+    lbCount.textContent = pad(idx + 1) + ' / ' + pad(items.length);
+  }
+  function open(i) {
+    collect();
+    if (!items.length) return;
+    if (!lb) build();
+    idx = i; lastFocus = document.activeElement;
+    show();
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lb.querySelector('.lb-close').focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function close() {
+    if (!lb) return;
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function go(d) { idx = (idx + d + items.length) % items.length; show(); }
+  function onKey(e) {
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') go(1);
+    else if (e.key === 'ArrowLeft') go(-1);
+  }
+  function tileIndex(el) {
+    var all = document.querySelectorAll(SEL);
+    for (var i = 0; i < all.length; i++) if (all[i] === el) return i;
+    return 0;
+  }
+  function enhance() {
+    Array.prototype.forEach.call(document.querySelectorAll(SEL), function (el) {
+      if (el.dataset.lbReady) return;
+      el.dataset.lbReady = '1';
+      el.setAttribute('role', 'button');
+      el.setAttribute('tabindex', '0');
+      var im = el.querySelector('img');
+      el.setAttribute('aria-label', 'Enlarge image' + (im && im.alt ? ': ' + im.alt : ''));
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest && e.target.closest(SEL);
+    if (el) { e.preventDefault(); open(tileIndex(el)); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+    var el = e.target.closest && e.target.closest(SEL);
+    if (el) { e.preventDefault(); open(tileIndex(el)); }
+  });
+  function ready(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  ready(function () {
+    enhance();
+    var obs = new MutationObserver(enhance);
+    obs.observe(document.body, { childList: true, subtree: true });
+    setTimeout(function () { obs.disconnect(); }, 4000);
+  });
+})();
+</script>
 </body>
 </html>
