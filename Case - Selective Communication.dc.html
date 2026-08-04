@@ -40,9 +40,51 @@
   @media (prefers-reduced-motion:no-preference){
     header{animation:reveal .6s var(--ease) both}
     .lb.open{animation:lbfade .2s var(--ease)}
+    .fte-track{animation:fte-slide 10.5s infinite}
+    .fte-cursor{animation:fte-cursor 10.5s infinite}
+    .fte-press{animation:fte-press 10.5s infinite}
   }
   @keyframes reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
   @keyframes lbfade{from{opacity:0}to{opacity:1}}
+
+  /* First-time-experience walkthrough: 3 steps × 3s, cursor clicks Next between them */
+  .fte-stage{width:100%;box-sizing:border-box;background:#e9e7e0;border:1px solid #14141216;border-radius:10px;padding:clamp(22px,4.5vw,52px) clamp(16px,3vw,28px);display:flex;justify-content:center}
+  .fte{position:relative;width:100%;max-width:398px;aspect-ratio:824/940;border-radius:11px;overflow:hidden;background:#f4eae0;box-shadow:0 20px 46px #1414121f,0 2px 6px #14141214}
+  .fte-track{display:flex;width:400%;height:100%;will-change:transform}
+  .fte-track img{width:25%;height:100%;display:block;object-fit:cover}
+  .fte-press{position:absolute;left:70.14%;top:84.26%;width:21.97%;height:8.83%;border-radius:3px;background:#fff;opacity:0}
+  .fte-cursor{position:absolute;left:78.5%;top:85.8%;width:7.4%;transform-origin:0 0;filter:drop-shadow(0 2px 3px #14141252)}
+  .fte-cursor svg{display:block;width:100%;height:auto}
+  @keyframes fte-slide{
+    0%,28.571%{transform:translateX(0);animation-timing-function:cubic-bezier(.72,0,.18,1)}
+    33.333%,61.905%{transform:translateX(-25%);animation-timing-function:cubic-bezier(.72,0,.18,1)}
+    66.667%,95.238%{transform:translateX(-50%);animation-timing-function:cubic-bezier(.72,0,.18,1)}
+    100%{transform:translateX(-75%)}
+  }
+  @keyframes fte-cursor{
+    0%,15.238%{transform:translate(64%,80%) scale(1);animation-timing-function:cubic-bezier(.22,.7,.28,1)}
+    24.762%,27.619%{transform:translate(0,0) scale(1)}
+    28.571%{transform:translate(3%,4%) scale(.8)}
+    30.476%{transform:translate(0,0) scale(1)}
+    40%,48.571%{transform:translate(64%,80%) scale(1);animation-timing-function:cubic-bezier(.22,.7,.28,1)}
+    58.095%,60.952%{transform:translate(0,0) scale(1)}
+    61.905%{transform:translate(3%,4%) scale(.8)}
+    63.810%{transform:translate(0,0) scale(1)}
+    73.333%,81.905%{transform:translate(64%,80%) scale(1);animation-timing-function:cubic-bezier(.22,.7,.28,1)}
+    91.429%,94.286%{transform:translate(0,0) scale(1)}
+    95.238%{transform:translate(3%,4%) scale(.8)}
+    97.143%{transform:translate(0,0) scale(1)}
+    100%{transform:translate(64%,80%) scale(1)}
+  }
+  @keyframes fte-press{
+    0%,28%{opacity:0}
+    28.571%{opacity:.26}
+    31.5%,61.3%{opacity:0}
+    61.905%{opacity:.26}
+    64.8%,94.7%{opacity:0}
+    95.238%{opacity:.26}
+    98.1%,100%{opacity:0}
+  }
 </style>
 </helmet>
 <div>
@@ -58,31 +100,42 @@
 
   <div style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:28px;display:flex;align-items:center;justify-content:space-between">
     <a class="backlink" href="Avia Eyal - Portfolio (Minimal).dc.html" style="font:400 13px/1 'Hanken Grotesk',sans-serif;color:#8a8a82;text-decoration:none">← <span class="nm" style="color:#5f5f58">Avia Eyal</span></a>
-    <span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#a3a39a">01 / 04</span>
+    <span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#717684">01 / 04</span>
   </div>
 
   <header style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:60px;padding-bottom:44px">
     <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#8a8a82;margin:0 0 22px">HONEYBOOK · COMMS · 2024</p>
     <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(38px,5.6vw,60px);line-height:1;letter-spacing:-.025em;margin:0 0 18px;max-width:16ch">Selective Communication</h1>
     <p style="font:500 13px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:#8a8a82;margin:0 0 20px">AKA messages &amp; file permissions</p>
-    <p style="font:400 20px/1.55 'Hanken Grotesk',sans-serif;color:#454540;max-width:46ch;margin:0">How do you give a business owner control over exactly who hears from them, without turning messaging into a chore?</p>
+    <p style="font:400 20px/1.55 'Hanken Grotesk',sans-serif;color:#454540;max-width:46ch;margin:0">How do you give a business owner control over exactly who sees messages, files, and activity?</p>
   </header>
 
   <div style="max-width:860px;margin:0 auto;padding:0 28px">
-    <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:10px;background:#e9e7e0"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/share-hero.webp" type="image/webp"><img src="assets/selective-communication/share-hero.jpg" alt="The shipped Share modal: Share via email and Share via link tabs, an authentication toggle, the email-to recipient chips, and a who-can-view link" style="width:100%;display:block"></picture></div>
-    <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">The Share flow: recipient selection, file authentication, and per-participant access in one place. <span style="color:#c8c6bd">— click any image to enlarge</span></p>
+    <div class="fte-stage">
+      <div class="fte" role="img" aria-label="The three-step first-time experience modal, advancing on its own: step one, Your files, your control; step two, Customize your recipients; step three, Give the right people access.">
+        <div class="fte-track">
+          <img src="assets/selective-communication/fte-1.png" alt="" width="824" height="940">
+          <img src="assets/selective-communication/fte-2.png" alt="" width="824" height="940">
+          <img src="assets/selective-communication/fte-3.png" alt="" width="824" height="940">
+          <img src="assets/selective-communication/fte-1.png" alt="" width="824" height="940" aria-hidden="true">
+        </div>
+        <span class="fte-press" aria-hidden="true"></span>
+        <span class="fte-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 2 L3 20 L8 15.4 L11.5 22 L14.6 20.4 L11.1 14 L17.6 14 Z" fill="#fbfbf9" stroke="#121210" stroke-width="1.5" stroke-linejoin="round"></path></svg></span>
+      </div>
+    </div>
+    <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">The first-time experience I designed to introduce the feature: three steps, each one naming a thing you can now do. <span style="color:#c8c6bd">— click any image below to enlarge</span></p>
   </div>
 
   <section style="max-width:680px;margin:0 auto;padding:0 28px">
     <div style="padding:52px 0 4px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
-      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">ROLE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Lead product designer</span></div>
-      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">TEAM</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">PM · engineering · research</span></div>
-      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">TIMELINE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">2024</span></div>
-      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#a3a39a;display:block;margin-bottom:10px">SCOPE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Discovery → ship</span></div>
+      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">ROLE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Lead product designer</span></div>
+      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TEAM</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">PM · engineering · research</span></div>
+      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TIMELINE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">2024</span></div>
+      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">SCOPE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Discovery → ship</span></div>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">CONTEXT</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">CONTEXT</p>
       <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 18px">A HoneyBook project is rarely one-to-one. It holds clients, collaborators, and team members, but every email and shared file went to all of them at once. That's fine for a true 1:1 project; the moment a project involves more than one client, a collaborator, or a team member, it turns risky: the wrong person seeing the wrong message, or opening a file that wasn't meant for them.</p>
       <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 20px">Three problems kept surfacing:</p>
       <ul style="margin:0 0 6px;padding-left:1.15em;font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34">
@@ -91,53 +144,53 @@
         <li>Communication that felt inefficient and unprofessional to clients.</li>
       </ul>
       <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;margin-top:36px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/reply-recipients-before.webp" type="image/webp"><img src="assets/selective-communication/reply-recipients-before.jpg" loading="lazy" alt="Before: replying in the project feed, with recipients locked to whoever was already in the thread and no way to change them" style="width:100%;display:block"></picture></div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 30px">BEFORE, REPLY: a feed reply always went to everyone already in the thread, with no way to change the recipients.</p>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 30px">BEFORE, REPLY: a feed reply always went to everyone already in the thread, with no way to change the recipients.</p>
       <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/share-modal-before.webp" type="image/webp"><img src="assets/selective-communication/share-modal-before.jpg" loading="lazy" alt="Before: the old share modal, a flat email-to list with no per-recipient visibility control" style="width:100%;display:block"></picture></div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">BEFORE, SHARE: the old share modal was a flat email-to list, with no way to manage visibility per recipient.</p>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">BEFORE, SHARE: the old share modal was a flat email-to list, with no way to manage visibility per recipient.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">RESEARCH</p>
-      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">I ran a study with 30 members to pressure-test the model. 61% wanted to decide case-by-case whether all past communication or only new communication is shared; 32% were uncomfortable with “share everything” as the only option. Most tellingly, 71% framed the value as not spamming clients and protecting sensitive information, not just tidiness. That reframed the design around recipient control and clear visibility, mapped against the underlying participant states.</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">RESEARCH</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">We ran a study with 30 members to pressure-test the model. 61% wanted to decide case-by-case whether all past communication or only new communication is shared; 32% were uncomfortable with “share everything” as the only option. Most tellingly, 71% framed the value as not spamming clients and protecting sensitive information, not just tidiness. That reframed the design around recipient control and clear visibility, mapped against the underlying participant states.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(23px,3.2vw,31px);line-height:1.28;letter-spacing:-.015em;color:#1a1a17;margin:0;max-width:26ch">71% wanted selective communication to avoid spamming clients and to protect sensitive information.</p>
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#a3a39a;margin:22px 0 0">— KEY RESEARCH FINDING</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684;margin:22px 0 0">— KEY RESEARCH FINDING</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">DATA &amp; INSIGHTS</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">DATA &amp; INSIGHTS</p>
       <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">This wasn't a niche need. One in five emails already goes to multiple participants, 43% of members run 2+ projects with at least one client, and selective communication was the third most-requested feature in the community.</p>
       <div style="display:flex;gap:44px;flex-wrap:wrap;margin-top:30px"><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">#3</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">most-requested feature<br>(195 community votes)</span></div><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">20%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of emails go to<br>multiple participants</span></div><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">43%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of members run 2+<br>projects with 1+ client</span></div></div>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">CONCEPTS</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">CONCEPTS</p>
       <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">“Who sees what” could live in more than one place. I explored two directions before committing.</p>
       <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/concept-inline.webp" type="image/webp"><img src="assets/selective-communication/concept-inline.jpg" loading="lazy" alt="Concept one: the Share via email and Share via link screens with authentication and per-recipient access controls built directly into the sharing flow" style="width:100%;display:block"></picture></div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 30px">Direction one, permissions inline: authentication and per-recipient access built right into the Share-via-email and Share-via-link screens.</p>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 30px">Direction one, permissions inline: authentication and per-recipient access built right into the Share-via-email and Share-via-link screens.</p>
       <div class="zoom" style="max-width:600px;margin:0 auto;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/concept-modal.webp" type="image/webp"><img src="assets/selective-communication/concept-modal.jpg" loading="lazy" alt="Concept two: a lean Share via link screen paired with a separate Manage file access modal that toggles per-participant access" style="width:100%;display:block"></picture></div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 28px;text-align:center">Direction two, the one I chose: a dedicated “Manage file access” dialog for per-participant control, kept separate from the send flow.</p>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 28px;text-align:center">Direction two, the one I chose: a dedicated “Manage file access” dialog for per-participant control, kept separate from the send flow.</p>
       <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">The shipped design kept the best of both: recipients and authentication inline, where the decision gets made, and a separate Manage file access modal for the finer-grained, per-person control.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">DESIGN CHOICES</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">DESIGN CHOICES</p>
       <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">The complexity came from several directions at once: different permission levels inside an account, different needs for clients versus collaborators, and different norms across industries, where a wedding planner's project isn't structured like a university's.</p>
-      <div class="zoom" style="max-width:520px;margin:0 auto;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/comms-flowmap.webp" type="image/webp"><img src="assets/selective-communication/comms-flowmap.jpg" loading="lazy" alt="Project-communication permission flows: View and Send branch into files, messages, feed items, replies and shared files, then into which participants can see them and whether they joined before or after the project started" style="width:100%;display:block"></picture></div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0;text-align:center">The permission flows I mapped: every interaction type, down to whether someone added mid-project should see what came before. Who sees what was the hard part; the UI was the easy part.</p>
+      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff"><img src="assets/selective-communication/comms-flowmap.png" loading="lazy" alt="Project-communication permission flows mapped in four columns: Action (Send, View), Entity (file, reply, new message, feed items, messages and emails, files), Variations by entity (new file versus reshared file), and Variations by participant (non-project participants with view only, some project participants, all participants, and whether someone was present from the start or added after the project was in progress)" style="width:100%;display:block"></div>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">The permission flows I mapped: every interaction type, down to whether someone added mid-project should see what came before. Who sees what was the hard part; the UI was the easy part.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">INTERFACE</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">INTERFACE</p>
       <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">The shipped share screen puts every decision in one place: who receives the file, whether they authenticate with a code before opening it, and a direct link to manage per-person access, all before anything sends.</p>
       <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/share-screen.webp" type="image/webp"><img src="assets/selective-communication/share-screen.jpg" loading="lazy" alt="The shipped Share file screen: a Share via email tab with an authentication toggle, per-recipient email chips, a Who can view this file link, and a Manage file access entry" style="width:100%;display:block"></picture></div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#a3a39a;margin:12px 2px 0">The shipped Share screen: per-recipient sending, an authentication toggle for sensitive files, “Who can view this file?”, and a Manage file access entry.</p>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">The shipped Share screen: per-recipient sending, an authentication toggle for sensitive files, “Who can view this file?”, and a Manage file access entry.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#a3a39a;margin:0 0 22px">OUTCOME</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">OUTCOME</p>
       <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">Shipped selective sending across the message feed and file sharing, with authentication for sensitive files and per-participant visibility across the workspace, and rolled out to all members. In pre-launch testing all four core tasks cleared an 80% success rate, and after launch adoption concentrated exactly where the problem lived: among members who run projects with more than one client, 37% of feed messages and 36% of shared files now go out selectively, rather than to everyone by default.</p>
       <div style="display:flex;gap:44px;flex-wrap:wrap;border-top:1px solid #14141212;margin-top:30px;padding-top:28px"><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em;">37%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of feed messages from members<br>with 2+ clients sent selectively</span></div><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em;">10%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of all accounts have used<br>selective communication</span></div><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em;">6%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of all feed messages now<br>sent selectively</span></div></div>
     </div>
@@ -145,12 +198,12 @@
 
   <a class="nextrow" href="Case - Custom Fields.dc.html" style="display:block;border-top:1px solid #14141212;text-decoration:none">
     <div style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:34px;padding-bottom:34px;display:flex;align-items:baseline;justify-content:space-between">
-      <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#a3a39a">NEXT</span>
+      <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684">NEXT</span>
       <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:21px;letter-spacing:-.01em;color:#1a1a17">Custom Fields →</span>
     </div>
   </a>
 
-  <footer style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:26px;padding-bottom:60px;border-top:1px solid #14141212;display:flex;justify-content:space-between;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:#a3a39a">
+  <footer style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:26px;padding-bottom:60px;border-top:1px solid #14141212;display:flex;justify-content:space-between;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:#717684">
     <span>Avia Eyal</span>
     <span>Tel Aviv · 2026</span>
   </footer>
