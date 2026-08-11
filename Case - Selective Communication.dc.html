@@ -43,6 +43,9 @@
     .fte-track{animation:fte-slide 10.5s infinite}
     .fte-cursor{animation:fte-cursor 10.5s infinite}
     .fte-press{animation:fte-press 10.5s infinite}
+    .xfade .xf-b{animation:xfade 9s infinite}
+    .ship-track-5{animation:ship-slide5 16s infinite}
+    .ship-track-4{animation:ship-slide4 13s infinite}
   }
   @keyframes reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
   @keyframes lbfade{from{opacity:0}to{opacity:1}}
@@ -85,6 +88,39 @@
     95.238%{opacity:.26}
     98.1%,100%{opacity:0}
   }
+
+  /* Old/new design label bars on figures */
+  .figbar{display:block;padding:11px 16px;font:500 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;background:#121210;color:#fbfbf9}
+  .figbar-old{background:#e9e7e0;color:#5f5f58;border-bottom:1px solid #14141216}
+
+  /* What shipped: crossfading state pairs + phone flow walkthroughs */
+  .xfade{position:relative;overflow:hidden;border:1px solid #14141216;border-radius:8px}
+  .xfade picture,.xfade img{display:block;width:100%;height:auto}
+  .xfade .xf-b{position:absolute;inset:0;opacity:0}
+  .ship-stage{background:#e9e7e0;border:1px solid #14141216;border-radius:10px;padding:clamp(22px,4.5vw,48px) clamp(16px,3vw,28px);display:flex;justify-content:center;align-items:center;gap:clamp(20px,5vw,52px);flex-wrap:wrap}
+  .ship-phone{position:relative;width:min(100%,248px);aspect-ratio:750/1624;border-radius:11px;overflow:hidden;background:#fff;box-shadow:0 20px 46px #1414121f,0 2px 6px #14141214}
+  .ship-track{display:flex;height:100%;will-change:transform}
+  .ship-track img{height:100%;display:block;object-fit:cover}
+  .ship-track-5{width:600%}
+  .ship-track-5 img{width:16.6667%}
+  .ship-track-4{width:500%}
+  .ship-track-4 img{width:20%}
+  @keyframes xfade{0%,42%{opacity:0}50%,92%{opacity:1}100%{opacity:0}}
+  @keyframes ship-slide5{
+    0%,16.5%{transform:translateX(0);animation-timing-function:cubic-bezier(.72,0,.18,1)}
+    20%,36.5%{transform:translateX(-16.6667%);animation-timing-function:cubic-bezier(.72,0,.18,1)}
+    40%,56.5%{transform:translateX(-33.3333%);animation-timing-function:cubic-bezier(.72,0,.18,1)}
+    60%,76.5%{transform:translateX(-50%);animation-timing-function:cubic-bezier(.72,0,.18,1)}
+    80%,96.5%{transform:translateX(-66.6667%);animation-timing-function:cubic-bezier(.72,0,.18,1)}
+    100%{transform:translateX(-83.3333%)}
+  }
+  @keyframes ship-slide4{
+    0%,21%{transform:translateX(0);animation-timing-function:cubic-bezier(.72,0,.18,1)}
+    25%,46%{transform:translateX(-20%);animation-timing-function:cubic-bezier(.72,0,.18,1)}
+    50%,71%{transform:translateX(-40%);animation-timing-function:cubic-bezier(.72,0,.18,1)}
+    75%,96%{transform:translateX(-60%);animation-timing-function:cubic-bezier(.72,0,.18,1)}
+    100%{transform:translateX(-80%)}
+  }
 </style>
 </helmet>
 <div>
@@ -123,7 +159,7 @@
         <span class="fte-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 2 L3 20 L8 15.4 L11.5 22 L14.6 20.4 L11.1 14 L17.6 14 Z" fill="#fbfbf9" stroke="#121210" stroke-width="1.5" stroke-linejoin="round"></path></svg></span>
       </div>
     </div>
-    <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">The first-time experience I designed to introduce the feature: three steps, each one naming a thing you can now do. <span style="color:#c8c6bd">— click any image below to enlarge</span></p>
+    <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">The first-time experience I designed to introduce the feature: three steps, each one naming a thing you can now do. <span style="color:#c8c6bd">(click any image below to enlarge)</span></p>
   </div>
 
   <section style="max-width:680px;margin:0 auto;padding:0 28px">
@@ -143,9 +179,9 @@
         <li>No control over who can access or view a file.</li>
         <li>Communication that felt inefficient and unprofessional to clients.</li>
       </ul>
-      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;margin-top:36px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/reply-recipients-before.webp" type="image/webp"><img src="assets/selective-communication/reply-recipients-before.jpg" loading="lazy" alt="Before: replying in the project feed, with recipients locked to whoever was already in the thread and no way to change them" style="width:100%;display:block"></picture></div>
+      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;margin-top:36px"><span class="figbar figbar-old">OLD DESIGN</span><picture style="width:100%;display:block"><source srcset="assets/selective-communication/reply-recipients-before.webp" type="image/webp"><img src="assets/selective-communication/reply-recipients-before.jpg" loading="lazy" alt="Before: replying in the project feed, with recipients locked to whoever was already in the thread and no way to change them" style="width:100%;display:block"></picture></div>
       <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 30px">BEFORE, REPLY: a feed reply always went to everyone already in the thread, with no way to change the recipients.</p>
-      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/share-modal-before.webp" type="image/webp"><img src="assets/selective-communication/share-modal-before.jpg" loading="lazy" alt="Before: the old share modal, a flat email-to list with no per-recipient visibility control" style="width:100%;display:block"></picture></div>
+      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><span class="figbar figbar-old">OLD DESIGN</span><picture style="width:100%;display:block"><source srcset="assets/selective-communication/share-modal-before.webp" type="image/webp"><img src="assets/selective-communication/share-modal-before.jpg" loading="lazy" alt="Before: the old share modal, a flat email-to list with no per-recipient visibility control" style="width:100%;display:block"></picture></div>
       <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">BEFORE, SHARE: the old share modal was a flat email-to list, with no way to manage visibility per recipient.</p>
     </div>
 
@@ -156,7 +192,7 @@
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(23px,3.2vw,31px);line-height:1.28;letter-spacing:-.015em;color:#1a1a17;margin:0;max-width:26ch">71% wanted selective communication to avoid spamming clients and to protect sensitive information.</p>
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684;margin:22px 0 0">— KEY RESEARCH FINDING</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684;margin:22px 0 0">KEY RESEARCH FINDING</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
@@ -168,9 +204,9 @@
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">CONCEPTS</p>
       <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">“Who sees what” could live in more than one place. I explored two directions before committing.</p>
-      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><img src="assets/selective-communication/concept-inline.png" loading="lazy" alt="Concept one: the Share via link screen with authentication and a per-recipient list, each participant toggled individually for full access" style="width:100%;display:block"></div>
+      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><span class="figbar figbar-old">DIRECTION 1</span><img src="assets/selective-communication/concept-inline.png" loading="lazy" alt="Concept one: the Share via link screen with authentication and a per-recipient list, each participant toggled individually for full access" style="width:100%;display:block"></div>
       <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 30px">Direction one, permissions inline: authentication and per-recipient access built right into the Share-via-email and Share-via-link screens.</p>
-      <div class="zoom" style="max-width:600px;margin:0 auto;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/concept-modal.webp" type="image/webp"><img src="assets/selective-communication/concept-modal.jpg" loading="lazy" alt="Concept two: a lean Share via link screen paired with a separate Manage file access modal that toggles per-participant access" style="width:100%;display:block"></picture></div>
+      <div class="zoom" style="max-width:600px;margin:0 auto;overflow:hidden;border:1px solid #14141216;border-radius:8px"><span class="figbar figbar-old">DIRECTION 2</span><picture style="width:100%;display:block"><source srcset="assets/selective-communication/concept-modal.webp" type="image/webp"><img src="assets/selective-communication/concept-modal.jpg" loading="lazy" alt="Concept two: a lean Share via link screen paired with a separate Manage file access modal that toggles per-participant access" style="width:100%;display:block"></picture></div>
       <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 28px;text-align:center">Direction two, the one I chose: a dedicated “Manage file access” dialog for per-participant control, kept separate from the send flow.</p>
       <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">The shipped design kept the best of both: recipients and authentication inline, where the decision gets made, and a separate Manage file access modal for the finer-grained, per-person control.</p>
     </div>
@@ -185,8 +221,51 @@
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">INTERFACE</p>
       <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">The shipped share screen puts every decision in one place: who receives the file, whether they authenticate with a code before opening it, and a direct link to manage per-person access, all before anything sends.</p>
-      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/share-screen.webp" type="image/webp"><img src="assets/selective-communication/share-screen.jpg" loading="lazy" alt="The shipped Share file screen: a Share via email tab with an authentication toggle, per-recipient email chips, a Who can view this file link, and a Manage file access entry" style="width:100%;display:block"></picture></div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">The shipped Share screen: per-recipient sending, an authentication toggle for sensitive files, “Who can view this file?”, and a Manage file access entry.</p>
+      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><span class="figbar">NEW DESIGN: tabs, chips, menu, file permissions</span><picture style="width:100%;display:block"><source srcset="assets/selective-communication/share-screen.webp" type="image/webp"><img src="assets/selective-communication/share-screen.jpg" loading="lazy" alt="The shipped Share file screen: Share via email and Share via link tabs, an authentication toggle, recipient chips with an In Project dropdown showing who already has access, an Add participant action, and a Manage file access entry" style="width:100%;display:block"></picture></div>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">The shipped Share screen: per-recipient sending with a view of who already has access, an authentication toggle for sensitive files, “Who can view this file?”, and a Manage file access entry.</p>
+    </div>
+
+    <div style="padding:52px 0;border-top:1px solid #14141212">
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">WHAT SHIPPED</p>
+      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">The release wasn't one screen. It was one mental model applied everywhere: see who, choose who. The feed composer, file sharing, and access management all got the same recipient control, on desktop and on mobile.</p>
+
+      <div class="xfade" style="aspect-ratio:1600/1163" role="img" aria-label="Two states of the feed composer: choosing a recipient from the project participants list, then the message addressed to both clients, each shown as a removable chip.">
+        <picture><source srcset="assets/selective-communication/ship-feed-a.webp" type="image/webp"><img src="assets/selective-communication/ship-feed-a.jpg" loading="lazy" alt="" width="1600" height="1163"></picture>
+        <picture class="xf-b"><source srcset="assets/selective-communication/ship-feed-b.webp" type="image/webp"><img src="assets/selective-communication/ship-feed-b.jpg" loading="lazy" alt="" width="1600" height="1163"></picture>
+      </div>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 30px">SHIPPED, FEED: every message starts with “Send to”. Pick recipients from the project's participants, or add someone new without leaving the composer.</p>
+
+      <div class="xfade" style="aspect-ratio:1600/960" role="img" aria-label="The Manage file access dialog before and after sharing: first over a draft file with a prompt to publish it, then after sharing, with a confirmation that the file is live in the client portal.">
+        <picture><source srcset="assets/selective-communication/ship-access-before.webp" type="image/webp"><img src="assets/selective-communication/ship-access-before.jpg" loading="lazy" alt="" width="1600" height="960"></picture>
+        <picture class="xf-b"><source srcset="assets/selective-communication/ship-access-after.webp" type="image/webp"><img src="assets/selective-communication/ship-access-after.jpg" loading="lazy" alt="" width="1600" height="960"></picture>
+      </div>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 30px">SHIPPED, FILE ACCESS: the same dialog before and after publishing. A draft isn't visible to anyone yet; once shared, the file is live in the client portal.</p>
+
+      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="assets/selective-communication/ship-access-team.webp" type="image/webp"><img src="assets/selective-communication/ship-access-team.jpg" loading="lazy" alt="The shipped Manage file access dialog with multiple participants: two clients and five team members, each with their own visibility toggle; owner, super admin, and admin roles locked to always keep access" style="width:100%;display:block"></picture></div>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 30px">SHIPPED, TEAMS: per-participant visibility, one toggle per person, while owners, admins, and super admins always keep access.</p>
+
+      <div class="ship-stage">
+        <div class="ship-phone" role="img" aria-label="Mobile walkthrough of sending a feed message: the project feed, the empty composer, adding a client from contacts, back to the composer, then choosing exactly which recipients get the email.">
+          <div class="ship-track ship-track-5">
+            <img src="assets/selective-communication/ship-mb-1.webp" alt="" width="750" height="1624" loading="lazy">
+            <img src="assets/selective-communication/ship-mb-2.webp" alt="" width="750" height="1624" loading="lazy">
+            <img src="assets/selective-communication/ship-mb-3.webp" alt="" width="750" height="1624" loading="lazy">
+            <img src="assets/selective-communication/ship-mb-2.webp" alt="" width="750" height="1624" loading="lazy">
+            <img src="assets/selective-communication/ship-mb-4.webp" alt="" width="750" height="1624" loading="lazy">
+            <img src="assets/selective-communication/ship-mb-1.webp" alt="" width="750" height="1624" loading="lazy" aria-hidden="true">
+          </div>
+        </div>
+        <div class="ship-phone" role="img" aria-label="Mobile walkthrough of sharing a file: share options, creating a full-access or view-only link, the published links, and per-participant access toggles.">
+          <div class="ship-track ship-track-4">
+            <img src="assets/selective-communication/ship-ms-1.webp" alt="" width="750" height="1624" loading="lazy">
+            <img src="assets/selective-communication/ship-ms-2.webp" alt="" width="750" height="1624" loading="lazy">
+            <img src="assets/selective-communication/ship-ms-3.webp" alt="" width="750" height="1624" loading="lazy">
+            <img src="assets/selective-communication/ship-ms-4.webp" alt="" width="750" height="1624" loading="lazy">
+            <img src="assets/selective-communication/ship-ms-1.webp" alt="" width="750" height="1624" loading="lazy" aria-hidden="true">
+          </div>
+        </div>
+      </div>
+      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">SHIPPED, MOBILE: the full loop on the phone. Sending a feed message to chosen recipients (left) and sharing a file with per-participant access (right).</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
