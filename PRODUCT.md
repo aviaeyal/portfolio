@@ -23,7 +23,7 @@ Two differentiators the site is meant to carry, held in balance rather than one 
 
 ## Operating Context
 
-- Case studies document real, shipped HoneyBook features: Selective Communication (2024), Custom Fields (2023), Library Folders (2023), Client Portal Redesign (2022).
+- Case studies document real, shipped HoneyBook features: Selective Communication (2024), Custom Fields (2023), Library Folders (2026), Client Portal (2025).
 - Each case study follows a CONTEXT → PROCESS → OUTCOME structure with embedded interactive mockups (`dc-import` components) recreating the shipped UI, real competitor benchmarks, and quantified research findings (vote counts, participant counts, usability success rates).
 - CV available as a downloadable asset (`uploads/avia-eyal-cv-v10.pdf`).
 
