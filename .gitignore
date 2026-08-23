@@ -1,0 +1,6 @@
+# Local Claude Code context. Kept out of the repo because this is a public
+# repo served by GitHub Pages with .nojekyll, so anything committed at the
+# root is publicly fetchable. These files hold the candid portfolio review
+# and internal metrics, which should not be reachable from the live site.
+CLAUDE.md
+claude/
