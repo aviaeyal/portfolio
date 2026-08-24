@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Client Portal · Avia Eyal</title>
-<meta name="description" content="How do you make a portal feel professional and trustworthy to people who may never sign in again? A client portal redesign case study at HoneyBook.">
+<meta name="description" content="How do you make a portal feel professional and branded, giving design freedom to the member, while keeping it scalable and consistent? A client portal redesign case study at HoneyBook.">
 <link rel="canonical" href="https://aviaeyal.github.io/portfolio/client-portal/">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Avia Eyal">
 <meta property="og:title" content="Client Portal · Avia Eyal">
-<meta property="og:description" content="How do you make a portal feel professional and trustworthy to people who may never sign in again? A client portal redesign case study at HoneyBook.">
+<meta property="og:description" content="How do you make a portal feel professional and branded, giving design freedom to the member, while keeping it scalable and consistent? A client portal redesign case study at HoneyBook.">
 <meta property="og:url" content="https://aviaeyal.github.io/portfolio/client-portal/">
 <meta property="og:image" content="https://aviaeyal.github.io/portfolio/assets/client-portal/portal-thumb.jpg">
 <meta property="og:image:alt" content="The same HoneyBook client portal shown in two different brand themes.">
@@ -37,17 +37,67 @@
   .caserow .nx{transition:color .2s var(--ease)}
   .caserow a:hover .nx{color:#000}
   @media (max-width:520px){.caserow .nx{font-size:18px}}
-  @media (max-width:640px){
-    .scale-embed{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  }
   .navlink{transition:color .2s var(--ease)}
   .navlink:hover{color:#121210}
+  .body{font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 18px}
+  .body:last-child{margin-bottom:0}
+  .body ul{margin:10px 0 0;padding-left:22px}
+  .body li{margin:0 0 8px}
+  .label{font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px}
+  .cap{font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0}
+  .fig{width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff}
+  .fig img,.fig picture{width:100%;height:auto;display:block}
+  .figbar{display:block;padding:11px 16px;font:500 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;background:#121210;color:#fbfbf9}
+  .figbar-old{background:#e9e7e0;color:#5f5f58;border-bottom:1px solid #14141216}
+  .cmp{position:relative;width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff;user-select:none;-webkit-user-select:none;touch-action:pan-y;cursor:ew-resize;--pos:70%}
+  .cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;-webkit-user-drag:none}
+  .cmp .cmp-before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+  .cmp .cmp-bar{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:#121210;transform:translateX(-1px);pointer-events:none}
+  .cmp .cmp-knob{position:absolute;top:50%;left:var(--pos);transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:#121210;color:#fbfbf9;display:flex;align-items:center;justify-content:center;font:400 15px/1 'Hanken Grotesk',sans-serif;letter-spacing:-.05em;box-shadow:0 2px 10px #12121040;pointer-events:none}
+  .cmp .cmp-tag{position:absolute;top:10px;padding:6px 9px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;border-radius:4px;pointer-events:none}
+  .cmp .cmp-tag-old{left:10px;background:#e9e7e0;color:#5f5f58}
+  .cmp .cmp-tag-new{right:10px;background:#121210;color:#fbfbf9}
+  .cmp input{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .cmp:focus-within .cmp-knob{outline:2px solid #fbfbf9;outline-offset:2px}
+  .bv-stage{position:relative;width:100%;aspect-ratio:1424/1200;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff}
+  .bv-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .5s var(--ease)}
+  .bv-stage img.on{opacity:1}
+  .bv-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+  .bv-thumb{padding:0;border:0;background:none;cursor:pointer;text-align:left;font:inherit;color:inherit}
+  .bv-thumb .bv-pic{overflow:hidden;border-radius:6px;border:2px solid transparent;transition:border-color .2s var(--ease),opacity .2s var(--ease);opacity:.6}
+  .bv-thumb .bv-pic img{width:100%;height:auto;display:block;aspect-ratio:1424/1200;object-fit:cover}
+  .bv-thumb:hover .bv-pic{opacity:.85}
+  .bv-thumb[aria-pressed="true"] .bv-pic{border-color:#121210;opacity:1}
+  .bv-thumb:focus-visible{outline:2px solid #121210;outline-offset:3px;border-radius:6px}
+  .bv-thumb span{display:block;margin-top:8px;font:500 10px/1.3 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684;text-transform:uppercase}
+  .bv-thumb[aria-pressed="true"] span{color:#121210}
+  @media (max-width:520px){.bv-thumbs{gap:8px}.bv-thumb span{font-size:9px;letter-spacing:.06em}}
+  @media (prefers-reduced-motion:reduce){.bv-stage img{transition:none}}
+  .stats{display:flex;gap:40px;flex-wrap:wrap;border-top:1px solid #14141216;margin-top:30px;padding-top:26px}
+  .stats .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em}
+  .stats .d{font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82}
+  .zoom{cursor:zoom-in}
+  .zoom:focus-visible{outline:2px solid #121210;outline-offset:2px}
+  .lb{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:#121210f2;padding:4vh 6vw}
+  .lb.open{display:flex}
+  .lb img{max-width:100%;max-height:min(860px,92vh);object-fit:contain;border-radius:8px}
+  .lb-btn{position:absolute;background:#fbfbf91a;border:1px solid #fbfbf94d;color:#fbfbf9;width:46px;height:46px;border-radius:50%;font:400 22px/1 'Hanken Grotesk',system-ui,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s var(--ease)}
+  .lb-btn:hover{background:#fbfbf933}
+  .lb-btn:focus-visible{outline:2px solid #fbfbf9;outline-offset:2px}
+  .lb-close{top:18px;right:18px;font-size:17px}
+  .lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+  .lb-next{right:20px;top:50%;transform:translateY(-50%)}
+  .lb-count{position:absolute;bottom:20px;left:0;right:0;text-align:center;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#fbfbf9b3}
+  @media (max-width:640px){.lb{padding:8vh 2vw}.lb-prev{left:8px}.lb-next{right:8px}}
   @media (prefers-reduced-motion:no-preference){
     header{animation:reveal .6s var(--ease) both}
+    .lb.open{animation:lbfade .2s var(--ease)}
   }
   @keyframes reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-  .rolegrid{grid-template-columns:repeat(4,1fr)}
-  @media (max-width:520px){.rolegrid{grid-template-columns:repeat(2,1fr);gap:22px 20px}}
+  @keyframes lbfade{from{opacity:0}to{opacity:1}}
+  .rolegrid{grid-template-columns:repeat(4,auto);justify-content:space-between;gap:20px 32px}
+  .rolegrid span:last-child{white-space:nowrap}
+  @media (max-width:520px){.rolegrid{grid-template-columns:repeat(2,1fr);gap:22px 20px}.rolegrid span:last-child{white-space:normal}}
 </style>
 </helmet>
 <div>
@@ -67,69 +117,114 @@
   </div>
 
   <header style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:60px;padding-bottom:44px">
-    <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#8a8a82;margin:0 0 22px">HONEYBOOK · CX · 2025</p>
+    <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#8a8a82;margin:0 0 22px">HONEYBOOK · CLIENT EXPERIENCE · 2025</p>
     <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(38px,5.6vw,60px);line-height:1;letter-spacing:-.025em;margin:0 0 24px;max-width:16ch">Client Portal</h1>
-    <p style="font:400 20px/1.55 'Hanken Grotesk',sans-serif;color:#454540;max-width:46ch;margin:0">How do you make a portal feel professional and trustworthy to people who may never sign in again?</p>
+    <p style="font:400 20px/1.55 'Hanken Grotesk',sans-serif;color:#454540;max-width:46ch;margin:0">How do you make a portal feel professional and branded, giving design freedom to the member, while keeping it scalable and consistent?</p>
   </header>
 
   <div style="max-width:860px;margin:0 auto;padding:0 28px">
     <div style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:10px"><picture style="width:100%;display:block"><source srcset="../assets/client-portal/portal-hero.webp" type="image/webp"><img src="../assets/client-portal/portal-hero.jpg" fetchpriority="high" decoding="async" width="2000" height="1310" alt="The redesigned HoneyBook client portal in a member's own brand: sidebar navigation with Overview, Activity and Tasks, a full-width cover photo, project details, a messages panel, tasks and active files, with the Customize portal panel open over it showing controls for background and highlight color, font, sidebar color, button text color and corner radius" style="width:100%;height:auto;display:block"></picture></div>
-    <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">The redesigned portal, with the customization panel members use to theme it: sidebar navigation, project details, messages, tasks, and files, all carrying the member's own brand.</p>
+    <p class="cap">The redesigned portal, with the customization panel members use to theme it: sidebar navigation, project details, messages, tasks, and files, all carrying the member's own brand.</p>
   </div>
 
   <section style="max-width:680px;margin:0 auto;padding:0 28px">
-    <div class="rolegrid" style="padding:52px 0 4px;display:grid;gap:20px">
-      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">ROLE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Product designer</span></div>
+    <div class="rolegrid" style="padding:52px 0 40px;display:grid;gap:20px">
+      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">ROLE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Lead product designer</span></div>
       <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TEAM</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">PM · engineering · research</span></div>
       <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TIMELINE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">2025</span></div>
-      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">SCOPE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Research → ship</span></div>
+      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">SCOPE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Discovery → ship</span></div>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">CONTEXT</p>
-      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 18px">Research into what members felt HoneyBook wasn't delivering on kept surfacing the same theme: after cost, client experience was the single biggest driver of negative NPS. The old client portal was a symptom of that gap: a single flat page with no branding, no navigation, and no way for a member to make it feel like their own business, and it showed in the numbers, only 6–10% of clients ever logged into it.</p><p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">And the portal's audience is unforgiving: a client may open it once, on their phone, with no idea what HoneyBook even is. Every visual cue either builds trust in the business that sent it, or undermines it.</p>
-      <div style="display:flex;gap:40px;flex-wrap:wrap;border-top:1px solid #14141216;margin-top:30px;padding-top:26px">
-        <div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">3.4/5</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">how members rated<br>the current portal</span></div>
-        <div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">6–10%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of clients ever<br>logged in</span></div>
-        <div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">#2</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">driver of negative<br>NPS, after cost</span></div>
+      <p class="label">CONTEXT</p>
+      <p class="body">The client portal is a hub where clients log in (via link, password, or access code) to reach project activity, smart files, messages, payments, and key details shared by the member. The previous portal fell short of its original promise: a page with no branding, no customization, and no way for a member to make it feel like their own business, and it showed in the numbers, only 6–10% of clients ever logged into it.</p>
+      <p class="body">Research into what members felt HoneyBook wasn't delivering on kept surfacing the same theme: client experience was the biggest product driver of negative NPS. It was also an area where competitors had invested more than we had, after years of it being deprioritized. Our prediction was that investing in the client portal would reinforce our role as a trusted business partner, providing real, tangible value.</p>
+      <p class="body">Every visual cue in the client portal either builds trust in the business that sent it, or undermines it.</p>
+      <div class="stats">
+        <div><span class="n">#2</span><span class="d">driver of negative NPS,<br>after cost</span></div>
+        <div><span class="n">3.4/5</span><span class="d">how members rated<br>the current portal</span></div>
+        <div><span class="n">6–10%</span><span class="d">of clients ever<br>logged in</span></div>
       </div>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">PROCESS</p>
-      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">We ran an unmoderated concept test with 16 active members before building anything. Side navigation beat the existing tabs decisively, 14 of 16 preferred it. For surfacing outstanding items, a notifications center beat a dedicated page or overview section once compared side by side (56% vs. 25% and 19%), and overdue invoices, unread messages, and unsigned contracts each cleared 75%+ endorsement as what belonged there. Branding tested even more decisively: 14 of 16 rated it very important, and every proposed customization option cleared a 75% essential threshold. The before/after shows the shift those findings drove: from one flat, unbranded page to a full workspace with navigation, project details, and files, wearing the member's own colors and imagery.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:16px">
-        <div style="min-width:0">
-          <div class="scale-embed" style="width:100%;height:220px;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff"><div style="width:900px;height:600px;transform:scale(0.3956);transform-origin:top left"><dc-import name="PortalBeforeMockup" hint-size="900px,600px" style="width:900px;height:600px"></dc-import></div></div>
-          <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684;margin:8px 2px 0">BEFORE</p>
-        </div>
-        <div style="min-width:0">
-          <div class="scale-embed" style="width:100%;height:220px;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#f3ede4"><div style="width:1040px;height:640px;transform:scale(0.3346);transform-origin:top left"><dc-import name="PortalAfterMockup" hint-size="1040px,640px" style="width:1040px;height:640px"></dc-import></div></div>
-          <p style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684;margin:8px 2px 0">AFTER</p>
-        </div>
+      <p class="label">THE PROBLEM SPACE</p>
+      <p class="body">I started by defining the jobs to be done. The client portal has two sides, the member side and the client side, and they have different requirements and priorities. To make sure I wasn't missing important considerations, I mapped what each of them needs from the portal.</p>
+      <div class="fig zoom" style="margin-top:28px;background:#f2f7fc"><span class="figbar figbar-old">JOBS TO BE DONE</span><img src="../assets/client-portal/jtbd.png" loading="lazy" width="1320" height="1128" alt="Jobs-to-be-done map in two rows of sticky notes. As a client: access all my information in one place, see all interaction with my vendor, easily access my client portal, schedule a meeting, centralize communication, mark tasks completed, upload files, ask about project details, pay easily, communicate with project participants, receive material in one place. As a vendor: give my client visibility to all their files, communications and payments, communicate with my client, give easy access to all their files, introduce the portal and explain functionality, showcase my brand, send messages in the portal, show a payment summary, let clients schedule a meeting, assign tasks, let clients see and complete tasks, decide whether there is a portal or not, make it accessible on desktop and mobile, show upcoming meetings, share and collaborate on notes, supply resources in one place"></div>
+    </div>
+
+    <div style="padding:52px 0;border-top:1px solid #14141212">
+      <p class="label">RESEARCH</p>
+      <p class="body">I ran an unmoderated concept test with our UX researcher, with 16 active members, before building anything. It tested five questions:</p>
+      <div class="body"><ul>
+        <li>What are members' views of the current portal?</li>
+        <li>Which navigation framework works best for members: side menu or tabs?</li>
+        <li>Which design for project activity do members prefer: a dedicated page, an overview section, or a notification center?</li>
+        <li>Which items do members want to elevate for their clients' notice in outstanding items?</li>
+        <li>Are the proposed options for customizing the portal's branding sufficient?</li>
+      </ul></div>
+      <div class="fig" style="margin-top:28px"><img src="../assets/client-portal/research.gif" loading="lazy" width="800" height="456" alt="Four slides from the concept test report, cycling: the navigation, viewing-activity, outstanding-items and branding questions, each with the concepts shown to members and a bar chart of how the 16 participants voted"></div>
+      <p class="cap">Slides from the concept test: the concepts members compared, and how they voted.</p>
+      <p class="body" style="margin-top:28px">What came back:</p>
+      <div class="body"><ul>
+        <li>Almost all respondents used the portal for every project. They saw its most important purpose as contracts and payments, then managing client communication and files.</li>
+        <li>Side navigation beat the existing tabs decisively: 14 of 16 preferred it.</li>
+        <li>For surfacing outstanding items, a notifications center beat a dedicated page or an overview section once compared side by side (56% vs. 25% and 19%). Overdue invoices, unread messages, and unsigned contracts each cleared 75%+ endorsement as what belonged there.</li>
+        <li>Branding tested even more decisively: 14 of 16 rated it very important, and every proposed customization option cleared a 75% essential threshold.</li>
+      </ul></div>
+    </div>
+
+    <div style="padding:52px 0;border-top:1px solid #14141212">
+      <p class="label">PROCESS</p>
+      <p class="body">The before/after shows the shift those findings drove: from one flat, unbranded page to a full workspace with navigation, project details, and files, wearing the member's own colors and imagery.</p>
+      <div class="cmp" style="aspect-ratio:700/462">
+        <img class="cmp-after" src="../assets/client-portal/portal-after-cmp.jpg" srcset="../assets/client-portal/portal-after-cmp.webp" loading="lazy" alt="The redesigned portal in a makeup artist's brand: burgundy sidebar with Overview, Activity, Tasks, Files, Payments and Notes, a full-width cover photo, then project details and messages cards">
+        <img class="cmp-before" src="../assets/client-portal/portal-before.jpg" srcset="../assets/client-portal/portal-before.webp" loading="lazy" alt="The old client portal: a single page with a generic forest cover photo, the project name and date, participant avatars, and a row of tabs (Activity, Files, Payments, Notes, Details) over a plain details card. No branding, no navigation">
+        <span class="cmp-bar" aria-hidden="true"></span><span class="cmp-knob" aria-hidden="true">‹ ›</span>
+        <span class="cmp-tag cmp-tag-old" aria-hidden="true">OLD</span><span class="cmp-tag cmp-tag-new" aria-hidden="true">NEW</span>
+        <input type="range" min="0" max="100" value="70" aria-label="Client portal, before and after: drag to reveal the old design on the left and the new design on the right">
       </div>
-      <div class="scale-embed" style="width:100%;height:328px;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff;margin-top:24px">
-        <div style="width:900px;height:600px;transform:scale(0.6178);transform-origin:top left">
-          <dc-import name="PortalCustomizeMockup" hint-size="900px,600px" style="width:900px;height:600px"></dc-import>
-        </div>
-      </div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">The branding controls behind it: page and sidebar color, button styling, and a live preview, so the theming in the after shot is something any member can set themselves.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:28px">
-        <div style="overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="../assets/client-portal/theme-1.webp" type="image/webp"><img src="../assets/client-portal/theme-1.jpg" loading="lazy" alt="The redesigned client portal in one member's brand: cool grey sidebar and a forest header" style="width:100%;display:block"></picture></div>
-        <div style="overflow:hidden;border:1px solid #14141216;border-radius:8px"><picture style="width:100%;display:block"><source srcset="../assets/client-portal/theme-2.webp" type="image/webp"><img src="../assets/client-portal/theme-2.jpg" loading="lazy" alt="The same portal in another member's brand: warm cream background and orange accents" style="width:100%;display:block"></picture></div>
-      </div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">The same portal, two members' brands: sidebar color, button styling, and header imagery are all member-set.</p>
+      <p class="cap">Drag the handle to compare the old portal with the redesign.</p>
+      <p class="body" style="margin-top:28px">While working on the portal itself, I also designed two features to support the experience holistically: a design settings area for the portal, and an improved client authentication and login experience. Both are below.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(23px,3.2vw,31px);line-height:1.28;letter-spacing:-.015em;color:#1a1a17;margin:0;max-width:30ch">“The client experience is so important because… if it's not done correctly, it could break the relationship.”</p>
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684;margin:22px 0 0">FAVOUR, MSP (DIGITAL MARKETING & SEO)</p>
+      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684;margin:22px 0 0">VERBATIM FROM A MEMBER INTERVIEW (DIGITAL MARKETING &amp; SEO)</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">OUTCOME</p>
-      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">Shipped a rebranded portal with side navigation, an outstanding-items overview, and full member-set branding, aimed squarely at the problem that started it: a portal so generic and hard to reach that only 6–10% of clients ever logged in. Once it looked like their own business, members put it in front of clients far more, and the share of clients logging in has climbed to 22.6% over the last 30 days. Both portal sharing and take-up of the new branding controls ran well past their targets.</p>
-      <div style="display:flex;gap:44px;flex-wrap:wrap;border-top:1px solid #14141212;margin-top:30px;padding-top:28px"><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">22.6%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of clients now log into the<br>portal, up from 6–10% before</span></div><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">+17%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">more members sharing<br>their portal · goal was 10%</span></div><div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">30%</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">of active-portal members<br>personalized branding · goal was 20%</span></div></div>
+      <p class="label">WHAT SHIPPED</p>
+      <p class="body">A new client portal that can be branded and customized to the member's needs.</p>
+      <div class="bv" style="margin-top:28px">
+        <div class="bv-stage zoom"><img class="on" src="../assets/client-portal/brand-1.jpg" srcset="../assets/client-portal/brand-1.webp" loading="lazy" alt="The shipped portal in a makeup artist's brand: burgundy sidebar, a cover photo of a model with butterfly wings, then project details, messages, tasks and active files" data-bv="0"><img class="" src="../assets/client-portal/brand-2.jpg" srcset="../assets/client-portal/brand-2.webp" loading="lazy" alt="The shipped portal in a graphic designer's brand: black sidebar with a green highlight, a laptop cover photo, and the same project details, messages, tasks and files layout" data-bv="1"><img class="" src="../assets/client-portal/brand-3.jpg" srcset="../assets/client-portal/brand-3.webp" loading="lazy" alt="The shipped portal in a caterer's brand: warm cream background, brown sidebar and buttons, a food cover photo, and the project details, messages, tasks and files cards" data-bv="2"><img class="" src="../assets/client-portal/brand-4.jpg" srcset="../assets/client-portal/brand-4.webp" loading="lazy" alt="The shipped portal in a florist's brand: light grey sidebar with a dusty-pink highlight, a botanical rose illustration as the cover, then project details and messages" data-bv="3"></div>
+        <div class="bv-thumbs" role="group" aria-label="Choose a member's brand">
+        <button type="button" class="bv-thumb" data-bv="0" aria-pressed="true"><span class="bv-pic"><img src="../assets/client-portal/brand-1-thumb.jpg" srcset="../assets/client-portal/brand-1-thumb.webp" loading="lazy" alt=""></span><span>Makeup artist</span></button>
+        <button type="button" class="bv-thumb" data-bv="1" aria-pressed="false"><span class="bv-pic"><img src="../assets/client-portal/brand-2-thumb.jpg" srcset="../assets/client-portal/brand-2-thumb.webp" loading="lazy" alt=""></span><span>Graphic designer</span></button>
+        <button type="button" class="bv-thumb" data-bv="2" aria-pressed="false"><span class="bv-pic"><img src="../assets/client-portal/brand-3-thumb.jpg" srcset="../assets/client-portal/brand-3-thumb.webp" loading="lazy" alt=""></span><span>Caterer</span></button>
+        <button type="button" class="bv-thumb" data-bv="3" aria-pressed="false"><span class="bv-pic"><img src="../assets/client-portal/brand-4-thumb.jpg" srcset="../assets/client-portal/brand-4-thumb.webp" loading="lazy" alt=""></span><span>Florist</span></button>
+        </div>
+      </div>
+      <p class="cap">The same portal, four members' brands: page and sidebar color, highlight color, and cover imagery are all member-set. Click a thumbnail to switch, click the large image to enlarge.</p>
+
+      <p class="body" style="margin-top:44px">The portal branding customization modal. To keep it scalable, instead of giving members an option to select every color on the page, I limited the selection to three: background, sidebar, and highlight (used for buttons, links, the side nav selection, and other accent elements that would come down the road). I decided to keep the font color in the side nav automatically black or white, using an accessibility calculation, and kept the text readable by giving the cards a white background and not letting the running text be customizable.</p>
+      <div class="fig zoom" style="margin-top:28px"><picture><source srcset="../assets/client-portal/customize-modal.webp" type="image/webp"><img src="../assets/client-portal/customize-modal.jpg" loading="lazy" width="1400" height="903" alt="The Customize portal modal: on the left, Portal styles and Login page tabs, then controls for page background color, highlight color, font, side bar color, button text color, corner radius and button font; on the right, a live desktop/mobile preview of the portal; Revert to default and Save changes buttons at the bottom"></picture></div>
+
+      <p class="body" style="margin-top:44px">A new login page for easier access. It pushes the client toward an easier and faster (but still secure) link login instead of a password, by something as simple as changing the hierarchy: the link became the main call to action, and the password a secondary one.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:28px">
+        <div class="fig zoom" style="background:#f4eae0"><span class="figbar figbar-old">OLD DESIGN</span><picture><source srcset="../assets/client-portal/login-before.webp" type="image/webp"><img src="../assets/client-portal/login-before.jpg" loading="lazy" width="566" height="756" alt="The old client login: company name, email and password fields with a Log in button, Forgot password link, then an Or divider and a small Email me a link button at the bottom"></picture></div>
+        <div class="fig zoom" style="background:#f4eae0"><span class="figbar">NEW DESIGN</span><picture><source srcset="../assets/client-portal/login-after.webp" type="image/webp"><img src="../assets/client-portal/login-after.jpg" loading="lazy" width="572" height="864" alt="The new client login: logo and company name, a primary Log in with a link button with the note Get instant access without a password, then an Or divider, email and password fields, a secondary Log in button, Forgot password, and First time logging in? Create a password"></picture></div>
+      </div>
+    </div>
+
+    <div style="padding:52px 0;border-top:1px solid #14141212">
+      <p class="label">OUTCOME</p>
+      <p class="body">Shipped a rebranded portal with side navigation, an overview page, full member-set branding, and an improved login and authentication experience, aimed at the problem that started it: a portal that only 6–10% of clients ever logged into. Once it looked like their own business, members put it in front of clients far more, and the share of clients logging in climbed to 22.6% over the 30 days post release. Both portal sharing and take-up of the new branding controls ran well past their targets.</p>
+      <div class="stats" style="gap:44px;padding-top:28px">
+        <div><span class="n">22.6%</span><span class="d">of clients now log into the<br>portal, up from 6–10% before</span></div>
+        <div><span class="n">+17%</span><span class="d">more members sharing<br>their portal · goal was 10%</span></div>
+        <div><span class="n">30%</span><span class="d">of active-portal members<br>personalized branding · goal was 20%</span></div>
+      </div>
     </div>
   </section>
 
@@ -152,5 +247,141 @@
   </footer>
 </div>
 </x-dc>
+<script>
+(function () {
+  var active = null;
+  function setPos(cmp, v) {
+    v = Math.min(Math.max(v, 0), 100);
+    cmp.style.setProperty('--pos', v + '%');
+    var input = cmp.querySelector('input');
+    if (input && +input.value !== v) input.value = v;
+  }
+  function fromX(cmp, clientX) {
+    var r = cmp.getBoundingClientRect();
+    setPos(cmp, Math.round((clientX - r.left) / r.width * 100));
+  }
+  document.addEventListener('input', function (e) {
+    var cmp = e.target.closest && e.target.closest('.cmp');
+    if (cmp && e.target.type === 'range') cmp.style.setProperty('--pos', e.target.value + '%');
+  });
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.bv-thumb');
+    if (!btn) return;
+    var bv = btn.closest('.bv'), i = btn.getAttribute('data-bv');
+    Array.prototype.forEach.call(bv.querySelectorAll('.bv-thumb'), function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+    Array.prototype.forEach.call(bv.querySelectorAll('.bv-stage img'), function (im) { im.classList.toggle('on', im.getAttribute('data-bv') === i); });
+  });
+  document.addEventListener('pointerdown', function (e) {
+    var cmp = e.target.closest && e.target.closest('.cmp');
+    if (!cmp || e.button !== 0) return;
+    e.preventDefault();
+    active = cmp;
+    try { cmp.setPointerCapture(e.pointerId); } catch (x) {}
+    fromX(cmp, e.clientX);
+  });
+  document.addEventListener('pointermove', function (e) {
+    if (!active) return;
+    fromX(active, e.clientX);
+  });
+  function stop() { active = null; }
+  document.addEventListener('pointerup', stop);
+  document.addEventListener('pointercancel', stop);
+})();
+</script>
+<script>
+(function () {
+  var SEL = '.zoom';
+  var lb, lbImg, lbCount, items = [], idx = 0, lastFocus = null;
+  function collect() {
+    items = Array.prototype.map.call(document.querySelectorAll(SEL), function (el) {
+      var im = el.querySelector('img.on') || el.querySelector('img');
+      return { src: (im && (im.currentSrc || im.getAttribute('src'))) || '', alt: (im && im.getAttribute('alt')) || 'Image' };
+    });
+  }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function build() {
+    lb = document.createElement('div');
+    lb.className = 'lb';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Image viewer');
+    lb.innerHTML =
+      '<button type="button" class="lb-btn lb-close" aria-label="Close viewer">✕</button>' +
+      '<button type="button" class="lb-btn lb-prev" aria-label="Previous image">‹</button>' +
+      '<button type="button" class="lb-btn lb-next" aria-label="Next image">›</button>' +
+      '<div class="lb-count" aria-hidden="true"></div>';
+    lbImg = document.createElement('img');
+    lbImg.alt = '';
+    lb.appendChild(lbImg);
+    document.body.appendChild(lb);
+    lbCount = lb.querySelector('.lb-count');
+    lb.querySelector('.lb-close').addEventListener('click', close);
+    lb.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); go(-1); });
+    lb.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); go(1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  }
+  function show() {
+    var it = items[idx];
+    lbImg.setAttribute('src', it.src);
+    lbImg.setAttribute('alt', it.alt);
+    lbCount.textContent = pad(idx + 1) + ' / ' + pad(items.length);
+  }
+  function open(i) {
+    collect();
+    if (!items.length) return;
+    if (!lb) build();
+    idx = i; lastFocus = document.activeElement;
+    show();
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lb.querySelector('.lb-close').focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function close() {
+    if (!lb) return;
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function go(d) { idx = (idx + d + items.length) % items.length; show(); }
+  function onKey(e) {
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') go(1);
+    else if (e.key === 'ArrowLeft') go(-1);
+  }
+  function tileIndex(el) {
+    var all = document.querySelectorAll(SEL);
+    for (var i = 0; i < all.length; i++) if (all[i] === el) return i;
+    return 0;
+  }
+  function enhance() {
+    Array.prototype.forEach.call(document.querySelectorAll(SEL), function (el) {
+      if (el.dataset.lbReady) return;
+      el.dataset.lbReady = '1';
+      el.setAttribute('role', 'button');
+      el.setAttribute('tabindex', '0');
+      var im = el.querySelector('img.on') || el.querySelector('img');
+      el.setAttribute('aria-label', 'Enlarge image' + (im && im.alt ? ': ' + im.alt : ''));
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest && e.target.closest(SEL);
+    if (el) { e.preventDefault(); open(tileIndex(el)); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+    var el = e.target.closest && e.target.closest(SEL);
+    if (el) { e.preventDefault(); open(tileIndex(el)); }
+  });
+  function ready(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  ready(function () {
+    enhance();
+    var obs = new MutationObserver(enhance);
+    obs.observe(document.body, { childList: true, subtree: true });
+    setTimeout(function () { obs.disconnect(); }, 4000);
+  });
+})();
+</script>
 </body>
 </html>

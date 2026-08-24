@@ -4,3 +4,4 @@
 # and internal metrics, which should not be reachable from the live site.
 CLAUDE.md
 claude/
+.DS_Store
