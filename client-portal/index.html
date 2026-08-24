@@ -185,7 +185,8 @@
         <input type="range" min="0" max="100" value="70" aria-label="Client portal, before and after: drag to reveal the old design on the left and the new design on the right">
       </div>
       <p class="cap">Drag the handle to compare the old portal with the redesign.</p>
-      <p class="body" style="margin-top:28px">While working on the portal itself, I also designed two features to support the experience holistically: a design settings area for the portal, and an improved client authentication and login experience. Both are below.</p>
+      <p class="body" style="margin-top:28px">Not everything the test pointed to made the release. It had to be an MVP, and two of the winning ideas carried heavy dev cost: the notifications center (56% in the test) and surfacing outstanding items. I decided to cut both rather than thin out the whole release, keeping the improvements big enough to make a difference: side navigation, the overview page, and full branding. Both cuts were parked with the same rule: if the need shows up in feedback after release, they come back onto the roadmap.</p>
+      <p class="body">While working on the portal itself, I also designed two features to support the experience holistically: a design settings area for the portal, and an improved client authentication and login experience.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
@@ -210,7 +211,7 @@
       <p class="body" style="margin-top:44px">The portal branding customization modal. To keep it scalable, instead of giving members an option to select every color on the page, I limited the selection to three: background, sidebar, and highlight (used for buttons, links, the side nav selection, and other accent elements that would come down the road). I decided to keep the font color in the side nav automatically black or white, using an accessibility calculation, and kept the text readable by giving the cards a white background and not letting the running text be customizable.</p>
       <div class="fig zoom" style="margin-top:28px"><picture><source srcset="../assets/client-portal/customize-modal.webp" type="image/webp"><img src="../assets/client-portal/customize-modal.jpg" loading="lazy" width="1400" height="903" alt="The Customize portal modal: on the left, Portal styles and Login page tabs, then controls for page background color, highlight color, font, side bar color, button text color, corner radius and button font; on the right, a live desktop/mobile preview of the portal; Revert to default and Save changes buttons at the bottom"></picture></div>
 
-      <p class="body" style="margin-top:44px">A new login page for easier access. It pushes the client toward an easier and faster (but still secure) link login instead of a password, by something as simple as changing the hierarchy: the link became the main call to action, and the password a secondary one.</p>
+      <p class="body" style="margin-top:44px">A new login page for easier access. It pushes the client toward an easier and faster (but still secure) link login instead of a password, by something as simple as changing the hierarchy: the link became the main call to action, and the password a secondary one. In the 60 days after release, use of the link login rose 20%.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:28px">
         <div class="fig zoom" style="background:#f4eae0"><span class="figbar figbar-old">OLD DESIGN</span><picture><source srcset="../assets/client-portal/login-before.webp" type="image/webp"><img src="../assets/client-portal/login-before.jpg" loading="lazy" width="566" height="756" alt="The old client login: company name, email and password fields with a Log in button, Forgot password link, then an Or divider and a small Email me a link button at the bottom"></picture></div>
         <div class="fig zoom" style="background:#f4eae0"><span class="figbar">NEW DESIGN</span><picture><source srcset="../assets/client-portal/login-after.webp" type="image/webp"><img src="../assets/client-portal/login-after.jpg" loading="lazy" width="572" height="864" alt="The new client login: logo and company name, a primary Log in with a link button with the note Get instant access without a password, then an Or divider, email and password fields, a secondary Log in button, Forgot password, and First time logging in? Create a password"></picture></div>
@@ -224,6 +225,7 @@
         <div><span class="n">22.6%</span><span class="d">of clients now log into the<br>portal, up from 6–10% before</span></div>
         <div><span class="n">+17%</span><span class="d">more members sharing<br>their portal · goal was 10%</span></div>
         <div><span class="n">30%</span><span class="d">of active-portal members<br>personalized branding · goal was 20%</span></div>
+        <div><span class="n">+20%</span><span class="d">more clients logging in<br>with a link · 60 days post release</span></div>
       </div>
     </div>
   </section>
