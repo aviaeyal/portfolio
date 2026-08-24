@@ -31,10 +31,12 @@
   a{color:inherit}
   .backlink .nm{transition:color .2s var(--ease)}
   .backlink:hover .nm{color:#000}
-  .nextrow{transition:transform .2s var(--ease)}
-  .nextrow:hover{transform:translateX(12px)}
-  .nextrow .nx{transition:color .2s var(--ease)}
-  .nextrow:hover .nx{color:#000}
+  .caserow a{display:flex;flex-direction:column;gap:12px;text-decoration:none;transition:transform .2s var(--ease)}
+  .caserow .prev:hover{transform:translateX(-12px)}
+  .caserow .next:hover{transform:translateX(12px)}
+  .caserow .nx{transition:color .2s var(--ease)}
+  .caserow a:hover .nx{color:#000}
+  @media (max-width:520px){.caserow .nx{font-size:18px}}
   .navlink{transition:color .2s var(--ease)}
   .navlink:hover{color:#121210}
   .zoom{cursor:zoom-in}
@@ -314,12 +316,18 @@
     </div>
   </section>
 
-  <a class="nextrow" href="../client-portal/" style="display:block;border-top:1px solid #14141212;text-decoration:none">
-    <div style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:34px;padding-bottom:34px;display:flex;align-items:baseline;justify-content:space-between">
-      <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684">NEXT</span>
-      <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:21px;letter-spacing:-.01em;color:#1a1a17">Client Portal →</span>
+  <nav class="caserow" aria-label="Case study navigation" style="border-top:1px solid #14141212">
+    <div style="max-width:680px;margin:0 auto;padding:34px 28px;display:flex;justify-content:space-between;gap:24px">
+      <a class="prev" href="../library-folders/" style="align-items:flex-start;text-align:left">
+        <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684">PREVIOUS</span>
+        <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:21px;letter-spacing:-.01em;color:#1a1a17">← Library Folders</span>
+      </a>
+      <a class="next" href="../client-portal/" style="align-items:flex-end;text-align:right">
+        <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684">NEXT</span>
+        <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:21px;letter-spacing:-.01em;color:#1a1a17">Client Portal →</span>
+      </a>
     </div>
-  </a>
+  </nav>
 
   <footer style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:26px;padding-bottom:60px;border-top:1px solid #14141212;display:flex;justify-content:space-between;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:#717684">
     <span>Avia Eyal</span>
