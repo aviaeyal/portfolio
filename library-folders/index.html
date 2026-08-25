@@ -37,17 +37,68 @@
   .caserow .nx{transition:color .2s var(--ease)}
   .caserow a:hover .nx{color:#000}
   @media (max-width:520px){.caserow .nx{font-size:18px}}
-  @media (max-width:640px){
-    .scale-embed{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  }
   .navlink{transition:color .2s var(--ease)}
   .navlink:hover{color:#121210}
+  .body{font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 18px}
+  .body:last-child{margin-bottom:0}
+  .body ul{margin:10px 0 0;padding-left:22px}
+  .body li{margin:0 0 8px}
+  .label{font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px}
+  .cap{font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0}
+  .fig{width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff}
+  .fig img,.fig picture{width:100%;height:auto;display:block}
+  .figbar{display:block;padding:11px 16px;font:500 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;background:#121210;color:#fbfbf9}
+  .figbar-old{background:#e9e7e0;color:#5f5f58;border-bottom:1px solid #14141216}
+  .stats{display:flex;gap:40px;flex-wrap:wrap;border-top:1px solid #14141216;margin-top:30px;padding-top:26px}
+  .stats .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em}
+  .stats .d{font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:24px}
+  .cols h4{font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684;margin:0 0 12px}
+  .cols ul{margin:0;padding-left:20px;font:400 15px/1.6 'Hanken Grotesk',sans-serif;color:#3a3a34}
+  .cols li{margin:0 0 5px}
+  @media (max-width:520px){.cols{grid-template-columns:1fr}}
+  .todo{border:1px dashed #b8b6ad;border-radius:8px;padding:18px 20px 20px;background:#f4f3ee;margin:24px 0 0}
+  .todo .t{display:block;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#9a6b00;margin:0 0 12px}
+  .todo p{font:400 15px/1.6 'Hanken Grotesk',sans-serif;color:#5f5f58;margin:0 0 8px}
+  .todo p:last-child{margin:0}
+  .todo ul{margin:6px 0 0;padding-left:20px;font:400 15px/1.6 'Hanken Grotesk',sans-serif;color:#5f5f58}
+  .todo li{margin:0 0 4px}
+  .bv-stage{position:relative;width:100%;aspect-ratio:1440/900;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff}
+  .bv-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block;opacity:0;transition:opacity .5s var(--ease)}
+  .bv-stage img.on{opacity:1}
+  .bv-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+  .bv-thumb{padding:0;border:0;background:none;cursor:pointer;text-align:left;font:inherit;color:inherit}
+  .bv-thumb .bv-pic{overflow:hidden;border-radius:6px;border:2px solid transparent;transition:border-color .2s var(--ease),opacity .2s var(--ease);opacity:.6}
+  .bv-thumb .bv-pic img{width:100%;height:auto;display:block;aspect-ratio:1440/900;object-fit:cover;object-position:top}
+  .bv-thumb:hover .bv-pic{opacity:.85}
+  .bv-thumb[aria-pressed="true"] .bv-pic{border-color:#121210;opacity:1}
+  .bv-thumb:focus-visible{outline:2px solid #121210;outline-offset:3px;border-radius:6px}
+  .bv-thumb span{display:block;margin-top:8px;font:500 10px/1.3 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684;text-transform:uppercase}
+  .bv-thumb[aria-pressed="true"] span{color:#121210}
+  @media (max-width:520px){.bv-thumbs{gap:8px}.bv-thumb span{font-size:9px;letter-spacing:.06em}}
+  @media (prefers-reduced-motion:reduce){.bv-stage img{transition:none}}
+  .zoom{cursor:zoom-in}
+  .zoom:focus-visible{outline:2px solid #121210;outline-offset:2px}
+  .lb{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:#121210f2;padding:4vh 6vw}
+  .lb.open{display:flex}
+  .lb img{max-width:100%;max-height:min(860px,92vh);object-fit:contain;border-radius:8px}
+  .lb-btn{position:absolute;background:#fbfbf91a;border:1px solid #fbfbf94d;color:#fbfbf9;width:46px;height:46px;border-radius:50%;font:400 22px/1 'Hanken Grotesk',system-ui,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s var(--ease)}
+  .lb-btn:hover{background:#fbfbf933}
+  .lb-btn:focus-visible{outline:2px solid #fbfbf9;outline-offset:2px}
+  .lb-close{top:18px;right:18px;font-size:17px}
+  .lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+  .lb-next{right:20px;top:50%;transform:translateY(-50%)}
+  .lb-count{position:absolute;bottom:20px;left:0;right:0;text-align:center;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#fbfbf9b3}
+  @media (max-width:640px){.lb{padding:8vh 2vw}.lb-prev{left:8px}.lb-next{right:8px}}
   @media (prefers-reduced-motion:no-preference){
     header{animation:reveal .6s var(--ease) both}
+    .lb.open{animation:lbfade .2s var(--ease)}
   }
   @keyframes reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-  .rolegrid{grid-template-columns:repeat(4,1fr)}
-  @media (max-width:520px){.rolegrid{grid-template-columns:repeat(2,1fr);gap:22px 20px}}
+  @keyframes lbfade{from{opacity:0}to{opacity:1}}
+  .rolegrid{grid-template-columns:repeat(4,auto);justify-content:space-between;gap:20px 32px}
+  .rolegrid span:last-child{white-space:nowrap}
+  @media (max-width:520px){.rolegrid{grid-template-columns:repeat(2,1fr);gap:22px 20px}.rolegrid span:last-child{white-space:normal}}
 </style>
 </helmet>
 <div>
@@ -73,16 +124,12 @@
   </header>
 
   <div style="max-width:860px;margin:0 auto;padding:0 28px">
-    <div class="scale-embed" style="width:100%;height:499px;overflow:hidden;border:1px solid #14141216;border-radius:10px;background:#f6f7f8">
-      <div style="width:1000px;height:640px;transform:scale(0.86);transform-origin:top left">
-        <dc-import name="LibraryFoldersAfterMockup" hint-size="1000px,640px" style="width:1000px;height:640px"></dc-import>
-      </div>
-    </div>
-    <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">The shipped Library: folders in the left rail, All/Images/Files filtering, and a selection toolbar for bulk actions.</p>
+    <div style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:10px"><picture style="width:100%;display:block"><source srcset="../assets/library-folders/after.webp" type="image/webp"><img src="../assets/library-folders/after.jpg" fetchpriority="high" decoding="async" width="1440" height="900" alt="The redesigned HoneyBook Library: a folder rail on the left (All assets, Party, Wedding, Summer, Winter, Spring, Fall, Newborn, Flowers, Create folder), All / Images / Files filter chips, an Upload split button, a View recommended dimensions link, and a grid of image and PDF assets each tagged with its folder" style="width:100%;height:auto;display:block"></picture></div>
+    <p class="cap">The shipped Library: folders in the left rail, All / Images / Files filter chips, and every asset labeled with the folder it lives in.</p>
   </div>
 
   <section style="max-width:680px;margin:0 auto;padding:0 28px">
-    <div class="rolegrid" style="padding:52px 0 4px;display:grid;gap:20px">
+    <div class="rolegrid" style="padding:52px 0 40px;display:grid;gap:20px">
       <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">ROLE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Product designer</span></div>
       <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TEAM</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">PM · engineering · research</span></div>
       <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TIMELINE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">2026</span></div>
@@ -90,32 +137,117 @@
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">CONTEXT</p>
-      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 18px">The library was one unorganized, flat list. Users had to scroll through every image and file with no way to filter or group assets, and there was no folder, tag, or category to lean on.</p><p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 26px">Finding one specific image became a time-consuming, frustrating process, and that friction compounded every time someone needed to reuse a template or asset.</p>
-      <div style="width:100%;height:280px;overflow:hidden;border:1px solid #14141216;border-radius:8px">
-        <img src="../assets/library-before.png" alt="Library before: a flat, unorganized asset list" style="width:100%;height:100%;object-fit:cover;object-position:top" />
+      <p class="label">CONTEXT</p>
+      <p class="body">The library was one unorganized, flat list. Users had to scroll through every image and file with no way to filter or group assets, and there was no folder, tag, or category to lean on. Finding one specific image became a time-consuming, frustrating process, and that friction compounded every time someone needed to reuse a template or asset.</p>
+      <div class="fig zoom" style="margin-top:28px"><span class="figbar figbar-old">OLD DESIGN</span><picture><source srcset="../assets/library-folders/before.webp" type="image/webp"><img src="../assets/library-folders/before.jpg" loading="lazy" width="1076" height="650" alt="The old Library: Upload, Canva and Import from Pic-Time buttons, a Which dimensions should I use? link, then My Images as one scrolling strip of mixed thumbnails and My Files as a second strip of PDFs, with no folders or filters"></picture></div>
+      <p class="cap">Before: two flat strips, My Images and My Files, with nothing to group or filter by.</p>
+      <div class="stats">
+        <div><span class="n">#1</span><span class="d">community-requested<br>fix, for years</span></div>
+        <div><span class="n">300</span><span class="d">members opening the<br>Library every week</span></div>
       </div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">BEFORE: everything in one flat list, images and files mixed together with no way to group them.</p>
-      <div style="display:flex;gap:40px;flex-wrap:wrap;margin-top:30px">
-        <div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">#1</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">community-requested<br>fix, for years</span></div>
-        <div><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em">300</span><span style="font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">members opening the<br>Library every week</span></div>
+      <div class="todo"><span class="t">TO ADD</span>
+        <p>Source both numbers so they survive a "how do you know" question: where "#1 community-requested" comes from (community forum votes, support tickets, a feature-request board) and how "300 members a week" was measured and over what period.</p>
+        <p>One sentence on why it was prioritized now, after years of requests. What changed: a roadmap theme, a churn signal, a competitor, a quarter with capacity?</p>
       </div>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">PROCESS</p>
-      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">I modeled the new folders on the pattern members already knew from Templates, so the mental model wouldn't be new twice. The harder part wasn't the folder concept, it was consistency: the Library opens from seven separate places across the product, from the Tools tab to an email attachment picker to a Smart File thumbnail, and folders needed to behave identically in every one of them. I designed the model and a right-click menu covering the everyday actions (rename, move, remove from a folder, set as a project header, delete) so reorganizing didn't mean touching every item one at a time, then we shipped it in stages, first internally, then to 20% of members, then 30%, watching for the rough edges a single entry point wouldn't have surfaced before opening it to everyone.</p>
-      <div class="scale-embed" style="width:100%;height:328px;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#f6f7f8">
-        <div style="width:900px;height:600px;transform:scale(0.6178);transform-origin:top left">
-          <dc-import name="LibraryFoldersContextMenuMockup" hint-size="900px,600px" style="width:900px;height:600px"></dc-import>
+      <p class="label">SCOPING</p>
+      <p class="body">The brief set two jobs: create and manage folders so related images and files sit together instead of in one long scroll, and rename, delete, and reorder folders so the library keeps matching how a member works. Everything else was explicitly deferred. The MVP line landed here:</p>
+      <div class="cols">
+        <div><h4>IN THE FIRST RELEASE</h4><ul>
+          <li>Create, rename, delete, and reorder folders</li>
+          <li>Move one or many files to a folder (checkbox bulk actions)</li>
+          <li>Pick a destination folder while uploading</li>
+          <li>Empty states, including creating a folder before any file exists</li>
+          <li>Folders in every entry point that opens the Library</li>
+        </ul></div>
+        <div><h4>DEFERRED</h4><ul>
+          <li>Nested folders and dragging folders into folders</li>
+          <li>Search and filter</li>
+          <li>Tags, and sorting or filtering by tag</li>
+          <li>Drag a file into a folder; marquee multi-select</li>
+          <li>Sort by type, name, or date</li>
+          <li>Create a folder from inside "Move to folder"</li>
+        </ul></div>
+      </div>
+      <div class="todo"><span class="t">TO ADD</span>
+        <p>Who drew this line and how. Which items you argued for and lost, which you argued against, and what the cut was traded for (engineering weeks, a ship date). A reader is looking for one decision that was yours, with the reason.</p>
+        <p>Pick one deferred item that hurt (search is the obvious one, given the research below says findability depends on it) and say why it still didn't make the cut.</p>
+      </div>
+    </div>
+
+    <div style="padding:52px 0;border-top:1px solid #14141212">
+      <p class="label">RESEARCH</p>
+      <p class="body">There was no primary user research on this one. Before committing to folders, I did desk research (with AI assistance) on how people organize and retrieve files, and what it said shaped the scope:</p>
+      <div class="body"><ul>
+        <li>Folders are universally understood and fit how most people organize, with two known costs: a file can only live in one place, and too many levels get complicated.</li>
+        <li>Tags support non-hierarchical, multi-category organizing, but are hard to maintain and get out of hand without structure. Several studies found that people who say they like tagging still default to folders in practice.</li>
+        <li>People remember the context and purpose of a file, not its name or the folder they put it in. Project and client names are the folder names that survive that.</li>
+        <li>Three retrieval mental models coexist, filers, taggers, and searchers, and a good system eventually serves all three. Search is critical to findability whichever way files are organized.</li>
+      </ul></div>
+      <p class="body">The recommendation was a hybrid: one or two levels of folders for structure, tags for flexibility underneath, and search regardless. The first release took the part with the strongest evidence and the least maintenance burden, a single level of folders, and left tags and search on the list above.</p>
+      <div class="todo"><span class="t">TO ADD</span>
+        <p>Say plainly why there was no user research (timeline, team capacity, the request being unambiguous), and what you used instead: support tickets, community threads, usage data, a look at how Templates folders were already being used.</p>
+        <p>If you had any signal on how members would actually organize (client names? project types? seasons, as in the mock?), put it here. It's the difference between "the internet says folders" and "our members organize by X".</p>
+      </div>
+    </div>
+
+    <div style="padding:52px 0;border-top:1px solid #14141212">
+      <p class="label">PROCESS</p>
+      <p class="body">I modeled the new folders on the pattern members already knew from Templates, so the mental model wouldn't be new twice. The harder part wasn't the folder concept, it was consistency: the Library opens from seven separate places across the product, from the Tools tab to an email attachment picker to a Smart File thumbnail, and folders needed to behave identically in every one of them.</p>
+      <p class="body">I designed the model and a menu covering the everyday actions (download, rename, set as project header, move to folder, remove from folder, delete) so reorganizing didn't mean touching every item one at a time. Selecting several items brings up the same actions as a floating bar, with "remove from folder" only offered when you're inside one.</p>
+      <div class="fig zoom" style="margin-top:28px"><picture><source srcset="../assets/library-folders/menu.webp" type="image/webp"><img src="../assets/library-folders/menu.jpg" loading="lazy" width="1440" height="900" alt="The Library with an asset's overflow menu open: Download, Rename, Set as project header, Move to folder, Remove from folder name, Delete"></picture></div>
+      <p class="cap">The per-asset menu. Folder actions sit with the actions members already used, not in a separate mode.</p>
+      <div class="fig zoom" style="margin-top:24px"><picture><source srcset="../assets/library-folders/multi.webp" type="image/webp"><img src="../assets/library-folders/multi.jpg" loading="lazy" width="1440" height="900" alt="The Library inside the Summer folder with one asset checked, a floating bulk-actions bar reading 1 of 10, Select all, Move to folder, Download, Delete, and an overflow menu offering Remove from folder"></picture></div>
+      <p class="cap">Bulk actions: check items, then move, download, or delete them together. "Remove from folder" only appears inside a folder.</p>
+      <div class="fig zoom" style="margin-top:24px"><picture><source srcset="../assets/library-folders/upload.webp" type="image/webp"><img src="../assets/library-folders/upload.jpg" loading="lazy" width="1440" height="900" alt="The Upload file modal with a Select destination folder dropdown set to No folder, a drag-and-drop area with a 15 MB limit, and Canva and Pic-Time import options"></picture></div>
+      <p class="cap">Upload with a destination folder, so files land organized instead of being sorted afterwards.</p>
+      <div class="fig zoom" style="margin-top:24px"><picture><source srcset="../assets/library-folders/empty.webp" type="image/webp"><img src="../assets/library-folders/empty.jpg" loading="lazy" width="1440" height="900" alt="An empty Summer folder with the Images filter selected: an illustration, No images in this folder, Upload or move items to this folder, and an Upload link"></picture></div>
+      <p class="cap">Empty folder state, filtered to images. The next action is the message.</p>
+      <div class="todo"><span class="t">TO ADD</span>
+        <p>Name the seven entry points. The claim is strong; a list makes it checkable (Library page, Choose image modal, the Smart File builder panel, email attachment picker, ...).</p>
+        <p>One rejected alternative with a reason. Candidates from the brief: drag-and-drop to move files (deferred, why?), a folder picker inside "Move to folder", folders as a filter chip instead of a rail. Show a sketch or a Figma frame if one exists.</p>
+        <p>Anything that changed between design and ship: what engineering pushed back on, what got simplified.</p>
+      </div>
+    </div>
+
+    <div style="padding:52px 0;border-top:1px solid #14141212">
+      <p class="label">WHAT SHIPPED</p>
+      <p class="body">The same folder model wherever the Library opens: on its own page under Tools, in the "Choose image" modal, and in the Smart File builder's side panel, where "Displaying images from" filters by folder without leaving the canvas.</p>
+      <div class="bv" style="margin-top:28px">
+        <div class="bv-stage zoom"><img class="on" src="../assets/library-folders/after.jpg" srcset="../assets/library-folders/after.webp" loading="lazy" alt="The Library page with the folder rail, filter chips, and asset grid" data-bv="0"><img src="../assets/library-folders/modal.jpg" srcset="../assets/library-folders/modal.webp" loading="lazy" alt="The Choose image modal with Library and Upload tabs, the same folder rail and filter chips, an asset grid, and an Attach button" data-bv="1"><img src="../assets/library-folders/builder.jpg" srcset="../assets/library-folders/builder.webp" loading="lazy" alt="The Smart File builder with an empty image block selected and the Choose image side panel open: Your Library and Upload tabs, Canva and Pic-Time import, a Displaying images from dropdown set to All assets, and an image grid" data-bv="2"></div>
+        <div class="bv-thumbs" role="group" aria-label="Choose an entry point">
+          <button type="button" class="bv-thumb" data-bv="0" aria-pressed="true"><span class="bv-pic"><img src="../assets/library-folders/after.jpg" srcset="../assets/library-folders/after.webp" loading="lazy" alt=""></span><span>Library page</span></button>
+          <button type="button" class="bv-thumb" data-bv="1" aria-pressed="false"><span class="bv-pic"><img src="../assets/library-folders/modal.jpg" srcset="../assets/library-folders/modal.webp" loading="lazy" alt=""></span><span>Choose image modal</span></button>
+          <button type="button" class="bv-thumb" data-bv="2" aria-pressed="false"><span class="bv-pic"><img src="../assets/library-folders/builder.jpg" srcset="../assets/library-folders/builder.webp" loading="lazy" alt=""></span><span>Builder side panel</span></button>
         </div>
       </div>
-      <p style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">Right-click on any asset for the full set of folder actions, scoped to the folder it's currently in.</p>
+      <p class="cap">Three of the entry points. Click a thumbnail to switch, click the large image to enlarge.</p>
+      <div class="fig zoom" style="margin-top:36px"><picture><source srcset="../assets/library-folders/sizes.webp" type="image/webp"><img src="../assets/library-folders/sizes.jpg" loading="lazy" width="1440" height="900" alt="The Library with the View recommended dimensions popover open, listing File header 750 by 300, Service item 110 by 110, and Project header 1140 by 380, each with a small diagram"></picture></div>
+      <p class="cap">The old "Which dimensions should I use?" link became a popover showing where each size is used.</p>
+      <div class="todo"><span class="t">TO ADD</span>
+        <p>Confirm the recommended-dimensions popover was part of this release (it sits in the same Figma frame). If it was a side fix, say so in one line; if it wasn't yours, drop it.</p>
+        <p>Screenshots of the other four entry points if they exist, or one line naming them.</p>
+      </div>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">OUTCOME</p>
-      <p style="font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">Shipped a hierarchical folder system with bulk move and organize actions, rolled out gradually across the library's seven entry points to all members and trialers.</p>
+      <p class="label">OUTCOME</p>
+      <p class="body">Shipped a folder system with bulk move and organize actions, rolled out in stages across the Library's seven entry points: internally first, then to 20% of members, then 30%, then everyone including trialers. I left HoneyBook as the rollout completed, so there are no post-release numbers here.</p>
+      <p class="body">The brief's hypothesis was that folders, clearly surfaced, would improve perceived ease of navigation, cut time spent looking for files, and lift satisfaction with the Library. Those are the measures the release was set up to be judged on.</p>
+      <div class="todo"><span class="t">TO ADD</span>
+        <p>Rollout dates for each stage, and how long each held before widening.</p>
+        <p>Any early signal you can source, even qualitative: support-ticket volume on "can't find my file", community reactions, the share of members who created at least one folder in the first weeks (a former colleague may be able to pull this). If nothing is available, leave the paragraph above as it is; "shipped as I left, no data" is a legitimate ending. Don't dress it up.</p>
+        <p>What you'd have measured, concretely: folder creation rate, share of uploads that pick a destination folder, time-to-attach in the builder. Naming the metrics shows you'd have closed the loop.</p>
+      </div>
+    </div>
+
+    <div style="padding:52px 0;border-top:1px solid #14141212">
+      <p class="label">LOOKING BACK</p>
+      <div class="todo" style="margin-top:0"><span class="t">TO ADD</span>
+        <p>One unsentimental paragraph. What you'd redo: pushing search into the first release, testing the seven-entry-point consistency with members before shipping, choosing a rail over chips, anything you learned from the staged rollout.</p>
+      </div>
     </div>
   </section>
 
@@ -137,5 +269,111 @@
   </footer>
 </div>
 </x-dc>
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.bv-thumb');
+    if (!btn) return;
+    var bv = btn.closest('.bv'), i = btn.getAttribute('data-bv');
+    Array.prototype.forEach.call(bv.querySelectorAll('.bv-thumb'), function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+    Array.prototype.forEach.call(bv.querySelectorAll('.bv-stage img'), function (im) { im.classList.toggle('on', im.getAttribute('data-bv') === i); });
+  });
+})();
+</script>
+<script>
+(function () {
+  var SEL = '.zoom';
+  var lb, lbImg, lbCount, items = [], idx = 0, lastFocus = null;
+  function collect() {
+    items = Array.prototype.map.call(document.querySelectorAll(SEL), function (el) {
+      var im = el.querySelector('img.on') || el.querySelector('img');
+      return { src: (im && (im.currentSrc || im.getAttribute('src'))) || '', alt: (im && im.getAttribute('alt')) || 'Image' };
+    });
+  }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function build() {
+    lb = document.createElement('div');
+    lb.className = 'lb';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Image viewer');
+    lb.innerHTML =
+      '<button type="button" class="lb-btn lb-close" aria-label="Close viewer">✕</button>' +
+      '<button type="button" class="lb-btn lb-prev" aria-label="Previous image">‹</button>' +
+      '<button type="button" class="lb-btn lb-next" aria-label="Next image">›</button>' +
+      '<div class="lb-count" aria-hidden="true"></div>';
+    lbImg = document.createElement('img');
+    lbImg.alt = '';
+    lb.appendChild(lbImg);
+    document.body.appendChild(lb);
+    lbCount = lb.querySelector('.lb-count');
+    lb.querySelector('.lb-close').addEventListener('click', close);
+    lb.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); go(-1); });
+    lb.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); go(1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  }
+  function show() {
+    var it = items[idx];
+    lbImg.setAttribute('src', it.src);
+    lbImg.setAttribute('alt', it.alt);
+    lbCount.textContent = pad(idx + 1) + ' / ' + pad(items.length);
+  }
+  function open(i) {
+    collect();
+    if (!items.length) return;
+    if (!lb) build();
+    idx = i; lastFocus = document.activeElement;
+    show();
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lb.querySelector('.lb-close').focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function close() {
+    if (!lb) return;
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function go(d) { idx = (idx + d + items.length) % items.length; show(); }
+  function onKey(e) {
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') go(1);
+    else if (e.key === 'ArrowLeft') go(-1);
+  }
+  function tileIndex(el) {
+    var all = document.querySelectorAll(SEL);
+    for (var i = 0; i < all.length; i++) if (all[i] === el) return i;
+    return 0;
+  }
+  function enhance() {
+    Array.prototype.forEach.call(document.querySelectorAll(SEL), function (el) {
+      if (el.dataset.lbReady) return;
+      el.dataset.lbReady = '1';
+      el.setAttribute('role', 'button');
+      el.setAttribute('tabindex', '0');
+      var im = el.querySelector('img.on') || el.querySelector('img');
+      el.setAttribute('aria-label', 'Enlarge image' + (im && im.alt ? ': ' + im.alt : ''));
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest && e.target.closest(SEL);
+    if (el) { e.preventDefault(); open(tileIndex(el)); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+    var el = e.target.closest && e.target.closest(SEL);
+    if (el) { e.preventDefault(); open(tileIndex(el)); }
+  });
+  function ready(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  ready(function () {
+    enhance();
+    var obs = new MutationObserver(enhance);
+    obs.observe(document.body, { childList: true, subtree: true });
+    setTimeout(function () { obs.disconnect(); }, 4000);
+  });
+})();
+</script>
 </body>
 </html>
