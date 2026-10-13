@@ -39,6 +39,8 @@
   @media (max-width:520px){.caserow .nx{font-size:18px}}
   .navlink{transition:color .2s var(--ease)}
   .navlink:hover{color:#121210}
+  .ilink{text-decoration:none;border-bottom:1px solid #12121033;padding-bottom:1px;transition:border-color .2s var(--ease)}
+  .ilink:hover{border-bottom-color:#121210}
   .body{font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 18px}
   .body:last-child{margin-bottom:0}
   .body ul{margin:10px 0 0;padding-left:22px}
@@ -239,8 +241,13 @@
     </div>
   </nav>
 
-  <footer style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:26px;padding-bottom:60px;border-top:1px solid #14141212;display:flex;justify-content:center;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:#717684">
-    <span>© Avia Eyal 2026 | Tel Aviv</span>
+  <footer style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:26px;padding-bottom:60px;border-top:1px solid #14141212;display:flex;flex-direction:column;align-items:center;gap:18px">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px;font:400 14px/1.4 'Hanken Grotesk',sans-serif;color:#5f5f58">
+      <a href="mailto:aviaeyal@gmail.com" class="ilink">aviaeyal@gmail.com</a>
+      <a href="https://linkedin.com/in/aviaeyal-417225107" target="_blank" rel="noopener" class="ilink">LinkedIn</a>
+      <a href="../avia-eyal-cv.pdf?v=2026" target="_blank" rel="noopener" class="ilink">Resume</a>
+    </div>
+    <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:#717684">© Avia Eyal 2026 | Tel Aviv</span>
   </footer>
 </div>
 </x-dc>
