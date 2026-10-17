@@ -39,7 +39,7 @@ Two differentiators the site is meant to carry, held in balance rather than one 
 
 - Name: Avia Eyal. Location: Tel Aviv, Israel.
 - Illustration handle: instagram.com/aviaeyal — referenced as the home for personal illustration work.
-- Contact: aviaeyal@gmail.com, linkedin.com/in/aviaeyal-417225107.
+- Contact: aviaeyal@gmail.com, www.linkedin.com/in/avia-eyal-417225107.
 - Voice: direct, specific, first-person, evidence-first — avoids marketing-speak in favor of naming real numbers, real tools, and real constraints.
 
 ## Evidence on Hand
