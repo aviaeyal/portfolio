@@ -59,11 +59,12 @@
   .contactbtn:hover{border-color:#fbfbf9}
   .abouthead{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin:28px 0 0}
   .aboutphoto{width:120px;height:120px;border-radius:50%;flex-shrink:0;overflow:hidden;background:#f1f0ea;border:1px solid #14141216}
-  .facts{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+  .facts{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,auto);grid-auto-flow:column;gap:0 40px}
+  .facts>div{display:contents}
   @media (max-width:560px){
     .abouthead{gap:16px}
     .aboutphoto{width:88px;height:88px}
-    .facts{grid-template-columns:1fr}
+    .facts{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row}
   }
   @media (prefers-reduced-motion:no-preference){
     header{animation:reveal .6s var(--ease) both}
@@ -127,15 +128,11 @@
 
   <!-- ABOUT -->
   <section id="about" style="padding:88px 0 0">
-    <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 8px">ABOUT</p>
+    <h2 style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 8px">ABOUT</h2>
     <div class="abouthead" style="border-top:1px solid #14141212;padding-top:28px;margin-top:0">
       <div class="aboutphoto"><picture style="width:100%;height:100%;display:block"><source srcset="assets/photo/avia-eyal.webp" type="image/webp"><img src="assets/photo/avia-eyal.jpg" loading="lazy" alt="Portrait of Avia Eyal" style="width:100%;height:100%;object-fit:cover"></picture></div>
-      <div>
-        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(28px,4.4vw,38px);line-height:1;letter-spacing:-.02em;margin:0">Avia Eyal</h2>
-        <p style="font:400 15px/1.5 'Hanken Grotesk',sans-serif;color:#5f5f58;margin:12px 0 0">Senior Product Designer · Tel Aviv</p>
-      </div>
     </div>
-    <div style="max-width:60ch;padding-top:36px">
+    <div style="max-width:60ch;padding-top:30px">
       <p style="font:400 16px/1.75 'Hanken Grotesk',sans-serif;color:#2e2e29;margin:0 0 24px">I came to product design the long way. More than a decade in B2B SaaS that began in QA engineering and automation, then grew into design, which means I understand how the software is built, where it breaks, and how to design around complexity rather than past it.</p>
       <p style="font:400 16px/1.75 'Hanken Grotesk',sans-serif;color:#2e2e29;margin:0 0 24px">My academic background spans neuroscience at Tel Aviv University and visual communications at Bezalel. In practice I think as much about how people process information as about how a screen looks.</p>
       <sc-if value="{{ showIllustration }}" hint-placeholder-val="{{ true }}">
@@ -147,12 +144,12 @@
 
   <!-- FACTS -->
   <section class="facts" style="padding:56px 0 0">
-    <div style="display:flex;flex-direction:column">
+    <div>
       <div style="padding:0 0 18px;border-bottom:1px solid #14141216"><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684;display:block;margin-bottom:9px">COMPANIES</span><span style="font:400 14.5px/1.5 'Hanken Grotesk',sans-serif">ironSource · HoneyBook</span></div>
       <div style="padding:18px 0;border-bottom:1px solid #14141216"><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684;display:block;margin-bottom:9px">PATH</span><span style="font:400 14.5px/1.5 'Hanken Grotesk',sans-serif">QA Engineer → QA Automation → Product Design</span></div>
       <div style="padding:18px 0"><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684;display:block;margin-bottom:9px">EDUCATION</span><span style="font:400 14.5px/1.55 'Hanken Grotesk',sans-serif">B.Sc. Neuroscience, Tel Aviv University <span style="color:#8a8a82">(Magna Cum Laude)</span><br>B.A. Design &amp; Visual Communications, Bezalel</span></div>
     </div>
-    <div style="display:flex;flex-direction:column">
+    <div>
       <div style="padding:0 0 18px;border-bottom:1px solid #14141216"><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684;display:block;margin-bottom:9px">TOOLS</span><span style="font:400 14.5px/1.5 'Hanken Grotesk',sans-serif">Figma · Mixpanel · React (frontend PRs)</span></div>
       <div style="padding:18px 0;border-bottom:1px solid #14141216"><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684;display:block;margin-bottom:9px">BASED IN</span><span style="font:400 14.5px/1.5 'Hanken Grotesk',sans-serif">Tel Aviv, Israel</span></div>
       <div style="padding:18px 0"><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684;display:block;margin-bottom:9px">LANGUAGES</span><span style="font:400 14.5px/1.5 'Hanken Grotesk',sans-serif">Hebrew (native) · English (professional)</span></div>
