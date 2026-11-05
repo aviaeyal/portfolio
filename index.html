@@ -25,41 +25,57 @@
 <helmet data-dc-atomics="">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&amp;family=Hanken+Grotesk:ital,wght@0,400;0,500;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&amp;family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
   html{scroll-behavior:smooth;--ease:cubic-bezier(.16,1,.3,1)}
   body{margin:0;background:#fbfbf9;color:#121210;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   ::selection{background:#12121012}
   a{color:inherit}
-  .wrow{display:block;padding:28px 0;border-bottom:1px solid #14141212;text-decoration:none;transition:transform .2s var(--ease)}
-  .wrow:hover{transform:translateX(12px)}
-  .wrow .wt{transition:color .2s var(--ease)}
-  .wrow:hover .wt{color:#000}
-  .wrow .wyear{transition:color .2s var(--ease)}
-  .wrow:hover .wyear{color:#121210}
-  .wthumb{width:450px;max-width:100%;aspect-ratio:3/2;overflow:hidden;border:1px solid #14141216;border-radius:10px}
-  .wmeta{display:flex;align-items:baseline;gap:20px;max-width:450px;margin-top:16px}
-  .wmeta .wyear{margin-left:auto}
-  .ilink{text-decoration:none;border-bottom:1px solid #12121033;padding-bottom:1px;transition:border-color .2s var(--ease)}
-  .ilink:hover{border-bottom-color:#121210}
-  .navlink{transition:color .2s var(--ease)}
+  .wrap{max-width:900px;margin:0 auto;padding:0 28px}
+  .navlink{text-decoration:none;padding:15px 0;transition:color .2s var(--ease)}
   .navlink:hover{color:#121210}
-  .wmeta>span:first-of-type{min-width:0}
-  .wcat{font:400 16px/1 'Hanken Grotesk',sans-serif;color:#9a9a90;margin-left:12px}
-  @media (max-width:560px){
-    .wcat{display:block;margin-left:0;margin-top:5px}
-  }
-  section[id]{scroll-margin-top:76px}
-  .contactbtn{transition:border-color .2s var(--ease)}
-  .contactbtn:hover{border-color:#fbfbf9}
-  .abouthead{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin:28px 0 0}
-  .aboutphoto{width:120px;height:120px;border-radius:50%;flex-shrink:0;overflow:hidden;background:#f1f0ea;border:1px solid #14141216}
-  .facts{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,auto);grid-auto-flow:column;gap:0 40px}
+  .label{font:400 13.5px/1 'IBM Plex Mono',monospace;letter-spacing:.03em;text-transform:uppercase;color:#717684;margin:0}
+  .heroname{display:flex;align-items:center;gap:16px}
+  .heroname h1{font:500 clamp(40px,9vw,67.5px)/1.1 'Hanken Grotesk',sans-serif;letter-spacing:-.015em;color:#20211e;margin:0}
+  .heroname .photo{width:120px;height:120px;border-radius:50%;overflow:hidden;flex-shrink:0;background:#f1f0ea}
+  .chips{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 0}
+  .chip{display:inline-flex;align-items:center;height:36px;padding:0 9px;border:1px solid;border-radius:20px;font:400 16px/1 'Hanken Grotesk',sans-serif;text-decoration:none;transition:filter .2s var(--ease)}
+  .chip:hover{filter:brightness(.96)}
+  .wrow{display:block;padding:20px 0 24px;border-bottom:1px solid #e9eae6;text-decoration:none}
+  .wrow:last-child{border-bottom:0}
+  .wrow .wt{font:500 25px/1.2 'Hanken Grotesk',sans-serif;letter-spacing:-.018em;color:#20211e;margin:0;transition:color .2s var(--ease),text-decoration-color .2s var(--ease)}
+  .wrow:hover .wt{color:#000}
+  .wt{display:inline-block;text-decoration:underline 1px transparent;text-underline-offset:5px}
+  .wt::after{content:'→';display:inline-block;margin-left:8px;opacity:0;transform:translateX(-6px);transition:opacity .2s var(--ease),transform .2s var(--ease)}
+  .wt:hover{text-decoration-color:currentColor}
+  .wt:hover::after{opacity:1;transform:translateX(0)}
+  .wmeta{font:400 14px/1.4 'Hanken Grotesk',sans-serif;color:#717684;margin:4px 0 0}
+  .wout{font:400 16px/1.5 'Hanken Grotesk',sans-serif;color:#5f5f58;margin:8px 0 0;max-width:800px}
+  .wimg{display:block;width:800px;max-width:100%;height:auto;margin-top:18px;border-radius:4px;box-shadow:0 1px 19.4px #0000001f;transform-origin:left center;transition:box-shadow .3s var(--ease),transform .3s var(--ease)}
+  .wimg:hover{box-shadow:0 4px 28px #0000002e}
+  @media (prefers-reduced-motion:no-preference){.wimg:hover{transform:scale(1.02)}}
+  .bio p{font:300 18px/1.625 'Hanken Grotesk',sans-serif;color:#393a36;margin:0 0 30px}
+  .bio p:last-child{margin:0}
+  .facts{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,auto);grid-auto-flow:column;gap:0 40px;padding:54px 0 0}
   .facts>div{display:contents}
+  .fact{padding:0 0 24px;margin:0 0 18px;border-bottom:1px solid #e9eae6}
+  .fact.last{border-bottom:0;margin:0}
+  .fact .label{display:block;margin-bottom:8px}
+  .fact span+span{font:400 16px/1.5 'Hanken Grotesk',sans-serif;color:#20211e}
+  .caps{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
+  .caps span{font:400 13.5px/1 'Hanken Grotesk',sans-serif;color:#70716a;border:1px solid #d6d7d1;border-radius:30px;padding:5px 13px}
+  .contactbtn{display:inline-flex;align-items:center;gap:5px;font:400 17px/1 'Hanken Grotesk',sans-serif;color:#f3f3ef;text-decoration:none;border:1px solid #42433c;border-radius:2px;padding:0 20px;height:48px;transition:border-color .2s var(--ease)}
+  .contactbtn:hover{border-color:#f3f3ef}
+  section[id]{scroll-margin-top:76px}
+  @media (max-width:400px){
+    .topnav{padding:0 20px!important}
+    .navlinks{gap:20px!important}
+  }
   @media (max-width:560px){
-    .abouthead{gap:16px}
-    .aboutphoto{width:88px;height:88px}
+    .heroname .photo{width:88px;height:88px}
     .facts{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row}
+    .fact.last{border-bottom:1px solid #e9eae6;margin:0 0 18px}
+    .facts>div:last-child .fact.last{border-bottom:0;margin:0}
   }
   @media (prefers-reduced-motion:no-preference){
     header{animation:reveal .6s var(--ease) both}
@@ -81,118 +97,113 @@
   </svg>
 </template>
 <div style="background:{{ bgColor }};min-height:100vh">
-<nav style="position:sticky;top:0;z-index:50;background:#fbfbf9f2;backdrop-filter:blur(8px);border-bottom:1px solid #14141216;display:flex;align-items:center;justify-content:space-between;padding:0 34px;height:60px">
-  <a href="#top" style="font:600 17px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em;text-decoration:none;color:#121210">Avia Eyal</a>
-  <div style="display:flex;gap:26px;align-items:center;font:500 14px/1 'Hanken Grotesk',sans-serif;color:#5f5f58">
-    <a href="#top" class="navlink" style="text-decoration:none;color:#121210">Work</a>
-    <a href="#about" class="navlink" style="text-decoration:none">About</a>
-    <a href="#contact" class="navlink" style="text-decoration:none">Contact</a>
+<nav class="topnav" style="position:sticky;top:0;z-index:50;background:#fffffff2;backdrop-filter:blur(8px);border-bottom:1px solid #14141216;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 34px;height:60px">
+  <a href="#top" style="font:600 16px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em;text-decoration:none;color:#121210">Avia Eyal</a>
+  <div class="navlinks" style="display:flex;gap:26px;align-items:center;font:500 13px/1 'Hanken Grotesk',sans-serif;color:#5f5f58">
+    <a href="#top" class="navlink">Work</a>
+    <a href="#about" class="navlink">About</a>
+    <a href="#contact" class="navlink">Contact</a>
   </div>
 </nav>
-<div style="max-width:640px;margin:0 auto;padding:0 28px">
+<div class="wrap">
 
   <!-- HEADER -->
-  <header style="padding:84px 0 0">
-    <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:29px;line-height:1;letter-spacing:-.02em;margin:0">Avia Eyal</h1>
-    <p style="font:400 18px/1.7 'Hanken Grotesk',sans-serif;color:#5f5f58;margin:14px 0 0;max-width:52ch">A senior product designer, 10+ years in B2B SaaS. I design the complex parts of software (editors, file structure, platform features) from research through shipped UI. By way of QA engineering and a background in neuroscience.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:14px 22px;margin:22px 0 0;font:400 16px/1 'Hanken Grotesk',sans-serif;color:#5f5f58">
-      <a href="mailto:aviaeyal@gmail.com" class="ilink">Email</a>
-      <a href="https://www.linkedin.com/in/avia-eyal-417225107" target="_blank" rel="noopener" class="ilink">LinkedIn</a>
-      <a href="avia-eyal-cv.pdf?v=20261014" target="_blank" rel="noopener" class="ilink">Resume</a>
-      <a href="https://instagram.com/aviaeyal" target="_blank" rel="noopener" class="ilink">Instagram</a>
-      <a href="#about" class="ilink">About</a>
+  <header style="padding:80px 0 0">
+    <div class="heroname">
+      <div class="photo"><picture style="width:100%;height:100%;display:block"><source srcset="assets/photo/avia-eyal.webp" type="image/webp"><img src="assets/photo/avia-eyal.jpg" fetchpriority="high" alt="Portrait of Avia Eyal" style="width:100%;height:100%;object-fit:cover;display:block"></picture></div>
+      <h1>Avia Eyal</h1>
+    </div>
+    <p style="font:300 18px/1.625 'Hanken Grotesk',sans-serif;color:#70716a;margin:12px 0 0;max-width:680px">A senior product designer, 10+ years in B2B SaaS. I design the complex parts of software (editors, file structure, platform features) from research through shipped UI. By way of QA engineering and a background in neuroscience.</p>
+    <div class="chips">
+      <a href="mailto:aviaeyal@gmail.com" class="chip" style="background:#fef5ed;border-color:#fcddc1;color:#a95b24">Email</a>
+      <a href="https://www.linkedin.com/in/avia-eyal-417225107" target="_blank" rel="noopener" class="chip" style="background:#eafafa;border-color:#b6eced;color:#547676">LinkedIn</a>
+      <a href="avia-eyal-cv.pdf?v=20261014" target="_blank" rel="noopener" class="chip" style="background:#eef9f5;border-color:#c5ebdc;color:#207e5a">Resume</a>
+      <a href="https://instagram.com/aviaeyal" target="_blank" rel="noopener" class="chip" style="background:#fff4f8;border-color:#ffd8e8;color:#bf4074">Instagram</a>
     </div>
   </header>
 
   <!-- WORK -->
-  <section style="padding:72px 0 0">
-    <p style="font:500 12.5px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 8px">SELECTED WORK</p>
-    <div style="border-top:1px solid #14141212">
-      <a href="client-portal/" class="wrow">
-        <div class="wthumb" style="background:#c4ced0"><picture style="width:100%;height:100%;display:block"><source srcset="assets/client-portal/portal-thumb.webp" type="image/webp"><img src="assets/client-portal/portal-thumb.jpg" fetchpriority="high" decoding="async" alt="The same HoneyBook client portal shown in two different brand themes" style="width:100%;height:100%;object-fit:cover"></picture></div>
-        <div class="wmeta"><span><span class="wt" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:23.5px;letter-spacing:-.01em;color:#1a1a17">Client portal</span><span class="wcat">Client experience</span></span>
-        <span class="wyear" style="font:500 13.5px/1 'IBM Plex Mono',monospace;color:#717684">2025</span></div>
-      </a>
-      <a href="selective-communication/" class="wrow">
-        <div class="wthumb" style="background:#c4ced0"><picture style="width:100%;height:100%;display:block"><source srcset="assets/selective-communication/share-thumb.webp" type="image/webp"><img src="assets/selective-communication/share-thumb.jpg" fetchpriority="high" decoding="async" alt="HoneyBook share dialog with selected recipients and per-participant file access controls" style="width:100%;height:100%;object-fit:cover"></picture></div>
-        <div class="wmeta"><span><span class="wt" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:23.5px;letter-spacing:-.01em;color:#1a1a17">Selective sharing</span><span class="wcat">Messages &amp; files</span></span>
-        <span class="wyear" style="font:500 13.5px/1 'IBM Plex Mono',monospace;color:#717684">2024</span></div>
-      </a>
-    </div>
+  <section style="padding:68px 0 0">
+    <p class="label" style="padding-bottom:12px;border-bottom:1px solid #e9eae6">Selected work</p>
+    <a href="client-portal/" class="wrow">
+      <h2 class="wt">Client portal</h2>
+      <p class="wmeta">HoneyBook · Lead product designer · 2025</p>
+      <p class="wout">Client logins rose from 6–10% to 22.6% in the 30 days after release.</p>
+      <picture><source srcset="assets/home/portal-card.webp" type="image/webp"><img class="wimg" src="assets/home/portal-card.jpg" width="1600" height="1048" fetchpriority="high" decoding="async" alt="A HoneyBook client portal themed with a member's brand, with the Customize portal panel open over it showing background, highlight, font and button settings"></picture>
+    </a>
+    <a href="selective-communication/" class="wrow">
+      <h2 class="wt">Selective sharing</h2>
+      <p class="wmeta">HoneyBook · Lead product designer · 2024</p>
+      <p class="wout">Among members with 2+ clients, 37% of messages and 36% of shared files now go out selectively.</p>
+      <picture><source srcset="assets/home/share-card.webp" type="image/webp"><img class="wimg" src="assets/home/share-card.jpg" width="1600" height="1126" loading="lazy" decoding="async" alt="HoneyBook Manage file access dialog over a project workspace, with a toggle per client controlling who can open the file"></picture>
+    </a>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" style="padding:88px 0 0">
-    <h2 style="font:500 12.5px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 8px">ABOUT</h2>
-    <div class="abouthead" style="border-top:1px solid #14141212;padding-top:28px;margin-top:0">
-      <div class="aboutphoto"><picture style="width:100%;height:100%;display:block"><source srcset="assets/photo/avia-eyal.webp" type="image/webp"><img src="assets/photo/avia-eyal.jpg" loading="lazy" alt="Portrait of Avia Eyal" style="width:100%;height:100%;object-fit:cover"></picture></div>
-    </div>
-    <div style="max-width:60ch;padding-top:30px">
-      <p style="font:400 18px/1.75 'Hanken Grotesk',sans-serif;color:#2e2e29;margin:0 0 24px">I came to product design the long way. More than a decade in B2B SaaS that began in QA engineering and automation, then grew into design, which means I understand how the software is built, where it breaks, and how to design around complexity rather than past it.</p>
-      <p style="font:400 18px/1.75 'Hanken Grotesk',sans-serif;color:#2e2e29;margin:0 0 24px">My academic background spans neuroscience at Tel Aviv University and visual communications at Bezalel. In practice I think as much about how people process information as about how a screen looks.</p>
+  <section id="about" style="padding:40px 0 0">
+    <h2 class="label" style="padding-bottom:8px;border-bottom:1px solid #e9eae6">About</h2>
+    <div class="bio" style="max-width:608px;padding-top:28px">
+      <p>I came to product design the long way. More than a decade in B2B SaaS that began in QA engineering and automation, then grew into design, which means I understand how the software is built, where it breaks, and how to design around complexity rather than past it.</p>
+      <p>My academic background spans neuroscience at Tel Aviv University and visual communications at Bezalel. In practice I think as much about how people process information as about how a screen looks.</p>
       <sc-if value="{{ showIllustration }}" hint-placeholder-val="{{ true }}">
-      <p style="font:400 18px/1.75 'Hanken Grotesk',sans-serif;color:#2e2e29;margin:0 0 24px">I also illustrate. I oversaw a product illustration language after its original team moved on, creating new artwork and directing an external illustrator to keep it consistent.</p>
-      <p style="font:400 18px/1.75 'Hanken Grotesk',sans-serif;color:#2e2e29;margin:0">Outside work I keep drawing: <a href="https://instagram.com/aviaeyal" target="_blank" rel="noopener" class="ilink" style="white-space:nowrap">@aviaeyal ↗</a></p>
+      <p>I also illustrate. I oversaw a product illustration language after its original team moved on, creating new artwork and directing an external illustrator to keep it consistent.</p>
+      <p>Outside work I keep drawing: <a href="https://instagram.com/aviaeyal" target="_blank" rel="noopener" style="text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:4px">@aviaeyal <svg aria-hidden="true" width="17" height="17" viewBox="0 0 15 15" fill="none"><path d="M10.6245 10.6245V4.3755H4.3755M10.6245 4.3755L4.3755 10.6245" stroke-linecap="round" stroke="#D5D5D0"/></svg></a></p>
       </sc-if>
     </div>
   </section>
 
   <!-- FACTS -->
-  <section class="facts" style="padding:56px 0 0">
+  <section class="facts">
     <div>
-      <div style="padding:0 0 18px;border-bottom:1px solid #14141216"><span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684;display:block;margin-bottom:9px">COMPANIES</span><span style="font:400 16.5px/1.5 'Hanken Grotesk',sans-serif">ironSource · HoneyBook</span></div>
-      <div style="padding:18px 0;border-bottom:1px solid #14141216"><span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684;display:block;margin-bottom:9px">PATH</span><span style="font:400 16.5px/1.5 'Hanken Grotesk',sans-serif">QA Engineer → QA Automation → Product Design</span></div>
-      <div style="padding:18px 0"><span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684;display:block;margin-bottom:9px">EDUCATION</span><span style="font:400 16.5px/1.55 'Hanken Grotesk',sans-serif">B.Sc. Neuroscience, Tel Aviv University <span style="color:#8a8a82">(Magna Cum Laude)</span><br>B.A. Design &amp; Visual Communications, Bezalel</span></div>
+      <div class="fact"><span class="label">Companies</span><span>ironSource · HoneyBook</span></div>
+      <div class="fact"><span class="label">Path</span><span>QA Engineer → QA Automation → Product Design</span></div>
+      <div class="fact last"><span class="label">Education</span><span>B.Sc. Neuroscience, Tel Aviv University <span style="color:#96988e">(Magna Cum Laude)</span><br>B.A. Design &amp; Visual Communications, Bezalel</span></div>
     </div>
     <div>
-      <div style="padding:0 0 18px;border-bottom:1px solid #14141216"><span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684;display:block;margin-bottom:9px">TOOLS</span><span style="font:400 16.5px/1.5 'Hanken Grotesk',sans-serif">Figma · Mixpanel · React (frontend PRs) · Claude Code</span></div>
-      <div style="padding:18px 0;border-bottom:1px solid #14141216"><span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684;display:block;margin-bottom:9px">BASED IN</span><span style="font:400 16.5px/1.5 'Hanken Grotesk',sans-serif">Tel Aviv, Israel</span></div>
-      <div style="padding:18px 0"><span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684;display:block;margin-bottom:9px">LANGUAGES</span><span style="font:400 16.5px/1.5 'Hanken Grotesk',sans-serif">Hebrew (native) · English (professional)</span></div>
+      <div class="fact"><span class="label">Tools</span><span>Figma · Mixpanel · React (frontend PRs) · Claude Code</span></div>
+      <div class="fact"><span class="label">Based in</span><span>Tel Aviv, Israel</span></div>
+      <div class="fact last"><span class="label">Languages</span><span>Hebrew (native) · English (professional)</span></div>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section style="padding:24px 0 80px">
-    <p style="font:500 12.5px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 24px">CAPABILITIES</p>
-    <div style="display:flex;flex-wrap:wrap;gap:8px">
-      <span style="font:500 13px/1 'IBM Plex Mono',monospace;color:#5f5f58;border:1px solid #1414142e;border-radius:100px;padding:7px 13px">Product Design</span>
-      <span style="font:500 13px/1 'IBM Plex Mono',monospace;color:#5f5f58;border:1px solid #1414142e;border-radius:100px;padding:7px 13px">UX Strategy</span>
-      <span style="font:500 13px/1 'IBM Plex Mono',monospace;color:#5f5f58;border:1px solid #1414142e;border-radius:100px;padding:7px 13px">User Research</span>
-      <span style="font:500 13px/1 'IBM Plex Mono',monospace;color:#5f5f58;border:1px solid #1414142e;border-radius:100px;padding:7px 13px">Information Architecture</span>
-      <span style="font:500 13px/1 'IBM Plex Mono',monospace;color:#5f5f58;border:1px solid #1414142e;border-radius:100px;padding:7px 13px">Design Systems</span>
-      <span style="font:500 13px/1 'IBM Plex Mono',monospace;color:#5f5f58;border:1px solid #1414142e;border-radius:100px;padding:7px 13px">Competitive Analysis</span>
-      <span style="font:500 13px/1 'IBM Plex Mono',monospace;color:#5f5f58;border:1px solid #1414142e;border-radius:100px;padding:7px 13px">Data Analysis · Mixpanel</span>
-      <span style="font:500 13px/1 'IBM Plex Mono',monospace;color:#5f5f58;border:1px solid #1414142e;border-radius:100px;padding:7px 13px">Prototyping</span>
-      <span style="font:500 13px/1 'IBM Plex Mono',monospace;color:#5f5f58;border:1px solid #1414142e;border-radius:100px;padding:7px 13px">UX Writing</span>
-      <span style="font:500 13px/1 'IBM Plex Mono',monospace;color:#5f5f58;border:1px solid #1414142e;border-radius:100px;padding:7px 13px">React · Frontend PRs</span>
+  <section style="padding:30px 0 60px">
+    <p class="label">Capabilities</p>
+    <div class="caps">
+      <span>Product Design</span>
+      <span>UX Strategy</span>
+      <span>User Research</span>
+      <span>Information Architecture</span>
+      <span>Design Systems</span>
+      <span>Competitive Analysis</span>
+      <span>Data Analysis · Mixpanel</span>
+      <span>Prototyping</span>
+      <span>UX Writing</span>
+      <span>React · Frontend PRs</span>
     </div>
   </section>
 </div>
 
 <!-- CONTACT -->
-<section id="contact" style="background:#121210;color:#fbfbf9">
-  <div style="max-width:640px;margin:0 auto;padding:72px 28px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:40px">
+<section id="contact" style="background:#11120f">
+  <div class="wrap" style="padding-top:72px;padding-bottom:72px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:40px">
     <div>
-      <p style="font:500 12.5px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#7d7d74;margin:0 0 22px">GET IN TOUCH</p>
-      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(43px,6.5vw,67.5px);line-height:.98;letter-spacing:-.025em;margin:0">Say hi</h2>
+      <p class="label" style="color:#91928a;margin-bottom:16px">Get in touch</p>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(43px,6.5vw,67.5px);line-height:1;letter-spacing:-.06em;color:#fff;margin:0">Say hi</h2>
     </div>
     <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
-      <a href="mailto:aviaeyal@gmail.com" class="contactbtn" style="font:400 17px/1 'Hanken Grotesk',sans-serif;color:#fbfbf9;text-decoration:none;border:1px solid #ffffff2e;border-radius:3px;padding:13px 20px">aviaeyal at gmail.com</a>
-      <a href="https://www.linkedin.com/in/avia-eyal-417225107" target="_blank" rel="noopener" class="contactbtn" style="font:400 17px/1 'Hanken Grotesk',sans-serif;color:#fbfbf9;text-decoration:none;border:1px solid #ffffff2e;border-radius:3px;padding:13px 20px">LinkedIn ↗</a>
-      <a href="avia-eyal-cv.pdf?v=20261014" target="_blank" rel="noopener" class="contactbtn" style="font:400 17px/1 'Hanken Grotesk',sans-serif;color:#fbfbf9;text-decoration:none;border:1px solid #ffffff2e;border-radius:3px;padding:13px 20px">Resume ↗</a>
+      <a href="mailto:aviaeyal@gmail.com" class="contactbtn">aviaeyal at gmail.com</a>
+      <a href="https://www.linkedin.com/in/avia-eyal-417225107" target="_blank" rel="noopener" class="contactbtn">LinkedIn <svg aria-hidden="true" width="17" height="17" viewBox="0 0 15 15" fill="none"><path d="M10.6245 10.6245V4.3755H4.3755M10.6245 4.3755L4.3755 10.6245" stroke-linecap="round" stroke="#f3f3ef"/></svg></a>
+      <a href="avia-eyal-cv.pdf?v=20261014" target="_blank" rel="noopener" class="contactbtn">Resume <svg aria-hidden="true" width="17" height="17" viewBox="0 0 15 15" fill="none"><path d="M10.6245 10.6245V4.3755H4.3755M10.6245 4.3755L4.3755 10.6245" stroke-linecap="round" stroke="#f3f3ef"/></svg></a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<div style="max-width:640px;margin:0 auto;padding:0 28px">
-  <footer style="padding:26px 0 40px;display:flex;justify-content:center;font:500 12.5px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:#717684">
-    <div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
-      <span>© Avia Eyal 2026 | Tel Aviv</span>
-      <span>Designed and built by me with Claude Code</span>
-    </div>
-  </footer>
-</div>
+<footer style="padding:24px 28px 50px;display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;font:400 12.5px/1.3 'IBM Plex Mono',monospace;letter-spacing:.05em;color:#717684">
+  <span>© Avia Eyal 2026 | Tel Aviv</span>
+  <span>Designed and built by me with Claude Code</span>
+</footer>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;bgColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#ffffff&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;showIllustration&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;}}">
