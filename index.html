@@ -31,26 +31,21 @@
   body{margin:0;background:#fbfbf9;color:#121210;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   ::selection{background:#12121012}
   a{color:inherit}
-  .wrow{display:grid;grid-template-columns:140px 1fr auto;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid #14141212;text-decoration:none;transition:transform .2s var(--ease)}
+  .wrow{display:block;padding:28px 0;border-bottom:1px solid #14141212;text-decoration:none;transition:transform .2s var(--ease)}
   .wrow:hover{transform:translateX(12px)}
   .wrow .wt{transition:color .2s var(--ease)}
   .wrow:hover .wt{color:#000}
   .wrow .wyear{transition:color .2s var(--ease)}
   .wrow:hover .wyear{color:#121210}
-  .wthumb{width:140px;height:90px;overflow:hidden;border:1px solid #14141216;border-radius:8px;flex-shrink:0}
+  .wthumb{width:450px;max-width:100%;aspect-ratio:3/2;overflow:hidden;border:1px solid #14141216;border-radius:10px}
+  .wmeta{display:flex;align-items:baseline;gap:20px;max-width:450px;margin-top:16px}
+  .wmeta .wyear{margin-left:auto}
   .ilink{text-decoration:none;border-bottom:1px solid #12121033;padding-bottom:1px;transition:border-color .2s var(--ease)}
   .ilink:hover{border-bottom-color:#121210}
   .navlink{transition:color .2s var(--ease)}
   .navlink:hover{color:#121210}
-  .wrow>span:first-of-type{min-width:0}
+  .wmeta>span:first-of-type{min-width:0}
   .wcat{font:400 16px/1 'Hanken Grotesk',sans-serif;color:#9a9a90;margin-left:12px}
-  @media (max-width:480px){
-    /* stack the year under the text so a long title can't collide with it */
-    .wrow{grid-template-columns:96px 1fr;gap:4px 14px;align-items:start}
-    .wthumb{width:96px;height:62px;grid-row:1/span 2}
-    .wrow>span:first-of-type{grid-column:2}
-    .wrow .wyear{grid-column:2;justify-self:start}
-  }
   @media (max-width:560px){
     .wcat{display:block;margin-left:0;margin-top:5px}
   }
@@ -115,13 +110,13 @@
     <div style="border-top:1px solid #14141212">
       <a href="client-portal/" class="wrow">
         <div class="wthumb" style="background:#c4ced0"><picture style="width:100%;height:100%;display:block"><source srcset="assets/client-portal/portal-thumb.webp" type="image/webp"><img src="assets/client-portal/portal-thumb.jpg" fetchpriority="high" decoding="async" alt="The same HoneyBook client portal shown in two different brand themes" style="width:100%;height:100%;object-fit:cover"></picture></div>
-        <span><span class="wt" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:23.5px;letter-spacing:-.01em;color:#1a1a17">Client portal</span><span class="wcat">Client experience</span></span>
-        <span class="wyear" style="font:500 13.5px/1 'IBM Plex Mono',monospace;color:#717684">2025</span>
+        <div class="wmeta"><span><span class="wt" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:23.5px;letter-spacing:-.01em;color:#1a1a17">Client portal</span><span class="wcat">Client experience</span></span>
+        <span class="wyear" style="font:500 13.5px/1 'IBM Plex Mono',monospace;color:#717684">2025</span></div>
       </a>
       <a href="selective-communication/" class="wrow">
         <div class="wthumb" style="background:#c4ced0"><picture style="width:100%;height:100%;display:block"><source srcset="assets/selective-communication/share-thumb.webp" type="image/webp"><img src="assets/selective-communication/share-thumb.jpg" fetchpriority="high" decoding="async" alt="HoneyBook share dialog with selected recipients and per-participant file access controls" style="width:100%;height:100%;object-fit:cover"></picture></div>
-        <span><span class="wt" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:23.5px;letter-spacing:-.01em;color:#1a1a17">Selective sharing</span><span class="wcat">Messages &amp; files</span></span>
-        <span class="wyear" style="font:500 13.5px/1 'IBM Plex Mono',monospace;color:#717684">2024</span>
+        <div class="wmeta"><span><span class="wt" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:23.5px;letter-spacing:-.01em;color:#1a1a17">Selective sharing</span><span class="wcat">Messages &amp; files</span></span>
+        <span class="wyear" style="font:500 13.5px/1 'IBM Plex Mono',monospace;color:#717684">2024</span></div>
       </a>
     </div>
   </section>
