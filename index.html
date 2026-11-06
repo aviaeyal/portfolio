@@ -89,6 +89,8 @@
     header{animation:reveal .6s var(--ease) both}
   }
   @keyframes reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  html.rv-on [data-rv]{opacity:0;filter:blur(2px);translate:0 20px;transition:opacity .9s var(--ease),filter 1.3s var(--ease),translate 1.3s var(--ease);transition-delay:var(--rv-d,0s)}
+  html.rv-on [data-rv=in]{opacity:1;filter:blur(0);translate:0 0}
 </style>
 </helmet>
 <template id="__bundler_thumbnail" data-bg-color="#fbfbf9">
@@ -223,6 +225,35 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script>
+/* Scroll reveal: invisible, then blurred, then sharp. Off for reduced motion and without JS. */
+(function(){
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  document.documentElement.classList.add('rv-on');
+  var SEL='.wrow>*,section>.label,.bio p,.fact,.caps span,#contact .label,#contact h2,.contactbtn';
+  var io=new IntersectionObserver(function(entries){
+    var i=0;
+    entries.forEach(function(e){
+      if(!e.isIntersecting)return;
+      e.target.style.setProperty('--rv-d',Math.min(i++,6)*0.08+'s');
+      e.target.setAttribute('data-rv','in');
+      io.unobserve(e.target);
+    });
+  },{rootMargin:'0px 0px -8% 0px'});
+  var seen=new WeakSet();
+  function scan(){
+    /* Only tag nodes the x-dc renderer produced (data-dc-tpl), never the source markup it copies. */
+    document.querySelectorAll(SEL).forEach(function(el){
+      if(seen.has(el)||!el.hasAttribute('data-dc-tpl'))return;
+      seen.add(el);
+      el.setAttribute('data-rv','');
+      io.observe(el);
+    });
+  }
+  new MutationObserver(scan).observe(document.documentElement,{childList:true,subtree:true});
+  scan();
+})();
 </script>
 </body>
 </html>
