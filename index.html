@@ -39,9 +39,12 @@
   .heroname h1{font:500 clamp(40px,9vw,67.5px)/1.1 'Hanken Grotesk',sans-serif;letter-spacing:-.015em;color:#20211e;margin:0}
   .heroname h1 img{display:block;width:min(380px,calc(100vw - 176px));height:auto}
   .heroname .photo{width:120px;height:120px;border-radius:50%;overflow:hidden;flex-shrink:0;background:#f1f0ea}
-  .chips{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 0}
-  .chip{display:inline-flex;align-items:center;height:36px;padding:0 9px;border:1px solid;border-radius:20px;font:400 16px/1 'Hanken Grotesk',sans-serif;text-decoration:none;transition:filter .2s var(--ease)}
-  .chip:hover{filter:brightness(.96)}
+  .chips{display:flex;flex-wrap:wrap;gap:12px 24px;margin:22px 0 0}
+  .chip{display:inline-flex;align-items:center;gap:6px;padding:4px 0 3px;border-bottom:1px solid #12121033;font:500 14px/1 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:#121210;text-decoration:none;transition:border-color .2s var(--ease)}
+  .chip:hover{border-bottom-color:#121210}
+  .chip span{font-size:12px;transition:transform .2s var(--ease)}
+  .chip:hover span{transform:translate(1px,-1px)}
+  .chip:focus-visible{outline:2px solid #121210;outline-offset:3px}
   .wrow{display:block;padding:20px 0 24px;border-bottom:1px solid #e9eae6}
   .wrow h2{margin:0}
   .wlink{display:block;width:fit-content;max-width:100%}
@@ -125,10 +128,10 @@
     </div>
     <p style="font:300 18px/1.625 'Hanken Grotesk',sans-serif;color:#70716a;margin:12px 0 0;max-width:680px">A senior product designer, 10+ years in B2B SaaS. I design the complex parts of software (editors, file structure, platform features) from research through shipped UI. By way of QA engineering and a background in neuroscience.</p>
     <div class="chips">
-      <a href="mailto:aviaeyal@gmail.com" class="chip" style="background:#fef5ed;border-color:#fcddc1;color:#a95b24">Email</a>
-      <a href="https://www.linkedin.com/in/avia-eyal-417225107" target="_blank" rel="noopener" class="chip" style="background:#eafafa;border-color:#b6eced;color:#547676">LinkedIn</a>
-      <a href="avia-eyal-cv.pdf?v=20261105" target="_blank" rel="noopener" class="chip" style="background:#eef9f5;border-color:#c5ebdc;color:#207e5a">Resume</a>
-      <a href="https://instagram.com/aviaeyal" target="_blank" rel="noopener" class="chip" style="background:#fff4f8;border-color:#ffd8e8;color:#bf4074">Instagram</a>
+      <a href="mailto:aviaeyal@gmail.com" class="chip">Email<span aria-hidden="true">↗</span></a>
+      <a href="https://www.linkedin.com/in/avia-eyal-417225107" target="_blank" rel="noopener" class="chip">LinkedIn<span aria-hidden="true">↗</span></a>
+      <a href="avia-eyal-cv.pdf?v=20261105" target="_blank" rel="noopener" class="chip">Resume<span aria-hidden="true">↗</span></a>
+      <a href="https://instagram.com/aviaeyal" target="_blank" rel="noopener" class="chip">Instagram<span aria-hidden="true">↗</span></a>
     </div>
   </header>
 
