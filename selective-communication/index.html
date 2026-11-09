@@ -163,6 +163,8 @@
   }
   .rolegrid{grid-template-columns:repeat(4,1fr)}
   @media (max-width:520px){.rolegrid{grid-template-columns:repeat(2,1fr);gap:22px 20px}}
+  html.rv-on [data-rv]{opacity:0;filter:blur(2px);translate:0 20px;transition:opacity .9s var(--ease),filter 1.3s var(--ease),translate 1.3s var(--ease);transition-delay:var(--rv-d,0s)}
+  html.rv-on [data-rv=in]{opacity:1;filter:blur(0);translate:0 0}
 </style>
 </helmet>
 <div>
@@ -206,7 +208,7 @@
 
   <section style="max-width:680px;margin:0 auto;padding:0 28px">
     <div class="rolegrid" style="padding:52px 0 4px;display:grid;gap:20px">
-      <div><span style="font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">ROLE</span><span style="font:400 14.5px/1.4 'Hanken Grotesk',sans-serif">Lead product designer</span></div>
+      <div><span style="font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">ROLE</span><span style="font:400 14.5px/1.4 'Hanken Grotesk',sans-serif">End-to-end product design</span></div>
       <div><span style="font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TEAM</span><span style="font:400 14.5px/1.4 'Hanken Grotesk',sans-serif">PM · engineering · research</span></div>
       <div><span style="font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TIMELINE</span><span style="font:400 14.5px/1.4 'Hanken Grotesk',sans-serif">2024</span></div>
       <div><span style="font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">SCOPE</span><span style="font:400 14.5px/1.4 'Hanken Grotesk',sans-serif">Discovery → ship</span></div>
@@ -433,6 +435,35 @@
     obs.observe(document.body, { childList: true, subtree: true });
     setTimeout(function () { obs.disconnect(); }, 4000);
   });
+})();
+</script>
+<script>
+/* Scroll reveal: invisible, then blurred, then sharp. Off for reduced motion and without JS. */
+(function(){
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  document.documentElement.classList.add('rv-on');
+  var SEL='section>div>*';
+  var io=new IntersectionObserver(function(entries){
+    var i=0;
+    entries.forEach(function(e){
+      if(!e.isIntersecting)return;
+      e.target.style.setProperty('--rv-d',Math.min(i++,6)*0.08+'s');
+      e.target.setAttribute('data-rv','in');
+      io.unobserve(e.target);
+    });
+  },{rootMargin:'0px 0px -8% 0px'});
+  var seen=new WeakSet();
+  function scan(){
+    /* Only tag nodes the x-dc renderer produced (data-dc-tpl), never the source markup it copies. */
+    document.querySelectorAll(SEL).forEach(function(el){
+      if(seen.has(el)||!el.hasAttribute('data-dc-tpl'))return;
+      seen.add(el);
+      el.setAttribute('data-rv','');
+      io.observe(el);
+    });
+  }
+  new MutationObserver(scan).observe(document.documentElement,{childList:true,subtree:true});
+  scan();
 })();
 </script>
 </body>
