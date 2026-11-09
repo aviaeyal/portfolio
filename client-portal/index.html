@@ -36,27 +36,28 @@
   .caserow .next:hover{transform:translateX(12px)}
   .caserow .nx{transition:color .2s var(--ease)}
   .caserow a:hover .nx{color:#000}
-  @media (max-width:520px){.caserow .nx{font-size:18px}}
-  .navlink{transition:color .2s var(--ease)}
+  @media (max-width:520px){.caserow .nx{font-size:19px}}
+  .navlink{padding:15px 0;transition:color .2s var(--ease)}
+  @media (max-width:400px){.topnav{padding:0 20px!important}.navlinks{gap:20px!important}}
   .navlink:hover{color:#121210}
   .ilink{text-decoration:none;border-bottom:1px solid #12121033;padding-bottom:1px;transition:border-color .2s var(--ease)}
   .ilink:hover{border-bottom-color:#121210}
-  .body{font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 18px}
+  .body{font:400 18px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 18px}
   .body:last-child{margin-bottom:0}
   .body ul{margin:10px 0 0;padding-left:22px}
   .body li{margin:0 0 8px}
-  .label{font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px}
-  .cap{font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0}
+  .label{font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px}
+  .cap{font:400 12.5px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0}
   .fig{width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff}
   .fig img,.fig picture{width:100%;height:auto;display:block}
-  .figbar{display:block;padding:11px 16px;font:500 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;background:#121210;color:#fbfbf9}
+  .figbar{display:block;padding:11px 16px;font:500 11.5px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;background:#121210;color:#fbfbf9}
   .figbar-old{background:#e9e7e0;color:#5f5f58;border-bottom:1px solid #14141216}
   .cmp{position:relative;width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff;user-select:none;-webkit-user-select:none;touch-action:pan-y;cursor:ew-resize;--pos:70%}
   .cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;-webkit-user-drag:none}
   .cmp .cmp-before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
   .cmp .cmp-bar{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:#121210;transform:translateX(-1px);pointer-events:none}
-  .cmp .cmp-knob{position:absolute;top:50%;left:var(--pos);transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:#121210;color:#fbfbf9;display:flex;align-items:center;justify-content:center;font:400 15px/1 'Hanken Grotesk',sans-serif;letter-spacing:-.05em;box-shadow:0 2px 10px #12121040;pointer-events:none}
-  .cmp .cmp-tag{position:absolute;top:10px;padding:6px 9px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;border-radius:4px;pointer-events:none}
+  .cmp .cmp-knob{position:absolute;top:50%;left:var(--pos);transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:#121210;color:#fbfbf9;display:flex;align-items:center;justify-content:center;font:400 16px/1 'Hanken Grotesk',sans-serif;letter-spacing:-.05em;box-shadow:0 2px 10px #12121040;pointer-events:none}
+  .cmp .cmp-tag{position:absolute;top:10px;padding:6px 9px;font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;border-radius:4px;pointer-events:none}
   .cmp .cmp-tag-old{left:10px;background:#e9e7e0;color:#5f5f58}
   .cmp .cmp-tag-new{right:10px;background:#121210;color:#fbfbf9}
   .cmp input{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -71,25 +72,25 @@
   .bv-thumb:hover .bv-pic{opacity:.85}
   .bv-thumb[aria-pressed="true"] .bv-pic{border-color:#121210;opacity:1}
   .bv-thumb:focus-visible{outline:2px solid #121210;outline-offset:3px;border-radius:6px}
-  .bv-thumb span{display:block;margin-top:8px;font:500 10px/1.3 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684;text-transform:uppercase}
+  .bv-thumb span{display:block;margin-top:8px;font:500 10.5px/1.3 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684;text-transform:uppercase}
   .bv-thumb[aria-pressed="true"] span{color:#121210}
-  @media (max-width:520px){.bv-thumbs{gap:8px}.bv-thumb span{font-size:9px;letter-spacing:.06em}}
+  @media (max-width:520px){.bv-thumbs{gap:8px}.bv-thumb span{font-size:9.5px;letter-spacing:.06em}}
   @media (prefers-reduced-motion:reduce){.bv-stage img{transition:none}}
   .stats{display:flex;gap:40px;flex-wrap:wrap;border-top:1px solid #14141216;margin-top:30px;padding-top:26px}
-  .stats .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em}
-  .stats .d{font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82}
+  .stats .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:36px;line-height:1;display:block;letter-spacing:-.02em}
+  .stats .d{font:400 13px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82}
   .zoom{cursor:zoom-in}
   .zoom:focus-visible{outline:2px solid #121210;outline-offset:2px}
   .lb{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:#121210f2;padding:4vh 6vw}
   .lb.open{display:flex}
   .lb img{max-width:100%;max-height:min(860px,92vh);object-fit:contain;border-radius:8px}
-  .lb-btn{position:absolute;background:#fbfbf91a;border:1px solid #fbfbf94d;color:#fbfbf9;width:46px;height:46px;border-radius:50%;font:400 22px/1 'Hanken Grotesk',system-ui,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s var(--ease)}
+  .lb-btn{position:absolute;background:#fbfbf91a;border:1px solid #fbfbf94d;color:#fbfbf9;width:46px;height:46px;border-radius:50%;font:400 23.5px/1 'Hanken Grotesk',system-ui,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s var(--ease)}
   .lb-btn:hover{background:#fbfbf933}
   .lb-btn:focus-visible{outline:2px solid #fbfbf9;outline-offset:2px}
-  .lb-close{top:18px;right:18px;font-size:17px}
+  .lb-close{top:18px;right:18px;font-size:18px}
   .lb-prev{left:20px;top:50%;transform:translateY(-50%)}
   .lb-next{right:20px;top:50%;transform:translateY(-50%)}
-  .lb-count{position:absolute;bottom:20px;left:0;right:0;text-align:center;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#fbfbf9b3}
+  .lb-count{position:absolute;bottom:20px;left:0;right:0;text-align:center;font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#fbfbf9b3}
   @media (max-width:640px){.lb{padding:8vh 2vw}.lb-prev{left:8px}.lb-next{right:8px}}
   @media (prefers-reduced-motion:no-preference){
     header{animation:reveal .6s var(--ease) both}
@@ -100,52 +101,54 @@
   .rolegrid{grid-template-columns:repeat(4,auto);justify-content:space-between;gap:20px 32px}
   .rolegrid span:last-child{white-space:nowrap}
   @media (max-width:520px){.rolegrid{grid-template-columns:repeat(2,1fr);gap:22px 20px}.rolegrid span:last-child{white-space:normal}}
+  html.rv-on [data-rv]{opacity:0;filter:blur(2px);translate:0 20px;transition:opacity .9s var(--ease),filter 1.3s var(--ease),translate 1.3s var(--ease);transition-delay:var(--rv-d,0s)}
+  html.rv-on [data-rv=in]{opacity:1;filter:blur(0);translate:0 0}
 </style>
 </helmet>
 <div>
 
-  <nav style="position:sticky;top:0;z-index:50;background:#fbfbf9f2;backdrop-filter:blur(8px);border-bottom:1px solid #14141216;display:flex;align-items:center;justify-content:space-between;padding:0 34px;height:60px">
-    <a href="../" style="font:600 15px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em;text-decoration:none;color:#121210">Avia Eyal</a>
-    <div style="display:flex;gap:26px;align-items:center;font:500 12.5px/1 'Hanken Grotesk',sans-serif;color:#5f5f58">
+  <nav class="topnav" style="position:sticky;top:0;z-index:50;background:#fbfbf9f2;backdrop-filter:blur(8px);border-bottom:1px solid #14141216;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 34px;height:60px">
+    <a href="../" style="font:600 16px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em;text-decoration:none;color:#121210">Avia Eyal</a>
+    <div class="navlinks" style="display:flex;gap:26px;align-items:center;font:500 13px/1 'Hanken Grotesk',sans-serif;color:#5f5f58">
       <a href="../" class="navlink" style="text-decoration:none;color:#121210">Work</a>
       <a href="../#about" class="navlink" style="text-decoration:none">About</a>
       <a href="../#contact" class="navlink" style="text-decoration:none">Contact</a>
     </div>
   </nav>
 
-  <div style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:28px;display:flex;align-items:center;justify-content:space-between">
-    <a class="backlink" href="../" style="font:400 13px/1 'Hanken Grotesk',sans-serif;color:#8a8a82;text-decoration:none">← <span class="nm" style="color:#5f5f58">Avia Eyal</span></a>
-    <span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#717684">01 / 02</span>
+  <div style="max-width:900px;margin:0 auto;padding:0 28px;padding-top:28px;display:flex;align-items:center;justify-content:space-between">
+    <a class="backlink" href="../" style="font:400 14px/1 'Hanken Grotesk',sans-serif;color:#8a8a82;text-decoration:none">← <span class="nm" style="color:#5f5f58">Avia Eyal</span></a>
+    <span style="font:500 12.5px/1 'IBM Plex Mono',monospace;color:#717684">01 / 02</span>
   </div>
 
-  <header style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:60px;padding-bottom:44px">
-    <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#8a8a82;margin:0 0 22px">HONEYBOOK · CLIENT EXPERIENCE · 2025</p>
-    <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(38px,5.6vw,60px);line-height:1;letter-spacing:-.025em;margin:0 0 24px;max-width:16ch">Client Portal</h1>
-    <p style="font:400 20px/1.55 'Hanken Grotesk',sans-serif;color:#454540;max-width:46ch;margin:0">How do you make a portal feel professional and branded, giving design freedom to the member, while keeping it scalable and consistent?</p>
+  <header style="max-width:900px;margin:0 auto;padding:0 28px;padding-top:60px;padding-bottom:44px">
+    <p style="font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#8a8a82;margin:0 0 22px">HONEYBOOK · CLIENT EXPERIENCE · 2025</p>
+    <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(40px,6vw,63.5px);line-height:1;letter-spacing:-.025em;margin:0 0 24px;max-width:16ch">Client Portal</h1>
+    <p style="font:400 21px/1.55 'Hanken Grotesk',sans-serif;color:#454540;max-width:46ch;margin:0">How do you make a portal feel professional and branded, giving design freedom to the member, while keeping it scalable and consistent?</p>
   </header>
 
-  <div style="max-width:860px;margin:0 auto;padding:0 28px">
+  <div style="max-width:900px;margin:0 auto;padding:0 28px">
     <div style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:10px"><picture style="width:100%;display:block"><source srcset="../assets/client-portal/portal-hero.webp" type="image/webp"><img src="../assets/client-portal/portal-hero.jpg" fetchpriority="high" decoding="async" width="2000" height="1310" alt="The redesigned HoneyBook client portal in a member's own brand: sidebar navigation with Overview, Activity and Tasks, a full-width cover photo, project details, a messages panel, tasks and active files, with the Customize portal panel open over it showing controls for background and highlight color, font, sidebar color, button text color and corner radius" style="width:100%;height:auto;display:block"></picture></div>
     <p class="cap">The redesigned portal, with the customization panel members use to theme it: sidebar navigation, project details, messages, tasks, and files, all carrying the member's own brand.</p>
   </div>
 
   <section style="max-width:680px;margin:0 auto;padding:0 28px">
     <div class="rolegrid" style="padding:52px 0 40px;display:grid;gap:20px">
-      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">ROLE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Lead product designer</span></div>
-      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TEAM</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">PM · engineering · research</span></div>
-      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TIMELINE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">2025</span></div>
-      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">SCOPE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Discovery → ship</span></div>
+      <div><span style="font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">ROLE</span><span style="font:400 14.5px/1.4 'Hanken Grotesk',sans-serif">End-to-end product design</span></div>
+      <div><span style="font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TEAM</span><span style="font:400 14.5px/1.4 'Hanken Grotesk',sans-serif">PM · engineering · research</span></div>
+      <div><span style="font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TIMELINE</span><span style="font:400 14.5px/1.4 'Hanken Grotesk',sans-serif">2025</span></div>
+      <div><span style="font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">SCOPE</span><span style="font:400 14.5px/1.4 'Hanken Grotesk',sans-serif">Discovery → ship</span></div>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p class="label">CONTEXT</p>
-      <p class="body">The client portal is a hub where clients log in (via link, password, or access code) to reach project activity, smart files, messages, payments, and key details shared by the member. The previous portal fell short of its original promise: a page with no branding, no customization, and no way for a member to make it feel like their own business, and it showed in the numbers, only 6–10% of clients ever logged into it.</p>
+      <p class="body">The client portal is a hub where clients log in (via link, password, or access code) to reach project activity, smart files, messages, payments, and key details shared by the member. The previous portal fell short of its original promise: a page with no branding, no customization, and no way for a member to make it feel like their own business, and it showed in the numbers, only 10% of clients ever logged into it.</p>
       <p class="body">Research into what members felt HoneyBook wasn't delivering on kept surfacing the same theme: client experience was the biggest product driver of negative NPS. It was also an area where competitors had invested more than we had, after years of it being deprioritized. Our prediction was that investing in the client portal would reinforce our role as a trusted business partner, providing real, tangible value.</p>
       <p class="body">Every visual cue in the client portal either builds trust in the business that sent it, or undermines it.</p>
       <div class="stats">
         <div><span class="n">#2</span><span class="d">driver of negative NPS,<br>after cost</span></div>
         <div><span class="n">3.4/5</span><span class="d">how members rated<br>the current portal</span></div>
-        <div><span class="n">6–10%</span><span class="d">of clients ever<br>logged in</span></div>
+        <div><span class="n">10%</span><span class="d">of clients ever<br>logged in</span></div>
       </div>
     </div>
 
@@ -192,8 +195,8 @@
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
-      <p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(23px,3.2vw,31px);line-height:1.28;letter-spacing:-.015em;color:#1a1a17;margin:0;max-width:30ch">“The client experience is so important because… if it's not done correctly, it could break the relationship.”</p>
-      <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684;margin:22px 0 0">VERBATIM FROM A MEMBER INTERVIEW (DIGITAL MARKETING &amp; SEO)</p>
+      <p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(24.5px,3.5vw,33px);line-height:1.28;letter-spacing:-.015em;color:#1a1a17;margin:0;max-width:30ch">“The client experience is so important because… if it's not done correctly, it could break the relationship.”</p>
+      <p style="font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684;margin:22px 0 0">VERBATIM FROM A MEMBER INTERVIEW (DIGITAL MARKETING &amp; SEO)</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
@@ -222,9 +225,9 @@
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p class="label">OUTCOME</p>
-      <p class="body">Shipped a rebranded portal with side navigation, an overview page, full member-set branding, and an improved login and authentication experience, aimed at the problem that started it: a portal that only 6–10% of clients ever logged into. Once it looked like their own business, members put it in front of clients far more, and the share of clients logging in climbed to 22.6% over the 30 days post release. Both portal sharing and take-up of the new branding controls ran well past their targets.</p>
+      <p class="body">Shipped a rebranded portal with side navigation, an overview page, full member-set branding, and an improved login and authentication experience, aimed at the problem that started it: a portal that only 10% of clients ever logged into. Once it looked like their own business, members put it in front of clients far more, and the share of clients logging in climbed to 22.6% over the 30 days post release. Both portal sharing and take-up of the new branding controls ran well past their targets.</p>
       <div class="stats" style="gap:44px;padding-top:28px">
-        <div><span class="n">22.6%</span><span class="d">of clients now log into the<br>portal, up from 6–10% before</span></div>
+        <div><span class="n">22.6%</span><span class="d">of clients now log into the<br>portal, up from 10% before</span></div>
         <div><span class="n">+17%</span><span class="d">more members sharing<br>their portal · goal was 10%</span></div>
         <div><span class="n">30%</span><span class="d">of active-portal members<br>personalized branding · goal was 20%</span></div>
         <div><span class="n">+20%</span><span class="d">more clients logging in<br>with a link · 60 days post release</span></div>
@@ -235,18 +238,18 @@
   <nav class="caserow" aria-label="Case study navigation" style="border-top:1px solid #14141212">
     <div style="max-width:680px;margin:0 auto;padding:34px 28px;display:flex;justify-content:flex-end;gap:24px">
       <a class="next" href="../selective-communication/" style="align-items:flex-end;text-align:right">
-        <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684">NEXT</span>
-        <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:21px;letter-spacing:-.01em;color:#1a1a17">Selective Sharing →</span>
+        <span style="font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684">NEXT</span>
+        <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:22px;letter-spacing:-.01em;color:#1a1a17">Selective Sharing →</span>
       </a>
     </div>
   </nav>
 
   <footer style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:26px;padding-bottom:60px;border-top:1px solid #14141212;display:flex;flex-direction:column;align-items:center;gap:18px">
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px;font:400 14px/1.4 'Hanken Grotesk',sans-serif;color:#5f5f58">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px;font:400 15px/1.4 'Hanken Grotesk',sans-serif;color:#5f5f58">
       <a href="https://www.linkedin.com/in/avia-eyal-417225107" target="_blank" rel="noopener" class="ilink">LinkedIn</a>
-      <a href="../avia-eyal-cv.pdf?v=20261014" target="_blank" rel="noopener" class="ilink">Resume</a>
+      <a href="../avia-eyal-cv.pdf?v=20261105" target="_blank" rel="noopener" class="ilink">Resume</a>
     </div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:#717684">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:#717684">
       <span>© Avia Eyal 2026 | Tel Aviv</span>
       <span>Designed and built by me with Claude Code</span>
     </div>
@@ -387,6 +390,35 @@
     obs.observe(document.body, { childList: true, subtree: true });
     setTimeout(function () { obs.disconnect(); }, 4000);
   });
+})();
+</script>
+<script>
+/* Scroll reveal: invisible, then blurred, then sharp. Off for reduced motion and without JS. */
+(function(){
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  document.documentElement.classList.add('rv-on');
+  var SEL='section>div>*';
+  var io=new IntersectionObserver(function(entries){
+    var i=0;
+    entries.forEach(function(e){
+      if(!e.isIntersecting)return;
+      e.target.style.setProperty('--rv-d',Math.min(i++,6)*0.08+'s');
+      e.target.setAttribute('data-rv','in');
+      io.unobserve(e.target);
+    });
+  },{rootMargin:'0px 0px -8% 0px'});
+  var seen=new WeakSet();
+  function scan(){
+    /* Only tag nodes the x-dc renderer produced (data-dc-tpl), never the source markup it copies. */
+    document.querySelectorAll(SEL).forEach(function(el){
+      if(seen.has(el)||!el.hasAttribute('data-dc-tpl'))return;
+      seen.add(el);
+      el.setAttribute('data-rv','');
+      io.observe(el);
+    });
+  }
+  new MutationObserver(scan).observe(document.documentElement,{childList:true,subtree:true});
+  scan();
 })();
 </script>
 </body>
