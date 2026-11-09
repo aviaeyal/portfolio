@@ -4,15 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Custom Fields · Avia Eyal</title>
-<meta name="description" content="How do you let every business track the details unique to their work, without bloating the product for everyone else? A custom fields case study at HoneyBook.">
+<meta name="description" content="How do you let every business add the details unique to their work, keep them easy to find and use, without overcomplicating the product? A custom fields case study at HoneyBook.">
 <link rel="canonical" href="https://aviaeyal.com/custom-fields/">
-<meta name="robots" content="noindex">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Avia Eyal">
 <meta property="og:title" content="Custom Fields · Avia Eyal">
-<meta property="og:description" content="How do you let every business track the details unique to their work, without bloating the product for everyone else? A custom fields case study at HoneyBook.">
+<meta property="og:description" content="How do you let every business add the details unique to their work, keep them easy to find and use, without overcomplicating the product? A custom fields case study at HoneyBook.">
 <meta property="og:url" content="https://aviaeyal.com/custom-fields/">
 <meta property="og:image" content="https://aviaeyal.com/assets/custom-fields/fields-thumb.jpg">
 <meta property="og:image:alt" content="HoneyBook custom fields settings with typed field rows and the add-custom-field modal.">
@@ -37,36 +36,47 @@
   .caserow .next:hover{transform:translateX(12px)}
   .caserow .nx{transition:color .2s var(--ease)}
   .caserow a:hover .nx{color:#000}
-  @media (max-width:520px){.caserow .nx{font-size:18px}}
-  .navlink{transition:color .2s var(--ease)}
+  @media (max-width:520px){.caserow .nx{font-size:19px}}
+  .navlink{padding:15px 0;transition:color .2s var(--ease)}
+  @media (max-width:400px){.topnav{padding:0 20px!important}.navlinks{gap:20px!important}}
   .navlink:hover{color:#121210}
-  .body{font:400 17px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 18px}
+  .ilink{text-decoration:none;border-bottom:1px solid #12121033;padding-bottom:1px;transition:border-color .2s var(--ease)}
+  .ilink:hover{border-bottom-color:#121210}
+  .body{font:400 18px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 18px}
   .body:last-child{margin-bottom:0}
-  .body ul{margin:10px 0 0;padding-left:22px}
-  .body li{margin:0 0 8px}
-  .label{font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px}
-  .cap{font:400 12px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0}
-  .fig{width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff}
+  .body em{font-style:italic;color:#1a1a17}
+  .label{font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px}
+  .cap{font:400 12.5px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0}
+  .fig{width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff;margin-top:28px}
   .fig img,.fig picture{width:100%;height:auto;display:block}
-  .figbar{display:block;padding:11px 16px;font:500 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;background:#121210;color:#fbfbf9}
+  .fig .in{margin:0 auto;padding:24px 20px}
+  .fig .in picture+picture{margin-top:16px}
+  .figbar{display:block;padding:11px 16px;font:500 11.5px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;background:#121210;color:#fbfbf9;text-transform:uppercase}
   .figbar-old{background:#e9e7e0;color:#5f5f58;border-bottom:1px solid #14141216}
-  @media (max-width:520px){.bv-thumbs{gap:8px}.bv-thumb span{font-size:9px;letter-spacing:.06em}}
-  @media (prefers-reduced-motion:reduce){.bv-stage img{transition:none}}
   .stats{display:flex;gap:40px;flex-wrap:wrap;border-top:1px solid #14141216;margin-top:30px;padding-top:26px}
-  .stats .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:34px;line-height:1;display:block;letter-spacing:-.02em}
-  .stats .d{font:400 12.5px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82}
+  .stats .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:36px;line-height:1;display:block;letter-spacing:-.02em}
+  .stats .d{font:400 13px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82}
+  .tbl{border-top:1px solid #14141216;margin:8px 0 28px}
+  .tbl .r{display:grid;gap:20px;padding:14px 0;border-bottom:1px solid #14141212}
+  .tbl.c2 .r{grid-template-columns:1fr 2.6fr}
+  .tbl.c3 .r{grid-template-columns:1fr 1fr 1.4fr}
+  .tbl .r.h span{font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684;text-transform:uppercase}
+  .tbl .r span{font:400 15px/1.45 'Hanken Grotesk',sans-serif;color:#5f5f58}
+  .tbl .r span:first-child{font-weight:500;color:#1a1a17}
+  .tbl .r span:nth-child(3){color:#8a8a82}
+  @media (max-width:520px){.tbl.c3 .r{grid-template-columns:1fr 1fr}.tbl.c3 .r span:nth-child(3){grid-column:1/-1;margin-top:-10px}.tbl.c3 .h span:nth-child(3){display:none}}
   .zoom{cursor:zoom-in}
   .zoom:focus-visible{outline:2px solid #121210;outline-offset:2px}
   .lb{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:#121210f2;padding:4vh 6vw}
   .lb.open{display:flex}
   .lb img{max-width:100%;max-height:min(860px,92vh);object-fit:contain;border-radius:8px}
-  .lb-btn{position:absolute;background:#fbfbf91a;border:1px solid #fbfbf94d;color:#fbfbf9;width:46px;height:46px;border-radius:50%;font:400 22px/1 'Hanken Grotesk',system-ui,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s var(--ease)}
+  .lb-btn{position:absolute;background:#fbfbf91a;border:1px solid #fbfbf94d;color:#fbfbf9;width:46px;height:46px;border-radius:50%;font:400 23.5px/1 'Hanken Grotesk',system-ui,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s var(--ease)}
   .lb-btn:hover{background:#fbfbf933}
   .lb-btn:focus-visible{outline:2px solid #fbfbf9;outline-offset:2px}
-  .lb-close{top:18px;right:18px;font-size:17px}
+  .lb-close{top:18px;right:18px;font-size:18px}
   .lb-prev{left:20px;top:50%;transform:translateY(-50%)}
   .lb-next{right:20px;top:50%;transform:translateY(-50%)}
-  .lb-count{position:absolute;bottom:20px;left:0;right:0;text-align:center;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#fbfbf9b3}
+  .lb-count{position:absolute;bottom:20px;left:0;right:0;text-align:center;font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#fbfbf9b3}
   @media (max-width:640px){.lb{padding:8vh 2vw}.lb-prev{left:8px}.lb-next{right:8px}}
   @media (prefers-reduced-motion:no-preference){
     header{animation:reveal .6s var(--ease) both}
@@ -77,202 +87,165 @@
   .rolegrid{grid-template-columns:repeat(4,auto);justify-content:space-between;gap:20px 32px}
   .rolegrid span:last-child{white-space:nowrap}
   @media (max-width:520px){.rolegrid{grid-template-columns:repeat(2,1fr);gap:22px 20px}.rolegrid span:last-child{white-space:normal}}
-  .todo{border:1px dashed #b8862b;background:#fbf5e6;border-radius:8px;padding:18px 20px;margin:26px 0 0}
-  .todo .tl{font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#8a6414;margin:0 0 12px}
-  .todo p,.todo li{font:400 14.5px/1.6 'Hanken Grotesk',sans-serif;color:#5a4a22;margin:0}
-  .todo ul{margin:0;padding-left:18px}
-  .todo li{margin:0 0 6px}
+  html.rv-on [data-rv]{opacity:0;filter:blur(2px);translate:0 20px;transition:opacity .9s var(--ease),filter 1.3s var(--ease),translate 1.3s var(--ease);transition-delay:var(--rv-d,0s)}
+  html.rv-on [data-rv=in]{opacity:1;filter:blur(0);translate:0 0}
 </style>
 </helmet>
 <div>
 
-  <nav style="position:sticky;top:0;z-index:50;background:#fbfbf9f2;backdrop-filter:blur(8px);border-bottom:1px solid #14141216;display:flex;align-items:center;justify-content:space-between;padding:0 34px;height:60px">
-    <a href="../" style="font:600 15px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em;text-decoration:none;color:#121210">Avia Eyal</a>
-    <div style="display:flex;gap:26px;align-items:center;font:500 12.5px/1 'Hanken Grotesk',sans-serif;color:#5f5f58">
+  <nav class="topnav" style="position:sticky;top:0;z-index:50;background:#fbfbf9f2;backdrop-filter:blur(8px);border-bottom:1px solid #14141216;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 34px;height:60px">
+    <a href="../" style="font:600 16px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em;text-decoration:none;color:#121210">Avia Eyal</a>
+    <div class="navlinks" style="display:flex;gap:26px;align-items:center;font:500 13px/1 'Hanken Grotesk',sans-serif;color:#5f5f58">
       <a href="../" class="navlink" style="text-decoration:none;color:#121210">Work</a>
       <a href="../#about" class="navlink" style="text-decoration:none">About</a>
       <a href="../#contact" class="navlink" style="text-decoration:none">Contact</a>
     </div>
   </nav>
 
-  <div style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:28px;display:flex;align-items:center;justify-content:space-between">
-    <a class="backlink" href="../" style="font:400 13px/1 'Hanken Grotesk',sans-serif;color:#8a8a82;text-decoration:none">← <span class="nm" style="color:#5f5f58">Avia Eyal</span></a>
-    <span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#717684">03 / 04</span>
+  <div style="max-width:900px;margin:0 auto;padding:0 28px;padding-top:28px;display:flex;align-items:center;justify-content:space-between">
+    <a class="backlink" href="../" style="font:400 14px/1 'Hanken Grotesk',sans-serif;color:#8a8a82;text-decoration:none">← <span class="nm" style="color:#5f5f58">Avia Eyal</span></a>
+    <span style="font:500 12.5px/1 'IBM Plex Mono',monospace;color:#717684">03 / 03</span>
   </div>
 
-  <header style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:60px;padding-bottom:44px">
-    <p style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#8a8a82;margin:0 0 22px">HONEYBOOK · DATA · 2023</p>
-    <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(38px,5.6vw,60px);line-height:1;letter-spacing:-.025em;margin:0 0 24px;max-width:16ch">Custom Fields</h1>
-    <p style="font:400 20px/1.55 'Hanken Grotesk',sans-serif;color:#454540;max-width:46ch;margin:0">How do you let every business track the details unique to their work, without bloating the product for everyone else?</p>
+  <header style="max-width:900px;margin:0 auto;padding:0 28px;padding-top:60px;padding-bottom:44px">
+    <p style="font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#8a8a82;margin:0 0 22px">HONEYBOOK · DATA · 2023</p>
+    <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(40px,6vw,63.5px);line-height:1;letter-spacing:-.025em;margin:0 0 24px;max-width:16ch">Custom Fields</h1>
+    <p style="font:400 21px/1.55 'Hanken Grotesk',sans-serif;color:#454540;max-width:46ch;margin:0">How do you let every business add the details unique to their work, keep them easy to find and use, without overcomplicating the product?</p>
   </header>
 
-  <div style="max-width:860px;margin:0 auto;padding:0 28px">
-    <div class="fig zoom" style="border-radius:10px"><picture><source srcset="../assets/custom-fields/fields-hero.webp" type="image/webp"><img src="../assets/custom-fields/fields-hero.jpg" fetchpriority="high" decoding="async" width="1600" height="1126" alt="The shipped Manage contact fields modal, offset over HoneyBook's company settings page: suggestion chips for Pronouns, Birthday, Last contacted, Next meeting and Client worth, an Add custom field link, the locked default text fields (full name, email, phone, organization, job title, mailing address, private comments) with drag handles, and a new custom Birthday date field at the bottom. Behind it, the settings Data management card lists Project fields and Contact fields, both marked New"></picture></div>
-    <p class="cap">Manage contact fields, as shipped, with a custom Birthday date field added below the locked defaults. Behind it, the new Data management area in company settings where both field lists live.</p>
+  <div style="max-width:900px;margin:0 auto;padding:0 28px">
+    <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:10px"><picture style="width:100%;display:block"><source srcset="../assets/custom-fields/fields-hero.webp" type="image/webp"><img src="../assets/custom-fields/fields-hero.jpg" fetchpriority="high" decoding="async" width="1600" height="1126" alt="The shipped Manage contact fields modal, offset over HoneyBook's company settings: locked default text fields (full name, email address, phone number, organization, mailing address, private comments) and a custom Birthday date field at the bottom. Behind it, the settings Data management card lists Project fields and Contact fields, both tagged New" style="width:100%;height:auto;display:block"></picture></div>
   </div>
 
   <section style="max-width:680px;margin:0 auto;padding:0 28px">
     <div class="rolegrid" style="padding:52px 0 40px;display:grid;gap:20px">
-      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">ROLE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Product designer</span></div>
-      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TEAM</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">PM · engineering</span></div>
-      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TIMELINE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">2023</span></div>
-      <div><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">SCOPE</span><span style="font:400 13.5px/1.4 'Hanken Grotesk',sans-serif">Scoping → ship</span></div>
+      <div><span style="font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">ROLE</span><span style="font:400 14.5px/1.4 'Hanken Grotesk',sans-serif">End-to-end product design</span></div>
+      <div><span style="font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TEAM</span><span style="font:400 14.5px/1.4 'Hanken Grotesk',sans-serif">PM · engineering · research</span></div>
+      <div><span style="font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">TIMELINE</span><span style="font:400 14.5px/1.4 'Hanken Grotesk',sans-serif">2023</span></div>
+      <div><span style="font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.13em;color:#717684;display:block;margin-bottom:10px">SCOPE</span><span style="font:400 14.5px/1.4 'Hanken Grotesk',sans-serif">Scoping → ship</span></div>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p class="label">CONTEXT</p>
-      <p class="body">No two service businesses track the same things. A photographer cares about shoot locations; a coach about session counts. HoneyBook's project and contact records were mostly fixed. Projects had a handful of locked default fields, and members could add as many extra fields as they wanted, but only of one type: short text. Contacts had no customization at all. Everything else went into notes and manual workarounds, and the same gap kept surfacing independently across the community: requests to track referrals and important dates, to map intake-form answers into fields, to decide which details a client can see, and simply to add more fields to a contact record.</p>
-      <div style="display:grid;gap:16px;margin-top:28px">
-        <div class="fig zoom" style="max-width:540px"><span class="figbar figbar-old">BEFORE · CUSTOMIZE PROJECT DETAILS</span><picture><source srcset="../assets/custom-fields/fields-before.webp" type="image/webp"><img src="../assets/custom-fields/fields-before.jpg" loading="lazy" width="1264" height="1628" alt="The old Customize project details modal: project name, project type, date and location and about the project, each with a lock icon and a Visible toggle, one blank Short text row showing a Label name is required error, an Add link, and a Private details section holding a locked Notes field"></picture></div>
-      </div>
-      <p class="cap">Before: the customize modal (locked defaults, any added field is short text). Contacts had nothing to customize.</p>
-      <p class="body" style="margin-top:28px">The challenge wasn't adding fields. It was making them usable everywhere a member already works, in files, emails and the client portal, while keeping the product simple for the people who don't need them.</p>
-      <p class="body">The project sat inside a broader theme: improving the sense of customization and control members had over the app. The team was me, a PM, and engineers. The workaround I kept seeing for contacts was the private notes area, where members typed the details they had nowhere else to put: a birthday, a partner's name, how the client found them. Notes don't sort, don't filter, and can't be pulled into a file, so the information was captured and then stranded.</p>
+      <p class="body">No two service businesses track the same things. A photographer cares about shoot locations; a coach about session counts. HoneyBook’s project and contact records were mostly fixed: a handful of locked default fields, plus a generic short-text slot on projects, and nothing custom at all on contacts. Everything else went into notes and manual workarounds, and the same gap kept surfacing independently across users: requests to track referrals and important dates, to build fully custom field mappings, to decide which fields are visible to their client, and simply to add more fields to a client record.</p>
+      <p class="body">The challenge wasn’t just adding fields: it was making them work everywhere users would need, making them easy to find, and doing it while keeping the product simple for people who don't need them.</p>
+      <div class="fig zoom"><span class="figbar figbar-old">Project details · before</span><div class="in" style="max-width:296px"><picture><source srcset="../assets/custom-fields/fields-before.webp" type="image/webp"><img src="../assets/custom-fields/fields-before.jpg" loading="lazy" width="592" height="763" alt="The old Customize project details modal: locked Project Name, Project Type, Date &amp; Location and About the project rows, each marked Visible, a tooltip reading This is a required field that you cannot edit, one blank Short text row with a Label name is required error, an Add link, and a Private details section holding a locked Notes field marked Not visible"></picture></div></div>
+      <p class="cap">Before: “Customize project details” had a few locked default fields and one field type (short text), with no way to control visibility: every field except “Notes” was visible to clients.</p>
+    </div>
+
+    <div style="padding:52px 0;border-top:1px solid #14141212">
+      <p class="label">MOTIVATION</p>
+      <p class="body">Our team’s objective at the time was to improve user satisfaction, and “customization and control” had surfaced as a product gap and a source of dissatisfaction.</p>
+      <p class="body">There is more than one way to improve customization. We chose this direction for three reasons: users were explicitly asking for it, it had been on the roadmap before (and was dropped in an earlier round of prioritization), and it was a relatively easy win, improving an existing capability rather than adding new features on top of weak existing ones.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p class="label">DATA &amp; INSIGHTS</p>
-      <p class="body">The case for the feature came from member research that predated it. In a survey of 789 members asked how HoneyBook performed against their expectations, customizability and personalization scored 3.4 out of 5, below product quality, support, efficiency and navigation. Members were rating the product well on doing the job, and worse on letting them do it their way.</p>
-      <div class="fig zoom" style="margin-top:28px"><picture><source srcset="../assets/custom-fields/research-expectations.webp" type="image/webp"><img src="../assets/custom-fields/research-expectations.jpg" loading="lazy" width="2000" height="1190" alt="Slide titled We are not meeting expectations when it comes to customization and personalization, showing a bar chart of 13 aspects rated by 789 members on a 5-point scale: product quality 3.8, customer support 3.7, efficiency 3.7, navigation 3.5, accessibility 3.5, learnability 3.5, customizability and personalization 3.4, education 3.4, user feedback and iteration 3.0, mobile usability 3.2, collaboration 3.2, integration 3.2, AI integration 3.1. Customizability, user feedback and integration are outlined"></picture></div>
-      <p class="cap">"To what extent does HoneyBook perform above or below your expectations?" n=789. Customizability and personalization at 3.4/5.</p>
-      <div class="fig zoom" style="margin-top:16px"><picture><source srcset="../assets/custom-fields/research-priorities.webp" type="image/webp"><img src="../assets/custom-fields/research-priorities.jpg" loading="lazy" width="2000" height="1133" alt="Slide titled Leading top priorities: stacked bar chart of what consultants, well-performing members and everyone else named as top business priorities right now. Business efficiency, client experience, marketing and branding, organization and increase revenue are highlighted in each row at roughly 10 to 14 percent each"></picture></div>
+      <p class="body">The case for the feature came from user research that predated it. In a survey of 789 users asked how HoneyBook performed against their expectations, customization and personalization scored 3.5 out of 5: below product quality, support and ease of use, and level with navigation. Users were rating the product well on doing the job, and worse on letting them do it their way. This was joined by voices from the user community, with specific requests around fields. The workarounds for tracking data on contacts were the private notes area, which is plain text, or the Notes feature, which can’t be referenced from other parts of the product.</p>
+      <div class="fig zoom"><span class="figbar">Product expectations survey results</span><div class="in" style="max-width:559px"><picture><source srcset="../assets/custom-fields/research-expectations.webp" type="image/webp"><img src="../assets/custom-fields/research-expectations.jpg" loading="lazy" width="1118" height="534" alt="Bar chart, Meeting Expectations (average 1 to 5), N = 789: product quality 3.8, customer support 3.7, efficiency 3.7, navigation 3.5, accessibility 3.5, customization and personalization 3.5 (highlighted), user feedback and iteration 3.4, education and documentation 3.4, collaboration 3.2, integration with other software 3.2, AI integration 3.1"></picture></div></div>
+      <p class="cap">Survey question: “to what extent does HoneyBook perform above or below your expectations?” customization and personalization scored at 3.5/5.</p>
+      <div class="fig zoom"><span class="figbar">Users' top priorities by segment</span><div class="in" style="max-width:570px"><picture><source srcset="../assets/custom-fields/research-priorities.webp" type="image/webp"><img src="../assets/custom-fields/research-priorities.jpg" loading="lazy" width="1140" height="562" alt="Stacked bar chart answering Which of the following are top priorities for you and your business right now, for consultants, well-performing users and everyone else. Business efficiency, client experience, marketing and branding, organization and increase revenue are outlined in every row, each at roughly 8 to 14 percent"></picture></div></div>
       <p class="cap">Top business priorities by segment. Efficiency and organization, the two jobs custom fields serve, rank in the top five for every segment.</p>
       <div class="stats">
-        <div><span class="n">3.4/5</span><span class="d">customizability rating,<br>n=789 member survey</span></div>
-        <div><span class="n">26%</span><span class="d">named efficiency the top<br>benefit of joining HoneyBook</span></div>
-      </div>
-      <div class="todo">
-        <p class="tl">TO ADD · DATA</p>
-        <ul>
-          <li>Which study these slides come from (the diary study? an NPS survey?), when it ran, and who ran it. The brief says customization was "one of the top 3 things not meeting expectations", but on this chart it ranks 7th of 13. Either point at the ranking that supports "top 3" or drop that claim; a reader will check.</li>
-          <li>The community feedback thread on custom-field use cases: how many responses, and the two or three use cases that shaped the type list.</li>
-          <li>If you have it: how many support tickets or feature requests mentioned custom fields before the project.</li>
-        </ul>
+        <div><span class="n">3.5/5</span><span class="d">customization rating,<br>n=789 user survey</span></div>
+        <div><span class="n">26%</span><span class="d">named efficiency as the top<br>benefit of joining HoneyBook</span></div>
       </div>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p class="label">FRAMING THE SCOPE</p>
-      <p class="body">The brief asked for custom fields on projects and contacts, up to 25 per entity, with a name and a type, usable as smart fields in contracts, text blocks and emails, and fillable automatically from lead forms. That is a large surface. My first job was deciding what the first release had to contain to be useful, and what could wait.</p>
-      <div class="body"><ul>
-        <li><strong>Fields are per company, not per account.</strong> A team shares one field list, so a field an admin creates appears, empty, on every existing project or contact.</li>
-        <li><strong>Five types in V1: text, long text, date, number, link.</strong> Selection and multi-select were in the brief but were pushed to V2: they need option management (up to 25 options each, editing, deleting values already in use) that would have doubled the settings UI.</li>
-        <li><strong>Visibility is a project concern, not a contact one.</strong> Project fields can be shown to the client in the portal; contact fields never are, so the contact modal drops the whole visible/hidden split.</li>
-        <li><strong>Managing fields is an admin job.</strong> Creating, renaming and deleting fields sits behind admin permissions, in company settings, not inside each project.</li>
-      </ul></div>
-      <div class="todo">
-        <p class="tl">TO ADD · FRAMING</p>
-        <ul>
-          <li>The bullets above are reconstructed from the brief. Confirm which of these were your calls vs. the PM's, and say so in the first person. "I pushed selection to V2 because…" reads senior; a list of requirements does not.</li>
-          <li>Was the 25-field cap yours, engineering's, or a product decision? One line on why 25.</li>
-          <li>Any constraint that shaped this: legacy data model for project details, the smart-fields system in files, mobile app parity.</li>
-        </ul>
+      <p class="body">The scope included custom fields on projects and contacts, up to 25 per entity, each with a name and a type. We chose 25 after reviewing how many fields users already had, counting only repeating fields, and planned to track usage after release and adjust. (After community feedback, we raised it to 50.) Fields can be used as smart fields in contracts, text blocks and emails, and filled in automatically from a questionnaire. That is a large surface, so the first job was deciding what the first release had to contain to be useful, and what could wait. The first version had five field types:</p>
+      <div class="tbl c2">
+        <div class="r h"><span>Type</span><span>Used for</span></div>
+        <div class="r"><span>Text</span><span>One line of text. Best for short details, like “color scheme”</span></div>
+        <div class="r"><span>Long text</span><span>Bigger text box. Meant for longer notes, like “message for chalkboard sign”</span></div>
+        <div class="r"><span>Date</span><span>Important dates, like a client’s birthday or a deadline</span></div>
+        <div class="r"><span>Number</span><span>Guest count, chairs needed, cost of one printed photograph</span></div>
+        <div class="r"><span>Link</span><span>Social media accounts, client’s website</span></div>
       </div>
+      <p class="body">Two more field types, single-select and multi-select, were planned but moved to V2. Both let users pick from a reusable list they define, such as venue names or paper types. Those lists needed their own management (adding, editing, reordering and deleting values already in use), which would have doubled the dev effort, and text fields could cover the need until V2 was prioritized.</p>
+      <p class="body"><em>Field visibility</em><br>Visibility to clients only matters for project fields: Project fields hold details about a specific project and can be shown to the client in the portal; contact fields store information about the client and are never shown to them. So the contact modal drops the visible/hidden split entirely.</p>
+      <p class="body"><em>Location in the product</em><br>Managing fields is an admin job. Creating, renaming and deleting fields sits behind admin permissions in company settings, not inside each project.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p class="label">DESIGN DECISIONS</p>
-      <p class="body">Every field needed rules for after creation, since client data doesn't stay static. A renamed field updates everywhere it's already in use rather than breaking silently. A field's type locks once created, so a date field can't quietly become a text field under existing data. Deleting a field clears it from the list but keeps the values already saved on projects, since removing a field shouldn't mean losing a client's history. Default fields, like project name, type, lead source, and date and location, ship locked, so the 25-field cap is headroom for what's actually custom, not a ceiling members hit right away.</p>
+      <p class="body">Every field needed rules for after creation, since client data doesn’t stay static. A renamed field updates everywhere it’s already in use rather than breaking silently. A field’s type locks once created, so a date field can’t quietly become a text field under existing data. Deleting a field clears it from the list but keeps the values already saved on projects, since removing a field shouldn’t mean losing a client’s history.</p>
+      <p class="body">Default fields, like project name, project type, and date and location, ship locked, so the 25-field cap is headroom for what’s actually custom, not a ceiling users hit right away.</p>
       <p class="body">Adding a field meant a small, focused decision: name it, then pick a type scoped to what the data actually needs, not a blank spreadsheet cell.</p>
-      <div class="fig zoom" style="margin-top:28px;max-width:520px"><picture><source srcset="../assets/custom-fields/fields-add.webp" type="image/webp"><img src="../assets/custom-fields/fields-add.jpg" loading="lazy" width="880" height="748" alt="The Add custom field modal: a Field name input with a 0/100 counter, a Field type dropdown set to Text, a checked Visible to clients checkbox, and Cancel and Add buttons"></picture></div>
-      <p class="cap">Adding a field: name it, pick a type (text, long text, date, number, or link), and set whether the client sees it.</p>
-      <p class="body" style="margin-top:28px">The old modal had one visibility toggle per row, which put a decision on every field and made the client-facing set hard to read at a glance. The shipped version sorts fields into two sections, visible and not visible, and moves them by drag and drop, so what the client sees is one glance, not a column of eye icons. Suggested fields (priority, main phone number, next meeting, booked services) sit at the top as one-click chips, so a member who has never thought about custom fields gets a starting point instead of a blank form.</p>
-      <p class="body">To pressure-test that five types were enough, I ran the model against a real job, a member who sends a birthday card and wants the right details ready when they do:</p>
-      <div style="border-top:1px solid #14141216;margin-top:8px">
-        <div style="display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:20px;padding:12px 0;border-bottom:1px solid #14141212"><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684">FIELD</span><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684">TYPE</span><span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#717684">NOTES</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:20px;padding:14px 0;border-bottom:1px solid #14141212"><span style="font:500 14px/1.4 'Hanken Grotesk',sans-serif;color:#1a1a17">Birthday</span><span style="font:400 14px/1.4 'Hanken Grotesk',sans-serif;color:#5f5f58">Date</span><span style="font:400 14px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">contact field; sortable, so the next one is findable</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:20px;padding:14px 0;border-bottom:1px solid #14141212"><span style="font:500 14px/1.4 'Hanken Grotesk',sans-serif;color:#1a1a17">Cake flavor</span><span style="font:400 14px/1.4 'Hanken Grotesk',sans-serif;color:#5f5f58">Text</span><span style="font:400 14px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">wants a closed list; selection type parked for V2</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:20px;padding:14px 0;border-bottom:1px solid #14141212"><span style="font:500 14px/1.4 'Hanken Grotesk',sans-serif;color:#1a1a17">Contact group</span><span style="font:400 14px/1.4 'Hanken Grotesk',sans-serif;color:#5f5f58">Text</span><span style="font:400 14px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">used to target the reminder; another V2 selection case</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:20px;padding:14px 0;border-bottom:1px solid #14141212"><span style="font:500 14px/1.4 'Hanken Grotesk',sans-serif;color:#1a1a17">Lead source</span><span style="font:400 14px/1.4 'Hanken Grotesk',sans-serif;color:#5f5f58">Default</span><span style="font:400 14px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">already a locked project field; no custom field needed</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:20px;padding:14px 0"><span style="font:500 14px/1.4 'Hanken Grotesk',sans-serif;color:#1a1a17">Reference image</span><span style="font:400 14px/1.4 'Hanken Grotesk',sans-serif;color:#5f5f58">Link</span><span style="font:400 14px/1.4 'Hanken Grotesk',sans-serif;color:#8a8a82">kept hidden from the client</span></div>
+      <div class="fig zoom"><span class="figbar">Add custom project field modal</span><div class="in" style="max-width:471px"><picture><source srcset="../assets/custom-fields/fields-add.webp" type="image/webp"><img src="../assets/custom-fields/fields-add.jpg" loading="lazy" width="946" height="688" alt="Add custom field modal for a project: an empty Field name input with a 0/100 counter, a Field type dropdown set to Text, a checked Visible to clients checkbox, and Cancel and Add buttons"></picture></div></div>
+      <div class="fig zoom" style="margin-top:16px"><span class="figbar">Add custom contact field modal</span><div class="in" style="max-width:471px"><picture><source srcset="../assets/custom-fields/fields-add-contact.webp" type="image/webp"><img src="../assets/custom-fields/fields-add-contact.jpg" loading="lazy" width="943" height="685" alt="Add custom field modal for a contact: Field name filled in as Birthday with an 8/100 counter, Field type set to Date, both marked required, and Cancel and Add buttons. There is no visibility checkbox"></picture></div></div>
+      <p class="cap">How adding a field works: you name it and pick a type. For project fields, you also set visibility.</p>
+      <p class="body" style="margin-top:28px">The fields are sorted into two sections, visible and not visible, so you can see at a glance what the client can and can't see.</p>
+      <p class="body">To pressure-test custom fields against a real-life scenario, here is an example project for a user who makes cakes for parties.</p>
+      <div class="tbl c3">
+        <div class="r h"><span>Field</span><span>Type</span><span>Notes</span></div>
+        <div class="r"><span>Cake flavor</span><span>Text (single-select in V2)</span><span>This is an example where closed list fits better, but text also does the job.</span></div>
+        <div class="r"><span>Customizations</span><span>Long text</span><span>Can be kept private, since it may include technical details.</span></div>
+        <div class="r"><span>Cake text</span><span>Long text</span><span></span></div>
+        <div class="r"><span>Allergies</span><span>Long text</span><span></span></div>
+        <div class="r"><span>Number of layers</span><span>Number</span><span></span></div>
+        <div class="r"><span>Reference image</span><span>Link</span><span>Can link to a specific image or a Pinterest board for example.</span></div>
       </div>
-      <p class="body" style="margin-top:28px">Two of the five wanted a closed list. That was the argument for keeping selection on the roadmap rather than dropping it, and for shipping without it: text covers the job today, and a member's data survives the upgrade because a text field's type never changes underneath them.</p>
-      <div class="todo">
-        <p class="tl">TO ADD · DECISIONS</p>
-        <ul>
-          <li>At least one rejected direction with a screenshot or sketch: e.g. managing fields from inside the project Details tab (where the old banner lived) vs. company settings; a per-row visibility toggle (the old pattern) vs. two sections; a type picker with icons vs. a dropdown. Say what it was, why it lost.</li>
-          <li>The edge cases you designed states for: the 25-field limit reached, deleting a field with data in it (confirmation copy?), a renamed field inside an already-sent contract, a required default that a member tries to hide.</li>
-          <li>Anything engineering pushed back on and how it changed the design.</li>
-          <li>The birthday test above is reconstructed from your earlier draft; confirm it happened the way it reads, or replace it with the real example you used.</li>
-        </ul>
-      </div>
+      <p class="body">These fields can be collected with a questionnaire, and later tracked in the project and used in contracts, text blocks and emails.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p class="label">WHAT SHIPPED</p>
-      <p class="body">Two settings modals, one per entity, in company settings under Preferences. Both start with suggested fields, both list the locked defaults with their type, and both let admins drag custom fields to reorder them. Only the project modal carries the visible / not visible split, because only project fields ever reach the client portal.</p>
-      <div class="fig zoom" style="margin-top:28px"><picture><source srcset="../assets/custom-fields/fields-project.webp" type="image/webp"><img src="../assets/custom-fields/fields-project.jpg" loading="lazy" width="2000" height="1693" alt="The shipped Manage project fields modal over company settings: suggestion chips for Priority, Main phone number, Next meeting and Booked services, an Add custom field link, then the default fields (project name, type, date and location, about the project, guests, budget) under a Visible to clients heading, and an empty Not visible to clients section that fields can be dragged into"></picture></div>
-      <p class="cap">Manage project fields. The one place the visible / not visible split appears: drag a field into the lower section and the client stops seeing it.</p>
-      <p class="body" style="margin-top:28px">Once created, a field shows up empty on every project or contact, in the project Details tab and the contact record. It also joins the smart-field list in files, text blocks and the email composer, next to the default fields and looking no different, so the data members capture is usable where they write.</p>
-      <div class="fig zoom" style="margin-top:28px"><picture><source srcset="../assets/custom-fields/fields-in-file.webp" type="image/webp"><img src="../assets/custom-fields/fields-in-file.jpg" loading="lazy" width="1730" height="1600" alt="The file editor with a text block selected and the Smart fields panel open. The Field name dropdown lists Client fields (Client birthday 15/09/89, Client lead source, Clients cat name bella, Clients Company name Acme & co.) and Project fields (Project name Consulting program, Project budget), custom and default fields mixed in one list"></picture></div>
-      <p class="cap">A custom field in use: the smart-field picker inside a file lists custom fields (a client's birthday, a cat's name) alongside the defaults, each with its current value.</p>
-      <div class="todo">
-        <p class="tl">TO ADD · WHAT SHIPPED</p>
-        <ul>
-          <li>The contacts table with a custom field as a column, if it shipped in V1 (the brief lists column show/hide and sorting).</li>
-          <li>Lead-form auto-population: did it ship in V1? If not, say so; it is the most visible promise in the brief.</li>
-          <li>A short screen recording or GIF of drag-to-hide would show the interaction better than the static modal.</li>
-        </ul>
-      </div>
+      <p class="body">Two settings modals, one per entity (Project / contact), in company settings under Preferences.<br>Both list the locked defaults with their type.<br>Only the project modal carries the visible / not visible split, because only project fields are ever visible to clients.</p>
+      <div class="fig zoom"><span class="figbar">Manage project fields</span><picture><source srcset="../assets/custom-fields/fields-project.webp" type="image/webp"><img src="../assets/custom-fields/fields-project.jpg" loading="lazy" width="1400" height="1061" alt="Manage project fields modal over company settings: an Add custom field link, a Visible to clients section with locked Project name, Project type, Date and location and About the project fields plus a custom Selected services long text field, and a Not visible to clients section holding a draggable Private notes text field"></picture></div>
+      <p class="cap">Manage project fields: Users can add, edit and delete fields, but can't change the default system fields that other features depend on.</p>
+      <div class="fig zoom"><span class="figbar">Manage contact fields</span><picture><source srcset="../assets/custom-fields/fields-contact.webp" type="image/webp"><img src="../assets/custom-fields/fields-contact.jpg" loading="lazy" width="1396" height="1058" alt="Manage contact fields modal over company settings, noting that all contact fields are not visible to clients: locked Full name, Email address, Phone number, Organization, Mailing address and Private comments fields, and a custom Birthday date field with a menu"></picture></div>
+      <p class="cap">Manage contact fields: same as project fields, except there's no visibility split, since contact fields are always private.</p>
+      <p class="body" style="margin-top:28px">Once created, a field shows up empty on every project or contact, in the project Details tab and the contact record, and in the smart-field list in contracts, text blocks and the email composer, so the data users capture is usable where they write.</p>
+      <p class="body">Discoverability came from putting fields where users already work rather than adding a new destination: “New” tags on Project fields and Contact fields in settings, a field list inside the smart-field menu (opened from the side menu or by typing { in a text block), and a “Custom fields” group in the contacts table’s column picker, with a link back to manage them.</p>
+      <div class="fig zoom"><span class="figbar">Use custom fields in a file</span><picture><source srcset="../assets/custom-fields/fields-in-file.webp" type="image/webp"><img src="../assets/custom-fields/fields-in-file.jpg" loading="lazy" width="1396" height="873" alt="File editor with a text block selected and the Smart fields side panel open. The Field name dropdown lists Client fields (Client birthday 15/09/89, Client lead source, Clients cat name bella, Clients Company name Acme &amp; co.) and Project fields (Project name Consulting program, Project budget)"></picture><picture style="border-top:1px solid #14141216"><source srcset="../assets/custom-fields/fields-in-file-brace.webp" type="image/webp"><img src="../assets/custom-fields/fields-in-file-brace.jpg" loading="lazy" width="1396" height="873" alt="The same text block after typing an opening brace: an inline menu lists the same client and project fields with their values, while the side panel offers suggested smart fields and a Manage fields link"></picture></div>
+      <p class="cap">How using a field works: in a text block, add the field from the side panel or type { to open the field list.</p>
+      <div class="fig zoom"><span class="figbar">Show/hide columns in contacts table</span><picture><source srcset="../assets/custom-fields/fields-columns.webp" type="image/webp"><img src="../assets/custom-fields/fields-columns.jpg" loading="lazy" width="1396" height="844" alt="Contacts table with the Show / hide columns menu open: default columns such as Organization, Email, Phone and Projects, then a Custom fields group with a checked Birthday column and a Manage custom fields link"></picture></div>
+      <p class="cap">Custom fields also appear as optional columns in the contacts table, grouped under “Custom fields”, with a link to manage them.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p class="label">ROLLOUT</p>
-      <p class="body">The feature rolled out in stages, first to 30% of members, then a second milestone to another 30%, before opening to everyone, so edge cases like the delete-but-keep-history behavior surfaced before every member had it.</p>
-      <div class="todo">
-        <p class="tl">TO ADD · ROLLOUT</p>
-        <ul>
-          <li>What actually surfaced in the first 30% that changed something: one concrete bug, copy change, or behavior tweak between milestones.</li>
-          <li>Dates or weeks between milestones.</li>
-        </ul>
-      </div>
+      <p class="body">The feature rolled out in stages, first to 30% of users, then a second milestone to another 30%, before opening to everyone, so edge cases like the delete-but-keep-history behavior surfaced before every user had it. For example, a request for more than 25 fields came up a few times, so we raised the limit to 50.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p class="label">OUTCOME</p>
-      <p class="body">Shipped a custom-fields system that scales from a solo freelancer to a growing team without overwhelming either: members who never open the settings see nothing new, and members who need it get typed, private-by-default data that follows them into files and emails.</p>
+      <p class="body">Shipped a custom-fields system that scales from a solo freelancer to a growing team without overwhelming either: users who never open the settings see nothing new, and users who need it get typed, customizable data that follows them into files and emails.</p>
+      <p class="body">A few months later, prompted by community requests, another team released a V2 with single-select, multi-select and reordering.</p>
       <div class="stats" style="gap:44px;padding-top:28px">
         <div><span class="n">10K</span><span class="d">companies created at<br>least one custom field</span></div>
         <div><span class="n">15%</span><span class="d">of active companies<br>using custom fields</span></div>
       </div>
-      <div class="todo">
-        <p class="tl">TO ADD · OUTCOME</p>
-        <ul>
-          <li>Timeframe and method for both numbers: "10K companies within [N] days of full release, from [Amplitude / internal dashboard]". Without a window, 10K is not readable.</li>
-          <li>The success metrics the brief named, with a value or an honest "not measured": average custom fields per company, share of auto-populated vs. manually entered values, support case rate, NPS movement on the customization question.</li>
-          <li>Which suggested chips got used most, if you have it. It validates the type list and the community input.</li>
-          <li>Did selection / multi-select ship later? One line closes the V2 loop.</li>
-        </ul>
-      </div>
+      <p class="cap" style="margin-top:14px">Figures as of the end of the rollout test.</p>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p class="label">LOOKING BACK</p>
-      <div class="todo" style="margin-top:0">
-        <p class="tl">TO ADD · RETROSPECTIVE</p>
-        <ul>
-          <li>One unsentimental paragraph. What would you redo: shipping without selection types, putting management in company settings rather than in context, the 25 cap, the drag-to-hide pattern on touch devices?</li>
-          <li>What you learned about designing "rules after creation" (rename, lock type, delete-keeps-data) that you carried into later work.</li>
-        </ul>
-      </div>
+      <p class="body">We started with a conservative cap of 25 fields per entity. Raising it was an easy fix once we saw it had to change, and it showed the value of saving resources for post-release iterations and of rolling out gradually. Designing the next steps early (reordering, selection types) also paid off: it paved the way for the next iterations.</p>
     </div>
   </section>
 
   <nav class="caserow" aria-label="Case study navigation" style="border-top:1px solid #14141212">
     <div style="max-width:680px;margin:0 auto;padding:34px 28px;display:flex;justify-content:space-between;gap:24px">
-      <a class="prev" href="../client-portal/" style="align-items:flex-start;text-align:left">
-        <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684">PREVIOUS</span>
-        <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:21px;letter-spacing:-.01em;color:#1a1a17">← Client Portal</span>
+      <a class="prev" href="../selective-communication/" style="align-items:flex-start;text-align:left">
+        <span style="font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684">PREVIOUS</span>
+        <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:22px;letter-spacing:-.01em;color:#1a1a17">← Selective Sharing</span>
       </a>
-      <a class="next" href="../library-folders/" style="align-items:flex-end;text-align:right">
-        <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684">NEXT</span>
-        <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:21px;letter-spacing:-.01em;color:#1a1a17">Library Folders →</span>
+      <a class="next" href="../client-portal/" style="align-items:flex-end;text-align:right">
+        <span style="font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684">NEXT</span>
+        <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:22px;letter-spacing:-.01em;color:#1a1a17">Client Portal →</span>
       </a>
     </div>
   </nav>
 
-  <footer style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:26px;padding-bottom:60px;border-top:1px solid #14141212;display:flex;justify-content:center;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:#717684">
-    <div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
+  <footer style="max-width:680px;margin:0 auto;padding:0 28px;padding-top:26px;padding-bottom:60px;border-top:1px solid #14141212;display:flex;flex-direction:column;align-items:center;gap:18px">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px;font:400 15px/1.4 'Hanken Grotesk',sans-serif;color:#5f5f58">
+      <a href="https://www.linkedin.com/in/avia-eyal-417225107" target="_blank" rel="noopener" class="ilink">LinkedIn</a>
+      <a href="../avia-eyal-cv.pdf?v=20261105" target="_blank" rel="noopener" class="ilink">Resume</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;color:#717684">
       <span>© Avia Eyal 2026 | Tel Aviv</span>
       <span>Designed and built by me with Claude Code</span>
     </div>
@@ -372,6 +345,35 @@
     obs.observe(document.body, { childList: true, subtree: true });
     setTimeout(function () { obs.disconnect(); }, 4000);
   });
+})();
+</script>
+<script>
+/* Scroll reveal: invisible, then blurred, then sharp. Off for reduced motion and without JS. */
+(function(){
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  document.documentElement.classList.add('rv-on');
+  var SEL='section>div>*';
+  var io=new IntersectionObserver(function(entries){
+    var i=0;
+    entries.forEach(function(e){
+      if(!e.isIntersecting)return;
+      e.target.style.setProperty('--rv-d',Math.min(i++,6)*0.08+'s');
+      e.target.setAttribute('data-rv','in');
+      io.unobserve(e.target);
+    });
+  },{rootMargin:'0px 0px -8% 0px'});
+  var seen=new WeakSet();
+  function scan(){
+    /* Only tag nodes the x-dc renderer produced (data-dc-tpl), never the source markup it copies. */
+    document.querySelectorAll(SEL).forEach(function(el){
+      if(seen.has(el)||!el.hasAttribute('data-dc-tpl'))return;
+      seen.add(el);
+      el.setAttribute('data-rv','');
+      io.observe(el);
+    });
+  }
+  new MutationObserver(scan).observe(document.documentElement,{childList:true,subtree:true});
+  scan();
 })();
 </script>
 </body>
