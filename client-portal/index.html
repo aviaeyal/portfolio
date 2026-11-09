@@ -51,7 +51,6 @@
   .fig{width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff}
   .fig img,.fig picture{width:100%;height:auto;display:block}
   .figbar{display:block;padding:11px 16px;font:500 11.5px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;background:#121210;color:#fbfbf9}
-  .figbar-old{background:#e9e7e0;color:#5f5f58;border-bottom:1px solid #14141216}
   .cmp{position:relative;width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;background:#fff;user-select:none;-webkit-user-select:none;touch-action:pan-y;cursor:ew-resize;--pos:70%}
   .cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;-webkit-user-drag:none}
   .cmp .cmp-before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
@@ -155,7 +154,7 @@
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p class="label">THE PROBLEM SPACE</p>
       <p class="body">I started by defining the jobs to be done. The client portal has two sides, the member side and the client side, and they have different requirements and priorities. To make sure I wasn't missing important considerations, I mapped what each of them needs from the portal.</p>
-      <div class="fig zoom" style="margin-top:28px;background:#f2f7fc"><span class="figbar figbar-old">JOBS TO BE DONE</span><img src="../assets/client-portal/jtbd.png" loading="lazy" width="1320" height="1128" alt="Jobs-to-be-done map in two rows of sticky notes. As a client: access all my information in one place, see all interaction with my vendor, easily access my client portal, schedule a meeting, centralize communication, mark tasks completed, upload files, ask about project details, pay easily, communicate with project participants, receive material in one place. As a vendor: give my client visibility to all their files, communications and payments, communicate with my client, give easy access to all their files, introduce the portal and explain functionality, showcase my brand, send messages in the portal, show a payment summary, let clients schedule a meeting, assign tasks, let clients see and complete tasks, decide whether there is a portal or not, make it accessible on desktop and mobile, show upcoming meetings, share and collaborate on notes, supply resources in one place"></div>
+      <div class="fig zoom" style="margin-top:28px;background:#f2f7fc"><span class="figbar">JOBS TO BE DONE</span><img src="../assets/client-portal/jtbd.png" loading="lazy" width="1320" height="1128" alt="Jobs-to-be-done map in two rows of sticky notes. As a client: access all my information in one place, see all interaction with my vendor, easily access my client portal, schedule a meeting, centralize communication, mark tasks completed, upload files, ask about project details, pay easily, communicate with project participants, receive material in one place. As a vendor: give my client visibility to all their files, communications and payments, communicate with my client, give easy access to all their files, introduce the portal and explain functionality, showcase my brand, send messages in the portal, show a payment summary, let clients schedule a meeting, assign tasks, let clients see and complete tasks, decide whether there is a portal or not, make it accessible on desktop and mobile, show upcoming meetings, share and collaborate on notes, supply resources in one place"></div>
     </div>
 
     <div style="padding:52px 0;border-top:1px solid #14141212">
@@ -218,7 +217,7 @@
 
       <p class="body" style="margin-top:44px">A new login page for easier access. It pushes the client toward an easier and faster (but still secure) link login instead of a password, by something as simple as changing the hierarchy: the link became the main call to action, and the password a secondary one. In the 60 days after release, use of the link login rose 20%.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:28px">
-        <div class="fig zoom" style="background:#f4eae0"><span class="figbar figbar-old">OLD DESIGN</span><picture><source srcset="../assets/client-portal/login-before.webp" type="image/webp"><img src="../assets/client-portal/login-before.jpg" loading="lazy" width="566" height="756" alt="The old client login: company name, email and password fields with a Log in button, Forgot password link, then an Or divider and a small Email me a link button at the bottom"></picture></div>
+        <div class="fig zoom" style="background:#f4eae0"><span class="figbar">OLD DESIGN</span><picture><source srcset="../assets/client-portal/login-before.webp" type="image/webp"><img src="../assets/client-portal/login-before.jpg" loading="lazy" width="566" height="756" alt="The old client login: company name, email and password fields with a Log in button, Forgot password link, then an Or divider and a small Email me a link button at the bottom"></picture></div>
         <div class="fig zoom" style="background:#f4eae0"><span class="figbar">NEW DESIGN</span><picture><source srcset="../assets/client-portal/login-after.webp" type="image/webp"><img src="../assets/client-portal/login-after.jpg" loading="lazy" width="572" height="864" alt="The new client login: logo and company name, a primary Log in with a link button with the note Get instant access without a password, then an Or divider, email and password fields, a secondary Log in button, Forgot password, and First time logging in? Create a password"></picture></div>
       </div>
     </div>
@@ -236,9 +235,11 @@
   </section>
 
   <nav class="caserow" aria-label="Case study navigation" style="border-top:1px solid #14141212">
-    <div style="max-width:680px;margin:0 auto;padding:34px 28px;display:flex;justify-content:flex-end;gap:24px">
+    <div style="max-width:680px;margin:0 auto;padding:34px 28px;display:flex;justify-content:space-between;gap:24px">
+      <a class="prev" href="../custom-fields/" style="align-items:flex-start;text-align:left">
+        <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:22px;letter-spacing:-.01em;color:#1a1a17">← Custom Fields</span>
+      </a>
       <a class="next" href="../selective-communication/" style="align-items:flex-end;text-align:right">
-        <span style="font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684">NEXT</span>
         <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:22px;letter-spacing:-.01em;color:#1a1a17">Selective Sharing →</span>
       </a>
     </div>

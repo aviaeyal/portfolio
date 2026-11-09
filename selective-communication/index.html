@@ -111,7 +111,6 @@
 
   /* Old/new design label bars on figures */
   .figbar{display:block;padding:11px 16px;font:500 11.5px/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;background:#121210;color:#fbfbf9}
-  .figbar-old{background:#e9e7e0;color:#5f5f58;border-bottom:1px solid #14141216}
 
   /* What shipped: crossfading state pairs + phone flow walkthroughs */
   .xfade{position:relative;overflow:hidden;border:1px solid #14141216;border-radius:8px}
@@ -223,9 +222,9 @@
         <li>No control over who can access or view a file.</li>
         <li>Communication that felt inefficient and unprofessional to clients.</li>
       </ul>
-      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;margin-top:36px"><span class="figbar figbar-old">OLD DESIGN</span><picture style="width:100%;display:block"><source srcset="../assets/selective-communication/reply-recipients-before.webp" type="image/webp"><img src="../assets/selective-communication/reply-recipients-before.jpg" loading="lazy" alt="Before: replying in the project feed, with recipients locked to whoever was already in the thread and no way to change them" style="width:100%;display:block"></picture></div>
+      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px;margin-top:36px"><span class="figbar">OLD DESIGN</span><picture style="width:100%;display:block"><source srcset="../assets/selective-communication/reply-recipients-before.webp" type="image/webp"><img src="../assets/selective-communication/reply-recipients-before.jpg" loading="lazy" alt="Before: replying in the project feed, with recipients locked to whoever was already in the thread and no way to change them" style="width:100%;display:block"></picture></div>
       <p style="font:400 12.5px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 30px">BEFORE, REPLY: a feed reply always went to everyone already in the thread, with no way to change the recipients.</p>
-      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><span class="figbar figbar-old">OLD DESIGN</span><picture style="width:100%;display:block"><source srcset="../assets/selective-communication/share-modal-before.webp" type="image/webp"><img src="../assets/selective-communication/share-modal-before.jpg" loading="lazy" alt="Before: the old share modal, a flat email-to list with no per-recipient visibility control" style="width:100%;display:block"></picture></div>
+      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><span class="figbar">OLD DESIGN</span><picture style="width:100%;display:block"><source srcset="../assets/selective-communication/share-modal-before.webp" type="image/webp"><img src="../assets/selective-communication/share-modal-before.jpg" loading="lazy" alt="Before: the old share modal, a flat email-to list with no per-recipient visibility control" style="width:100%;display:block"></picture></div>
       <p style="font:400 12.5px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 0">BEFORE, SHARE: the old share modal was a flat email-to list, with no way to manage visibility per recipient.</p>
     </div>
 
@@ -255,9 +254,9 @@
     <div style="padding:52px 0;border-top:1px solid #14141212">
       <p style="font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#717684;margin:0 0 22px">EXPLORATION</p>
       <p style="font:400 18px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0 0 28px">For one exploration (the share modal on a file), “Who sees what” could live in more than one place. I explored two directions before committing.</p>
-      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><span class="figbar figbar-old">DIRECTION 1</span><img src="../assets/selective-communication/concept-inline.png" loading="lazy" alt="Concept one: the Share via link screen with authentication and a per-recipient list, each participant toggled individually for full access" style="width:100%;display:block"></div>
+      <div class="zoom" style="width:100%;overflow:hidden;border:1px solid #14141216;border-radius:8px"><span class="figbar">DIRECTION 1</span><img src="../assets/selective-communication/concept-inline.png" loading="lazy" alt="Concept one: the Share via link screen with authentication and a per-recipient list, each participant toggled individually for full access" style="width:100%;display:block"></div>
       <p style="font:400 12.5px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 30px">Direction one, permissions inline: authentication and per-recipient access built right into the Share-via-email and Share-via-link screens.</p>
-      <div class="zoom" style="max-width:600px;margin:0 auto;overflow:hidden;border:1px solid #14141216;border-radius:8px"><span class="figbar figbar-old">DIRECTION 2</span><picture style="width:100%;display:block"><source srcset="../assets/selective-communication/concept-modal.webp" type="image/webp"><img src="../assets/selective-communication/concept-modal.jpg" loading="lazy" alt="Concept two: a lean Share via link screen paired with a separate Manage file access modal that toggles per-participant access" style="width:100%;display:block"></picture></div>
+      <div class="zoom" style="max-width:600px;margin:0 auto;overflow:hidden;border:1px solid #14141216;border-radius:8px"><span class="figbar">DIRECTION 2</span><picture style="width:100%;display:block"><source srcset="../assets/selective-communication/concept-modal.webp" type="image/webp"><img src="../assets/selective-communication/concept-modal.jpg" loading="lazy" alt="Concept two: a lean Share via link screen paired with a separate Manage file access modal that toggles per-participant access" style="width:100%;display:block"></picture></div>
       <p style="font:400 12.5px/1.5 'IBM Plex Mono',monospace;color:#717684;margin:12px 2px 28px;text-align:center">Direction two, the one I chose: a dedicated “Manage file access” dialog for per-participant control, kept separate from the send flow.</p>
       <p style="font:400 18px/1.75 'Hanken Grotesk',sans-serif;color:#3a3a34;margin:0">The shipped design kept the best of both: recipients and authentication inline, where the decision gets made, and a separate Manage file access modal for the finer-grained, per-person control.</p>
     </div>
@@ -324,11 +323,9 @@
   <nav class="caserow" aria-label="Case study navigation" style="border-top:1px solid #14141212">
     <div style="max-width:680px;margin:0 auto;padding:34px 28px;display:flex;justify-content:space-between;gap:24px">
       <a class="prev" href="../client-portal/" style="align-items:flex-start;text-align:left">
-        <span style="font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684">PREVIOUS</span>
         <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:22px;letter-spacing:-.01em;color:#1a1a17">← Client Portal</span>
       </a>
       <a class="next" href="../custom-fields/" style="align-items:flex-end;text-align:right">
-        <span style="font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:#717684">NEXT</span>
         <span class="nx" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:22px;letter-spacing:-.01em;color:#1a1a17">Custom Fields →</span>
       </a>
     </div>
