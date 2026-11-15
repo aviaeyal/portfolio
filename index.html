@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Avia Eyal · Senior Product Designer</title>
-<meta name="description" content="Senior product designer, 10+ years in B2B SaaS. I design the complex parts of software (editors, file structure, platform features) from research through shipped UI.">
+<meta name="description" content="Senior product designer, 10+ years in B2B SaaS. I design the complex parts of software (editors, navigation, product migrations), from defining the problem through shipped UI.">
 <link rel="canonical" href="https://aviaeyal.com/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Avia Eyal">
 <meta property="og:title" content="Avia Eyal · Senior Product Designer">
-<meta property="og:description" content="Senior product designer, 10+ years in B2B SaaS. I design the complex parts of software (editors, file structure, platform features) from research through shipped UI.">
+<meta property="og:description" content="Senior product designer, 10+ years in B2B SaaS. I design the complex parts of software (editors, navigation, product migrations), from defining the problem through shipped UI.">
 <meta property="og:url" content="https://aviaeyal.com/">
 <meta property="og:image" content="https://aviaeyal.com/assets/og-card.png?v=3">
 <meta property="og:image:width" content="1200">
@@ -65,6 +65,10 @@
   @media (prefers-reduced-motion:no-preference){.wimg:hover{transform:scale(1.02)}}
   .bio p{font:300 18px/1.625 'Hanken Grotesk',sans-serif;color:#393a36;margin:0 0 30px}
   .bio p:last-child{margin:0}
+  .biolink{text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;transition:color .15s}
+  .biolink span{text-underline-offset:3px;text-decoration-thickness:1px}
+  .biolink:hover,.biolink:focus-visible{color:#000}
+  .biolink:hover span,.biolink:focus-visible span{text-decoration:underline}
   .facts{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,auto);grid-auto-flow:column;gap:0 40px;padding:54px 0 0}
   .facts>div{display:contents}
   .fact{padding:0 0 24px;margin:0 0 18px;border-bottom:1px solid #e9eae6}
@@ -126,7 +130,7 @@
       <div class="photo"><picture style="width:100%;height:100%;display:block"><source srcset="assets/photo/avia-eyal.webp" type="image/webp"><img src="assets/photo/avia-eyal.jpg" fetchpriority="high" alt="Portrait of Avia Eyal" style="width:100%;height:100%;object-fit:cover;display:block"></picture></div>
       <h1><img src="assets/lettering/hi-im-avia.webp" width="760" height="121" alt="Hi! I’m Avia" fetchpriority="high"></h1>
     </div>
-    <p style="font:300 18px/1.625 'Hanken Grotesk',sans-serif;color:#70716a;margin:12px 0 0;max-width:680px">A senior product designer with 10+ years in B2B SaaS, starting in QA and test automation. I design the complex parts of software (editors, file structure, platform features) from research through shipped UI. I studied visual communications at Bezalel and neuroscience at Tel Aviv University.</p>
+    <p style="font:300 18px/1.625 'Hanken Grotesk',sans-serif;color:#70716a;margin:12px 0 0;max-width:680px">A senior product designer with 10+ years in B2B SaaS, starting in QA and test automation. I design the complex parts of software (editors, navigation, product migrations), from defining the problem through shipped UI. I studied visual communications at Bezalel and neuroscience at Tel Aviv University.</p>
     <div class="chips">
       <a href="mailto:aviaeyal@gmail.com" class="chip">Email<span aria-hidden="true">↗</span></a>
       <a href="https://www.linkedin.com/in/avia-eyal-417225107" target="_blank" rel="noopener" class="chip">LinkedIn<span aria-hidden="true">↗</span></a>
@@ -166,7 +170,7 @@
       <p>My academic background spans neuroscience at Tel Aviv University and visual communications at Bezalel. In practice I think as much about how people process information as about how a screen looks.</p>
       <sc-if value="{{ showIllustration }}" hint-placeholder-val="{{ true }}">
       <p>I also illustrate. I oversaw a product illustration language after its original team moved on, creating new artwork and directing an external illustrator to keep it consistent.</p>
-      <p>Outside work I keep drawing: <a href="https://instagram.com/aviaeyal" target="_blank" rel="noopener" style="text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:4px">@aviaeyal <svg aria-hidden="true" width="17" height="17" viewBox="0 0 15 15" fill="none"><path d="M10.6245 10.6245V4.3755H4.3755M10.6245 4.3755L4.3755 10.6245" stroke-linecap="round" stroke="#D5D5D0"/></svg></a></p>
+      <p>Outside work I keep drawing: <a href="https://instagram.com/aviaeyal" target="_blank" rel="noopener" class="biolink"><span>@aviaeyal</span> <svg aria-hidden="true" width="17" height="17" viewBox="0 0 15 15" fill="none"><path d="M10.6245 10.6245V4.3755H4.3755M10.6245 4.3755L4.3755 10.6245" stroke-linecap="round" stroke="currentColor"/></svg></a></p>
       </sc-if>
     </div>
   </section>
