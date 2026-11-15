@@ -81,6 +81,9 @@
   .caps span{font:400 13.5px/1 'Hanken Grotesk',sans-serif;color:#70716a;border:1px solid #d6d7d1;border-radius:30px;padding:5px 13px}
   .contactbtn{display:inline-flex;align-items:center;gap:5px;font:400 17px/1 'Hanken Grotesk',sans-serif;color:#f3f3ef;text-decoration:none;border:1px solid #42433c;border-radius:2px;padding:0 20px;height:48px;transition:border-color .2s var(--ease)}
   .contactbtn:hover{border-color:#f3f3ef}
+  .contactbtn .copyico{margin-left:3px;opacity:0;transition:opacity .2s var(--ease)}
+  .contactbtn:hover .copyico,.contactbtn:focus-visible .copyico{opacity:1}
+  @media (hover:none){.contactbtn .copyico{opacity:1}}
   section[id]{scroll-margin-top:76px}
   @media (max-width:400px){
     .topnav{padding:0 20px!important}
@@ -100,6 +103,11 @@
   @keyframes reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
   html.rv-on [data-rv]{opacity:0;filter:blur(2px);translate:0 20px;transition:opacity .9s var(--ease),filter 1.3s var(--ease),translate 1.3s var(--ease);transition-delay:var(--rv-d,0s)}
   html.rv-on [data-rv=in]{opacity:1;filter:blur(0);translate:0 0}
+  .copytip{position:fixed;z-index:1000;pointer-events:none;transform:translate(-50%,calc(-100% - 10px));background:#121210;color:#fbfbf9;font:500 12.5px/1 'IBM Plex Mono',monospace;letter-spacing:.04em;padding:8px 10px;border-radius:3px;white-space:nowrap;opacity:0;transition:opacity .2s var(--ease)}
+  .copytip::after{content:'';position:absolute;left:50%;top:100%;margin-left:-5px;border:5px solid transparent;border-top-color:#121210}
+  .copytip.on{opacity:1}
+  .copytip.light{background:#f3f3ef;color:#121210}
+  .copytip.light::after{border-top-color:#f3f3ef}
 </style>
 </helmet>
 <template id="__bundler_thumbnail" data-bg-color="#fbfbf9">
@@ -134,7 +142,7 @@
     </div>
     <p style="font:300 18px/1.625 'Hanken Grotesk',sans-serif;color:#70716a;margin:12px 0 0;max-width:680px">A senior product designer with 10+ years in B2B SaaS, starting in QA and test automation. I design the complex parts of software (editors, navigation, product migrations), from defining the problem through shipped UI. I studied visual communications at Bezalel and neuroscience at Tel Aviv University.</p>
     <div class="chips">
-      <a href="mailto:aviaeyal@gmail.com" class="chip">Email<span aria-hidden="true">↗</span></a>
+      <a href="mailto:aviaeyal@gmail.com" class="chip" data-copy-email>Email<svg aria-hidden="true" width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" style="margin-top:-1px"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5"/><path d="M10.5 3.5v-.5A1.5 1.5 0 0 0 9 1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.5"/></svg></a>
       <a href="https://www.linkedin.com/in/avia-eyal-417225107" target="_blank" rel="noopener" class="chip">LinkedIn<span aria-hidden="true">↗</span></a>
       <a href="avia-eyal-cv.pdf?v=20261105" target="_blank" rel="noopener" class="chip">Resume<span aria-hidden="true">↗</span></a>
       <a href="https://instagram.com/aviaeyal" target="_blank" rel="noopener" class="chip">Instagram<span aria-hidden="true">↗</span></a>
@@ -217,7 +225,7 @@
       <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(43px,6.5vw,67.5px);line-height:1;letter-spacing:-.06em;color:#fff;margin:0">Say hi</h2>
     </div>
     <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
-      <a href="mailto:aviaeyal@gmail.com" class="contactbtn">aviaeyal at gmail.com</a>
+      <a href="mailto:aviaeyal@gmail.com" class="contactbtn" data-copy-email><!--email_off-->aviaeyal@gmail.com<!--/email_off--><svg class="copyico" aria-hidden="true" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5"/><path d="M10.5 3.5v-.5A1.5 1.5 0 0 0 9 1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.5"/></svg></a>
       <a href="https://www.linkedin.com/in/avia-eyal-417225107" target="_blank" rel="noopener" class="contactbtn">LinkedIn <svg aria-hidden="true" width="17" height="17" viewBox="0 0 15 15" fill="none"><path d="M10.6245 10.6245V4.3755H4.3755M10.6245 4.3755L4.3755 10.6245" stroke-linecap="round" stroke="#f3f3ef"/></svg></a>
       <a href="avia-eyal-cv.pdf?v=20261105" target="_blank" rel="noopener" class="contactbtn">Resume <svg aria-hidden="true" width="17" height="17" viewBox="0 0 15 15" fill="none"><path d="M10.6245 10.6245V4.3755H4.3755M10.6245 4.3755L4.3755 10.6245" stroke-linecap="round" stroke="#f3f3ef"/></svg></a>
     </div>
@@ -268,6 +276,31 @@ class Component extends DCLogic {
   }
   new MutationObserver(scan).observe(document.documentElement,{childList:true,subtree:true});
   scan();
+})();
+</script>
+<script>
+/* Email chip: copy the address and show a tooltip. Falls back to mailto if the clipboard is unavailable.
+   Delegated on document because the x-dc renderer replaces the source markup. */
+(function(){
+  var ADDR=['aviaeyal','gmail.com'].join('@'),tip,timer;
+  function show(el){
+    if(!tip){tip=document.createElement('div');tip.className='copytip';tip.setAttribute('role','status');document.body.appendChild(tip);}
+    var r=el.getBoundingClientRect();
+    tip.style.left=(r.left+r.width/2)+'px';
+    tip.style.top=r.top+'px';
+    tip.textContent='Email copied';
+    tip.classList.toggle('light',!!el.closest('#contact'));
+    tip.classList.add('on');
+    clearTimeout(timer);
+    timer=setTimeout(function(){tip.classList.remove('on');},1800);
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('[data-copy-email]');
+    if(!a||!navigator.clipboard||!window.isSecureContext)return;
+    e.preventDefault();
+    navigator.clipboard.writeText(ADDR).then(function(){show(a);},function(){location.href='mailto:'+ADDR;});
+  });
+  window.addEventListener('scroll',function(){if(tip)tip.classList.remove('on');},{passive:true});
 })();
 </script>
 </body>
